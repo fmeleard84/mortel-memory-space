@@ -9,6 +9,7 @@ import OrganisationSection from '../components/OrganisationSection';
 import AutoPromoService from '../components/AutoPromoService';
 import SereniteProche from '../components/SereniteProche';
 import MemorySpaceNew from '../components/MemorySpaceNew';
+import NewFAQ from '../components/NewFAQ';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -24,6 +25,7 @@ const Index = () => {
       <SereniteProche />
       <NewVerbatimSection />
       <MemorySpaceNew />
+      <NewFAQ />
       <Footer />
     </div>
   );
