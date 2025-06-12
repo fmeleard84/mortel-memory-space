@@ -10,7 +10,6 @@ import AutoPromoService from '../components/AutoPromoService';
 import SereniteProche from '../components/SereniteProche';
 import AdvantagesHeroSection from '../components/AdvantagesHeroSection';
 import PillarsSection from '../components/PillarsSection';
-import TestimonialSection from '../components/TestimonialSection';
 import ConsultantSection from '../components/ConsultantSection';
 import MemorySpaceSection from '../components/MemorySpaceSection';
 import AdvantagesSection from '../components/AdvantagesSection';
@@ -31,7 +30,7 @@ const Index = () => {
       <OrganisationSection />
       <AutoPromoService />
       <SereniteProche />
-      <TestimonialSection />
+      <NewVerbatimSection />
       <AdvantagesHeroSection />
       <PillarsSection />
       <ConsultantSection />
