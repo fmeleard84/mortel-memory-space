@@ -5,6 +5,7 @@ import HeroSection from '../components/HeroSection';
 import EngagementSection from '../components/EngagementSection';
 import NewVerbatimSection from '../components/NewVerbatimSection';
 import GestionAdminSection from '../components/GestionAdminSection';
+import OrganisationSection from '../components/OrganisationSection';
 import AdvantagesHeroSection from '../components/AdvantagesHeroSection';
 import PillarsSection from '../components/PillarsSection';
 import TestimonialSection from '../components/TestimonialSection';
@@ -25,6 +26,7 @@ const Index = () => {
       <EngagementSection />
       <NewVerbatimSection />
       <GestionAdminSection />
+      <OrganisationSection />
       <AdvantagesHeroSection />
       <PillarsSection />
       <TestimonialSection />
