@@ -9,18 +9,18 @@ const NewVerbatimSection = () => {
           <div className="flex-1 aspect-square">
             <img 
               className="w-full h-full object-cover" 
-              src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&h=600&fit=crop"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop"
               alt="Témoignage client"
             />
           </div>
           <div className="flex-1 bg-mortel-dark flex flex-col justify-center gap-8 p-8">
             <blockquote className="text-white text-xl md:text-2xl font-inter font-normal leading-[33.60px]">
-              « Une approche moderne et respectueuse qui m'a vraiment aidé dans un moment difficile. »
+              « Le service proposé par eMortel a transformé notre expérience. Leur approche humaine et digitale a vraiment fait la différence dans un moment difficile. »
             </blockquote>
             <div className="flex items-center gap-5">
               <div className="flex flex-col">
                 <cite className="text-neutral-400 text-base font-inter font-normal leading-6 not-italic">
-                  Jean Dupont
+                  Alain
                 </cite>
               </div>
             </div>
