@@ -1,53 +1,106 @@
 
 import React from 'react';
-import { Phone, Calendar } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="bg-gradient-to-br from-background to-muted py-20 lg:py-28">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Des obsèques{' '}
-            <span className="text-primary">sereines</span>,<br />
-            sans paperasse ni stress
-          </h1>
-          
-          <p className="text-xl lg:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-            Nous accompagnons plus de 2000 familles chaque année avec transparence, 
-            humanité et des solutions digitales innovantes.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <a
-              href="tel:+33123456789"
-              className="flex items-center space-x-3 bg-primary text-primary-foreground px-8 py-4 rounded-xl hover:bg-primary/90 transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            >
-              <Phone size={20} />
-              <span>Appel gratuit immédiat</span>
-            </a>
-            
-            <button className="flex items-center space-x-3 bg-white text-primary border-2 border-primary px-8 py-4 rounded-xl hover:bg-primary/5 transition-all duration-200 font-semibold text-lg">
-              <Calendar size={20} />
-              <span>Programmer un rappel</span>
-            </button>
+    <section className="w-full h-full flex flex-col justify-start items-start gap-2.5">
+      <div className="self-stretch h-[900px] bg-[#191919] overflow-hidden flex flex-col justify-start items-center gap-20">
+        <div className="self-stretch flex-1 flex justify-start items-start">
+          <div className="flex-1 self-stretch pl-16 pr-20 flex flex-col justify-center items-end gap-8">
+            <div className="w-full max-w-[560px] flex flex-col justify-start items-start gap-8">
+              <div className="self-stretch flex flex-col justify-start items-start gap-6">
+                <h1 
+                  className="self-stretch break-words"
+                  style={{
+                    color: 'white',
+                    fontSize: '56px',
+                    fontFamily: 'Inter',
+                    fontWeight: '400',
+                    lineHeight: '67.20px',
+                    wordWrap: 'break-word'
+                  }}
+                >
+                  Des obsèques sans tracas, en toute sérénité.
+                </h1>
+                <p 
+                  className="self-stretch break-words"
+                  style={{
+                    color: 'white',
+                    fontSize: '18px',
+                    fontFamily: 'Inter',
+                    fontWeight: '400',
+                    lineHeight: '27px',
+                    wordWrap: 'break-word'
+                  }}
+                >
+                  Nous vous accompagnons dans chaque étape de l'organisation des obsèques. Dites adieu à la paperasse et concentrez-vous sur l'essentiel.
+                </p>
+              </div>
+              
+              <div className="flex justify-start items-start gap-4">
+                <button 
+                  className="px-6 py-2.5 bg-white rounded-none border border-white flex justify-center items-center gap-2"
+                >
+                  <span 
+                    style={{
+                      color: 'black',
+                      fontSize: '16px',
+                      fontFamily: 'Inter',
+                      fontWeight: '400',
+                      lineHeight: '24px',
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    En savoir plus
+                  </span>
+                </button>
+                <button 
+                  className="px-6 py-2.5 bg-[#30B0C7] rounded-none flex justify-center items-center gap-2"
+                >
+                  <span 
+                    style={{
+                      color: 'white',
+                      fontSize: '16px',
+                      fontFamily: 'Inter',
+                      fontWeight: '400',
+                      lineHeight: '24px',
+                      wordWrap: 'break-word'
+                    }}
+                  >
+                    Urgence : Rappel immédiat
+                  </span>
+                </button>
+              </div>
+              
+              <div className="flex justify-start items-center gap-9">
+                <div className="w-[42.85px] h-[58.25px] relative">
+                  <img 
+                    className="w-[57px] h-[57px] absolute left-0 top-0 rounded-full border-2 border-white object-cover" 
+                    src="https://images.unsplash.com/photo-1494790108755-2616b612b1e1?w=57&h=57&fit=crop&crop=face"
+                    alt="Aline, conseillère disponible"
+                  />
+                </div>
+                <div 
+                  className="w-[359.36px] h-[29.63px] break-words"
+                  style={{
+                    color: 'white',
+                    fontSize: '16px',
+                    fontFamily: 'Inter',
+                    fontWeight: '400',
+                    lineHeight: '24px',
+                    wordWrap: 'break-word'
+                  }}
+                >
+                  Aline, est actuellement disponible pour vous écouter
+                </div>
+              </div>
+            </div>
           </div>
-
-          {/* Trust indicators */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-gray-200">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">4.9/5</div>
-              <div className="text-muted-foreground">⭐⭐⭐⭐⭐ Google</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">+2000</div>
-              <div className="text-muted-foreground">familles accompagnées</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-              <div className="text-muted-foreground">disponibilité conseiller</div>
-            </div>
-          </div>
+          <img 
+            className="flex-1 self-stretch object-cover" 
+            src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=720&h=900&fit=crop"
+            alt="Service funéraire serein"
+          />
         </div>
       </div>
     </section>
