@@ -9,13 +9,12 @@ const Footer = () => {
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle newsletter subscription
     console.log('Newsletter subscription:', email);
   };
 
   return (
     <footer className="w-full">
-      <div className="w-full px-16 py-20 bg-foreground overflow-hidden flex flex-col justify-start items-center gap-20">
+      <div className="w-full px-16 py-20 overflow-hidden flex flex-col justify-start items-center gap-20" style={{ background: '#191919' }}>
         <div className="w-full max-w-[1280px] flex flex-col justify-start items-start gap-20">
           {/* Main Content */}
           <div className="w-full h-[248px] justify-start items-start gap-32 inline-flex">
@@ -33,7 +32,7 @@ const Footer = () => {
               </div>
               <div className="self-stretch flex-col justify-start items-start gap-3 flex">
                 <form onSubmit={handleNewsletterSubmit} className="self-stretch justify-start items-start gap-4 inline-flex">
-                  <div className="flex-1 px-3 py-2 bg-white/10 outline outline-1 outline-transparent justify-start items-center gap-2 flex">
+                  <div className="flex-1 px-3 py-[10px] bg-white/10 justify-start items-center gap-2 flex">
                     <input
                       type="email"
                       value={email}
@@ -44,7 +43,7 @@ const Footer = () => {
                   </div>
                   <button
                     type="submit"
-                    className="px-6 py-2.5 bg-white/50 outline outline-1 outline-transparent justify-center items-center gap-2 flex hover:bg-white/60 transition-colors"
+                    className="px-6 py-[10px] bg-white/50 justify-center items-center gap-2 flex hover:bg-white/60 transition-colors"
                   >
                     <span className="text-black text-base font-normal leading-6">S'abonner</span>
                   </button>
