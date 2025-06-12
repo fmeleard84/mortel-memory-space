@@ -9,15 +9,6 @@ import OrganisationSection from '../components/OrganisationSection';
 import AutoPromoService from '../components/AutoPromoService';
 import SereniteProche from '../components/SereniteProche';
 import MemorySpaceNew from '../components/MemorySpaceNew';
-import AdvantagesHeroSection from '../components/AdvantagesHeroSection';
-import PillarsSection from '../components/PillarsSection';
-import ConsultantSection from '../components/ConsultantSection';
-import MemorySpaceSection from '../components/MemorySpaceSection';
-import AdvantagesSection from '../components/AdvantagesSection';
-import AdvantagesSection2 from '../components/AdvantagesSection2';
-import VerbatimSection from '../components/VerbatimSection';
-import CTASection from '../components/CTASection';
-import FAQSection from '../components/FAQSection';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -33,15 +24,6 @@ const Index = () => {
       <SereniteProche />
       <NewVerbatimSection />
       <MemorySpaceNew />
-      <AdvantagesHeroSection />
-      <PillarsSection />
-      <ConsultantSection />
-      <MemorySpaceSection />
-      <AdvantagesSection />
-      <AdvantagesSection2 />
-      <VerbatimSection />
-      <CTASection />
-      <FAQSection />
       <Footer />
     </div>
   );
