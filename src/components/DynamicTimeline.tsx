@@ -51,7 +51,11 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
           {title}
         </h3>
         <p 
-          className="text-white text-base font-normal leading-6"
+          className={`text-base leading-6 transition-all duration-300 ${
+            isActive 
+              ? 'text-white font-normal opacity-100' 
+              : 'text-white/50 font-light opacity-70'
+          }`}
           style={{ fontFamily: 'Inter' }}
         >
           {description}
