@@ -2,6 +2,7 @@ import React from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import EngagementSection from '../components/EngagementSection';
+import NewVerbatimSection from '../components/NewVerbatimSection';
 import AdvantagesHeroSection from '../components/AdvantagesHeroSection';
 import PillarsSection from '../components/PillarsSection';
 import TestimonialSection from '../components/TestimonialSection';
@@ -20,6 +21,7 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <EngagementSection />
+      <NewVerbatimSection />
       <AdvantagesHeroSection />
       <PillarsSection />
       <TestimonialSection />
