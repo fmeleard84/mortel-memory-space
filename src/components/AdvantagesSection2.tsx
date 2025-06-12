@@ -37,8 +37,8 @@ const AdvantagesSection2 = () => {
                 <p 
                   className="w-full break-words"
                   style={{
-                    color: 'var(--Gris-texte, #D4D4D4)',
-                    fontSize: '18px',
+                    color: 'white',
+                    fontSize: '16px',
                     fontFamily: 'Inter',
                     fontWeight: '300',
                     lineHeight: '27px',
