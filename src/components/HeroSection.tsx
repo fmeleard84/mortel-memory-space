@@ -5,10 +5,10 @@ const HeroSection = () => {
   return (
     <section className="w-screen h-full flex flex-col justify-start items-start">
       <div className="w-full h-[900px] md:h-[800px] lg:h-[900px] bg-mortel-dark overflow-hidden flex flex-col justify-start items-center">
-        <div className="w-full flex-1 flex flex-col lg:flex-row justify-start items-start">
+        <div className="w-full flex-1 flex flex-col lg:flex-row justify-center items-stretch">
           <div className="flex-1 self-stretch px-4 md:px-8 lg:pl-16 lg:pr-20 py-8 lg:py-0 flex flex-col justify-center items-start lg:items-end gap-6 lg:gap-8">
             <div className="w-full max-w-[560px] flex flex-col justify-start items-start gap-6 lg:gap-8">
-              <div className="self-stretch flex flex-col justify-start items-start gap-4 lg:gap-6">
+              <div className="flex-1 h-full px-6 lg:px-16 py-12 flex flex-col justify-center items-start gap-6">
                 <h1 className="self-stretch text-white text-3xl md:text-4xl lg:text-[56px] font-inter font-normal leading-tight lg:leading-[67.20px] break-words">
                   Des obsèques sans tracas, en toute sérénité.
                 </h1>
