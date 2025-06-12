@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
@@ -8,6 +9,7 @@ import ConsultantSection from '../components/ConsultantSection';
 import MemorySpaceSection from '../components/MemorySpaceSection';
 import AdvantagesSection from '../components/AdvantagesSection';
 import AdvantagesSection2 from '../components/AdvantagesSection2';
+import VerbatimSection from '../components/VerbatimSection';
 import CTASection from '../components/CTASection';
 import FAQSection from '../components/FAQSection';
 import Footer from '../components/Footer';
@@ -24,6 +26,7 @@ const Index = () => {
       <MemorySpaceSection />
       <AdvantagesSection />
       <AdvantagesSection2 />
+      <VerbatimSection />
       <CTASection />
       <FAQSection />
       <Footer />
