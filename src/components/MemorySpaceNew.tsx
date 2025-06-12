@@ -13,7 +13,7 @@ const MemorySpaceNew = () => {
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center">
                     <span className="text-mortel-blue text-lg font-inter font-semibold leading-[27px]">
-                      espace mémoire
+                      Espace mémoire
                     </span>
                   </div>
                   <div className="flex flex-col gap-6">
