@@ -2,7 +2,7 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import SimplifieDemarcheHero from '../components/SimplifieDemarcheHero';
-import EtapesSection from '../components/EtapesSection';
+import DynamicTimeline from '../components/DynamicTimeline';
 import Footer from '../components/Footer';
 
 const SimplifieDemarches = () => {
@@ -10,7 +10,7 @@ const SimplifieDemarches = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <SimplifieDemarcheHero />
-      <EtapesSection />
+      <DynamicTimeline />
       <Footer />
     </div>
   );

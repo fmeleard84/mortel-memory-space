@@ -51,7 +51,7 @@ const Navigation = () => {
                 key={item.name}
                 to={item.path}
                 className="text-white text-base font-normal leading-6 hover:text-mortel-blue transition-colors"
-                style={{ fontFamily: 'Source Sans 3' }}
+                style={{ fontFamily: 'Inter' }}
               >
                 {item.name}
               </Link>
@@ -69,7 +69,7 @@ const Navigation = () => {
             />
             <div 
               className="whitespace-nowrap text-white text-sm font-normal leading-[21px]"
-              style={{ fontFamily: 'Source Sans 3' }}
+              style={{ fontFamily: 'Inter' }}
             >
               Alain, est actuellement disponible pour être à votre écoute
             </div>
@@ -81,7 +81,7 @@ const Navigation = () => {
           {!isScrolled && (
             <>
               <button className="px-5 py-2 bg-white text-black text-base font-normal leading-6 hover:bg-gray-100 transition-all duration-300"
-                style={{ fontFamily: 'Source Sans 3' }}>
+                style={{ fontFamily: 'Inter' }}>
                 Contact
               </button>
               
@@ -113,7 +113,7 @@ const Navigation = () => {
                 key={item.name}
                 to={item.path}
                 className="text-white text-base font-normal leading-6 hover:text-mortel-blue transition-colors"
-                style={{ fontFamily: 'Source Sans 3' }}
+                style={{ fontFamily: 'Inter' }}
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
@@ -129,7 +129,7 @@ const Navigation = () => {
               />
               <div 
                 className="text-white text-sm font-normal leading-[21px]"
-                style={{ fontFamily: 'Source Sans 3' }}
+                style={{ fontFamily: 'Inter' }}
               >
                 Alain, est actuellement disponible pour être à votre écoute
               </div>

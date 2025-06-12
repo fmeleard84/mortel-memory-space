@@ -19,7 +19,7 @@ const SimplifieDemarcheHero = () => {
               </h1>
               <p 
                 className="text-white text-base md:text-lg font-normal leading-relaxed lg:leading-[27px] break-words"
-                style={{ fontFamily: 'Source Sans 3', fontSize: '18px' }}
+                style={{ fontFamily: 'Inter', fontSize: '18px' }}
               >
                 Nous sommes à vos côtés pour simplifier vos démarches, avant, pendant et après un décès. Nous vous soutenons à chaque étape, qu'elle soit administrative ou organisationnelle.
               </p>
@@ -32,7 +32,7 @@ const SimplifieDemarcheHero = () => {
                   <span 
                     className="text-base font-normal leading-6"
                     style={{ 
-                      fontFamily: 'Source Sans 3',
+                      fontFamily: 'Inter',
                       color: '#E9E9E9'
                     }}
                   >
@@ -42,7 +42,7 @@ const SimplifieDemarcheHero = () => {
                 <button className="w-full sm:w-auto px-0 py-2.5 bg-transparent rounded-none flex justify-center items-center gap-3 hover:bg-white/5 transition-colors">
                   <span 
                     className="text-white text-base font-normal leading-6"
-                    style={{ fontFamily: 'Source Sans 3' }}
+                    style={{ fontFamily: 'Inter' }}
                   >
                     En savoir plus
                   </span>
