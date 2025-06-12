@@ -4,8 +4,8 @@ import React from 'react';
 const HeroSection = () => {
   return (
     <section className="w-full h-full flex flex-col justify-start items-start gap-2.5">
-      <div className="self-stretch h-[900px] bg-[#191919] overflow-hidden flex flex-col justify-start items-center gap-20">
-        <div className="self-stretch flex-1 flex justify-start items-start">
+      <div className="w-full h-[900px] bg-[#191919] overflow-hidden flex flex-col justify-start items-center gap-20">
+        <div className="w-full flex-1 flex justify-start items-start">
           <div className="flex-1 self-stretch pl-16 pr-20 flex flex-col justify-center items-end gap-8">
             <div className="w-full max-w-[560px] flex flex-col justify-start items-start gap-8">
               <div className="self-stretch flex flex-col justify-start items-start gap-6">
@@ -27,7 +27,7 @@ const HeroSection = () => {
                   style={{
                     color: 'white',
                     fontSize: '18px',
-                    fontFamily: 'Inter',
+                    fontFamily: 'Source Sans 3',
                     fontWeight: '400',
                     lineHeight: '27px',
                     wordWrap: 'break-word'
@@ -45,7 +45,7 @@ const HeroSection = () => {
                     style={{
                       color: 'black',
                       fontSize: '16px',
-                      fontFamily: 'Inter',
+                      fontFamily: 'Source Sans 3',
                       fontWeight: '400',
                       lineHeight: '24px',
                       wordWrap: 'break-word'
@@ -61,7 +61,7 @@ const HeroSection = () => {
                     style={{
                       color: 'white',
                       fontSize: '16px',
-                      fontFamily: 'Inter',
+                      fontFamily: 'Source Sans 3',
                       fontWeight: '400',
                       lineHeight: '24px',
                       wordWrap: 'break-word'
@@ -73,19 +73,19 @@ const HeroSection = () => {
               </div>
               
               <div className="flex justify-start items-center gap-9">
-                <div className="w-[42.85px] h-[58.25px] relative">
+                <div className="w-[57px] h-[57px] relative">
                   <img 
-                    className="w-[57px] h-[57px] absolute left-0 top-0 rounded-full border-2 border-white object-cover" 
+                    className="w-full h-full rounded-full border-2 border-white object-cover" 
                     src="https://images.unsplash.com/photo-1494790108755-2616b612b1e1?w=57&h=57&fit=crop&crop=face"
                     alt="Aline, conseillère disponible"
                   />
                 </div>
                 <div 
-                  className="w-[359.36px] h-[29.63px] break-words"
+                  className="break-words"
                   style={{
                     color: 'white',
                     fontSize: '16px',
-                    fontFamily: 'Inter',
+                    fontFamily: 'Source Sans 3',
                     fontWeight: '400',
                     lineHeight: '24px',
                     wordWrap: 'break-word'
