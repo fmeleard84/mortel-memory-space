@@ -22,7 +22,7 @@ const AdvantagesSection2 = () => {
                 <h2 
                   className="w-full break-words"
                   style={{
-                    color: 'white',
+                    color: 'var(--Gris-texte, #e2e2dd)',
                     fontSize: '40px',
                     fontFamily: 'Inter',
                     fontWeight: '300',
@@ -72,7 +72,7 @@ const AdvantagesSection2 = () => {
                       className="w-full break-words"
                       style={{
                         color: 'var(--Gris-texte, #D4D4D4)',
-                        fontSize: '16px',
+                        fontSize: '14px',
                         fontFamily: 'Inter',
                         fontWeight: '300',
                         lineHeight: '24px',
@@ -102,7 +102,7 @@ const AdvantagesSection2 = () => {
                       className="w-full break-words"
                       style={{
                         color: 'var(--Gris-texte, #D4D4D4)',
-                        fontSize: '16px',
+                        fontSize: '14px',
                         fontFamily: 'Inter',
                         fontWeight: '300',
                         lineHeight: '24px',
