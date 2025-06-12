@@ -5,11 +5,11 @@ import { Star, Quote } from 'lucide-react';
 const TestimonialSection = () => {
   const testimonials = [
     {
-      name: 'Marie Dubois',
+      name: 'Alain',
       location: 'Lyon',
       rating: 5,
-      text: 'Mortel a rendu cette épreuve beaucoup plus supportable. L\'accompagnement était exceptionnel et tout était clair dès le début.',
-      avatar: 'MD'
+      text: 'Le service proposé par eMortel a transformé notre expérience. Leur approche humaine et digitale a vraiment fait la différence dans un moment difficile.',
+      avatar: 'AL'
     },
     {
       name: 'Jean-Pierre Martin',

@@ -31,9 +31,9 @@ const Index = () => {
       <OrganisationSection />
       <AutoPromoService />
       <SereniteProche />
+      <TestimonialSection />
       <AdvantagesHeroSection />
       <PillarsSection />
-      <TestimonialSection />
       <ConsultantSection />
       <MemorySpaceSection />
       <AdvantagesSection />
