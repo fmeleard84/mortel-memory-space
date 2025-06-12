@@ -58,7 +58,7 @@ const SereniteProche = () => {
             </div>
             <div className="flex-1">
               <img 
-                className="w-full h-[640px] object-cover rounded-[40px]" 
+                className="w-full h-[640px] object-cover" 
                 src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=640&fit=crop"
                 alt="Gestion centralisée des proches"
               />
