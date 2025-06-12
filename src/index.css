@@ -144,11 +144,11 @@
   }
 
   .mortel-button-primary {
-    @apply mortel-text uppercase tracking-wide px-6 py-3 bg-primary text-primary-foreground rounded-mortel-sm hover:bg-primary/90 transition-all duration-200 font-medium;
+    @apply mortel-text uppercase tracking-wide px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-200 font-medium;
   }
 
   .mortel-button-secondary {
-    @apply mortel-text uppercase tracking-wide px-6 py-3 border border-foreground/20 text-foreground rounded-mortel-sm hover:bg-foreground/5 transition-all duration-200 font-medium;
+    @apply mortel-text uppercase tracking-wide px-6 py-3 border border-foreground/20 text-foreground hover:bg-foreground/5 transition-all duration-200 font-medium;
   }
 
   .story-link {
