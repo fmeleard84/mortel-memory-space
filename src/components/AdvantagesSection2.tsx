@@ -71,8 +71,8 @@ const AdvantagesSection2 = () => {
                     <div 
                       className="w-full break-words"
                       style={{
-                        color: 'var(--Gris-texte, #D4D4D4)',
-                        fontSize: '14px',
+                        color: 'var(--Gris-texte, #dadaca)',
+                        fontSize: '12px',
                         fontFamily: 'Inter',
                         fontWeight: '300',
                         lineHeight: '24px',
@@ -101,8 +101,8 @@ const AdvantagesSection2 = () => {
                     <div 
                       className="w-full break-words"
                       style={{
-                        color: 'var(--Gris-texte, #D4D4D4)',
-                        fontSize: '14px',
+                        color: 'var(--Gris-texte, #dadaca)',
+                        fontSize: '12px',
                         fontFamily: 'Inter',
                         fontWeight: '300',
                         lineHeight: '24px',
