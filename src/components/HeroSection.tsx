@@ -29,19 +29,6 @@ const HeroSection = () => {
                   </span>
                 </button>
               </div>
-
-    <div className="flex justify-start items-center gap-4 lg:gap-9">
-      <div className="w-[57px] h-[57px] flex-shrink-0">
-        <img 
-          className="w-full h-full rounded-full border-2 border-white object-cover" 
-          src="https://images.unsplash.com/photo-1494790108755-2616b612b1e1?w=57&h=57&fit=crop&crop=face"
-          alt="Aline, conseillère disponible"
-        />
-      </div>
-      <div className="text-white text-sm lg:text-base font-inter font-normal leading-6 break-words">
-        Aline, est actuellement disponible pour vous écouter
-      </div>
-    </div>
   </div>
 </div>
 
