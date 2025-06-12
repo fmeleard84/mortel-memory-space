@@ -36,7 +36,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 192 169 36;
 
-    --radius: 0.75rem;
+    --radius: 0rem; /* Suppression des coins arrondis */
 
     --sidebar-background: 255 255 255;
     --sidebar-foreground: 25 25 25;
@@ -115,7 +115,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-muted-foreground/30 rounded-full;
+    @apply bg-muted-foreground/30;
   }
 
   ::-webkit-scrollbar-thumb:hover {
@@ -140,7 +140,7 @@
   }
 
   .mortel-tag {
-    @apply mortel-text text-xs uppercase tracking-wider px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20;
+    @apply mortel-text text-xs uppercase tracking-wider px-3 py-1 bg-primary/10 text-primary border border-primary/20;
   }
 
   .mortel-button-primary {

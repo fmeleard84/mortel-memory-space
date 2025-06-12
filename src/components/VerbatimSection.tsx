@@ -20,12 +20,12 @@ const VerbatimSection = () => {
               
               {/* Boutons */}
               <div className="flex flex-col sm:flex-row justify-start items-start gap-3 lg:gap-4 w-full sm:w-auto">
-                <button className="w-full sm:w-auto px-4 lg:px-6 py-2.5 bg-mortel-violet rounded-xl border border-mortel-violet flex justify-center items-center gap-2 hover:bg-mortel-violet/90 transition-colors">
+                <button className="w-full sm:w-auto px-4 lg:px-6 py-2.5 bg-mortel-violet border border-mortel-violet flex justify-center items-center gap-2 hover:bg-mortel-violet/90 transition-colors">
                   <span className="text-white text-sm lg:text-base font-inter font-normal leading-6">
                     Réserver
                   </span>
                 </button>
-                <button className="w-full sm:w-auto px-4 lg:px-6 py-2.5 bg-mortel-violet/70 rounded-xl flex justify-center items-center gap-2 hover:bg-mortel-violet/60 transition-colors">
+                <button className="w-full sm:w-auto px-4 lg:px-6 py-2.5 bg-mortel-violet/70 flex justify-center items-center gap-2 hover:bg-mortel-violet/60 transition-colors">
                   <span className="text-white text-sm lg:text-base font-inter font-normal leading-6">
                     Estimer
                   </span>
@@ -36,7 +36,7 @@ const VerbatimSection = () => {
             {/* Colonne droite - Image */}
             <div className="flex-1 w-full">
               <img 
-                className="w-full h-[300px] md:h-[400px] lg:h-[600px] rounded-[20px] lg:rounded-[28px] object-cover" 
+                className="w-full h-[300px] md:h-[400px] lg:h-[600px] object-cover" 
                 src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&h=600&fit=crop"
                 alt="Service funéraire digital"
               />
