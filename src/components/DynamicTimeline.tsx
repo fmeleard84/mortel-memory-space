@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, UserPlus, Upload, Cogs, Heart } from 'lucide-react';
+import { ArrowRight, UserPlus, Upload, Cog, Heart } from 'lucide-react';
 
 interface TimelineItemProps {
   step: number;
@@ -84,7 +83,7 @@ const DynamicTimeline = () => {
       step: 3,
       title: "Étape 3",
       description: "C'est fini, nous prenons le relais, vous n'avez plus à vous en soucier. Nous vous tenons informé en temps réel de l'avancement administratif.",
-      icon: <Cogs className="w-6 h-6" />
+      icon: <Cog className="w-6 h-6" />
     },
     {
       step: 4,
