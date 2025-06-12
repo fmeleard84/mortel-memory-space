@@ -1,152 +1,166 @@
 
-import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import React, { useState } from 'react';
+import { Facebook, Instagram, Twitter, Linkedin, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logoMortel from '../assets/Mortel_logo_little.png';
 
 const Footer = () => {
-  const services = [
-    { name: 'Organiser des obsèques', path: '/organiser' },
-    { name: 'Anticiper', path: '/anticiper' },
-    { name: 'Boutique hommage', path: '/remercier' },
-    { name: 'Espace mémoire', path: '/espace-memoire' },
-  ];
+  const [email, setEmail] = useState('');
 
-  const company = [
-    { name: 'Pourquoi Mortel', path: '/pourquoi-mortel' },
-    { name: 'Notre manifeste', path: '/notre-manifeste' },
-    { name: 'En savoir plus', path: '/en-savoir-plus' },
-    { name: 'Professionnels', path: '/espace-pour-les-professionnels' },
-  ];
-
-  const legal = [
-    { name: 'Mentions légales', path: '#' },
-    { name: 'Conditions générales', path: '#' },
-    { name: 'Politique de confidentialité', path: '#' },
-    { name: 'Cookies', path: '#' },
-  ];
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle newsletter subscription
+    console.log('Newsletter subscription:', email);
+  };
 
   return (
-    <footer className="bg-foreground text-white pt-20 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          {/* Brand & Contact */}
-          <div className="lg:col-span-1">
-            <Link to="/" className="text-3xl font-bold mb-6 block">
-              Mortel
-            </Link>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Des obsèques sereines, transparentes et profondément humaines. 
-              Nous accompagnons plus de 2000 familles chaque année.
-            </p>
-            
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <Phone size={16} className="text-primary" />
-                <a href="tel:+33123456789" className="text-gray-300 hover:text-white transition-colors">
-                  01 23 45 67 89
-                </a>
+    <footer className="w-full">
+      <div className="w-full px-16 py-20 bg-foreground overflow-hidden flex flex-col justify-start items-center gap-20">
+        <div className="w-full max-w-[1280px] flex flex-col justify-start items-start gap-20">
+          {/* Main Content */}
+          <div className="w-full h-[248px] justify-start items-start gap-32 inline-flex">
+            {/* Newsletter Section */}
+            <div className="w-[500px] flex-col justify-start items-start gap-6 inline-flex">
+              <div className="w-[84px] h-9 relative overflow-hidden">
+                <img 
+                  src={logoMortel} 
+                  alt="Logo Mortel" 
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <div className="flex items-center space-x-3">
-                <Mail size={16} className="text-primary" />
-                <a href="mailto:contact@mortel.fr" className="text-gray-300 hover:text-white transition-colors">
-                  contact@mortel.fr
-                </a>
+              <div className="self-stretch text-white text-base font-normal leading-6">
+                Inscrivez-vous à notre newsletter pour rester informé des nouveautés et des fonctionnalités.
               </div>
-              <div className="flex items-start space-x-3">
-                <MapPin size={16} className="text-primary mt-1" />
-                <span className="text-gray-300">
-                  123 Avenue de la Paix<br />
-                  75001 Paris, France
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="text-xl font-semibold mb-6">Nos services</h3>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.name}>
-                  <Link
-                    to={service.path}
-                    className="text-gray-300 hover:text-white transition-colors"
+              <div className="self-stretch flex-col justify-start items-start gap-3 flex">
+                <form onSubmit={handleNewsletterSubmit} className="self-stretch justify-start items-start gap-4 inline-flex">
+                  <div className="flex-1 px-3 py-2 bg-white/10 outline outline-1 outline-transparent justify-start items-center gap-2 flex">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Entrez votre email"
+                      className="flex-1 bg-transparent text-white placeholder:text-white/60 text-base font-normal leading-6 outline-none"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="px-6 py-2.5 bg-white/50 outline outline-1 outline-transparent justify-center items-center gap-2 flex hover:bg-white/60 transition-colors"
                   >
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="text-xl font-semibold mb-6">L'entreprise</h3>
-            <ul className="space-y-3">
-              {company.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    to={item.path}
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Support & Emergency */}
-          <div>
-            <h3 className="text-xl font-semibold mb-6">Support</h3>
-            <div className="space-y-4">
-              <div className="bg-primary/10 border border-primary/20 p-4 rounded-lg">
-                <p className="text-primary font-semibold mb-2">Urgence 24/7</p>
-                <a
-                  href="tel:+33123456789"
-                  className="text-white hover:text-primary transition-colors font-medium"
-                >
-                  01 23 45 67 89
-                </a>
-              </div>
-              
-              <ul className="space-y-3">
-                {legal.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      to={item.path}
-                      className="text-gray-300 hover:text-white transition-colors text-sm"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-gray-700 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-6">
-              <p className="text-gray-300 text-sm">
-                © 2024 Mortel. Tous droits réservés.
-              </p>
-              <div className="flex items-center space-x-4">
-                <span className="text-gray-400 text-sm">Certifié:</span>
-                <div className="flex items-center space-x-2">
-                  <div className="bg-gray-700 px-3 py-1 rounded text-xs font-medium">RGPD</div>
-                  <div className="bg-gray-700 px-3 py-1 rounded text-xs font-medium">ISO 27001</div>
+                    <span className="text-black text-base font-normal leading-6">S'abonner</span>
+                  </button>
+                </form>
+                <div className="self-stretch text-white text-xs font-normal leading-[18px]">
+                  En vous abonnant, vous acceptez notre politique de confidentialité et recevez des mises à jour.
                 </div>
               </div>
             </div>
-            
-            <div className="flex items-center space-x-4">
-              <span className="text-gray-300 text-sm">Données hébergées en France</span>
-              <div className="w-6 h-4 bg-blue-500 rounded-sm"></div>
-              <div className="w-6 h-4 bg-white rounded-sm"></div>
-              <div className="w-6 h-4 bg-red-500 rounded-sm"></div>
+
+            {/* Navigation Links */}
+            <div className="flex-1 justify-start items-start gap-10 flex">
+              {/* Anticiper */}
+              <div className="flex-1 overflow-hidden flex-col justify-start items-start gap-4 inline-flex">
+                <div className="self-stretch text-white text-base font-normal leading-6">Anticiper</div>
+                <div className="self-stretch flex-col justify-start items-start flex">
+                  <Link to="#" className="self-stretch py-2 justify-start items-start inline-flex">
+                    <div className="flex-1 text-white text-sm font-normal leading-[21px]">Garanties obsèque</div>
+                  </Link>
+                  <Link to="#" className="self-stretch py-2 justify-start items-start inline-flex">
+                    <div className="flex-1 text-white text-sm font-normal leading-[21px]">Volontés</div>
+                  </Link>
+                  <Link to="#" className="self-stretch py-2 justify-start items-start inline-flex">
+                    <div className="flex-1 text-white text-sm font-normal leading-[21px]">Mémoire numérique</div>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Organiser */}
+              <div className="flex-1 overflow-hidden flex-col justify-start items-start gap-4 inline-flex">
+                <div className="self-stretch text-white text-base font-normal leading-6">Organiser</div>
+                <div className="self-stretch flex-col justify-start items-start flex">
+                  <Link to="#" className="self-stretch py-2 justify-start items-start inline-flex">
+                    <div className="flex-1 text-white text-sm font-normal leading-[21px]">Vos démarches</div>
+                  </Link>
+                  <Link to="#" className="self-stretch py-2 justify-start items-start inline-flex">
+                    <div className="flex-1 text-white text-sm font-normal leading-[21px]">Vos obsèques</div>
+                  </Link>
+                  <Link to="#" className="self-stretch py-2 justify-start items-start inline-flex">
+                    <div className="flex-1 text-white text-sm font-normal leading-[21px]">Vos proches</div>
+                  </Link>
+                  <Link to="#" className="self-stretch py-2 justify-start items-start inline-flex">
+                    <div className="flex-1 text-white text-sm font-normal leading-[21px]">Espace mémoire</div>
+                  </Link>
+                  <Link to="#" className="self-stretch py-2 justify-start items-start inline-flex">
+                    <div className="flex-1 text-white text-sm font-normal leading-[21px]">Lien numérique</div>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Remercier */}
+              <div className="flex-1 overflow-hidden flex-col justify-start items-start gap-4 inline-flex">
+                <div className="self-stretch text-white text-base font-normal leading-6">Remercier</div>
+                <div className="self-stretch flex-col justify-start items-start flex">
+                  <Link to="#" className="self-stretch py-2 justify-start items-start inline-flex">
+                    <div className="flex-1 text-white text-sm font-normal leading-[21px]">Fleurs</div>
+                  </Link>
+                  <Link to="#" className="self-stretch py-2 justify-start items-start inline-flex">
+                    <div className="flex-1 text-white text-sm font-normal leading-[21px]">Bijoux</div>
+                  </Link>
+                  <Link to="#" className="self-stretch py-2 justify-start items-start inline-flex">
+                    <div className="flex-1 text-white text-sm font-normal leading-[21px]">Bougies</div>
+                  </Link>
+                  <Link to="#" className="self-stretch py-2 justify-start items-start inline-flex">
+                    <div className="flex-1 text-white text-sm font-normal leading-[21px]">Correspondance</div>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Social Media */}
+              <div className="flex-1 flex-col justify-start items-start gap-4 inline-flex">
+                <div className="self-stretch text-white text-base font-normal leading-6">Suivez-nous</div>
+                <div className="self-stretch flex-col justify-start items-start flex">
+                  <a href="#" className="self-stretch py-2 justify-start items-center gap-3 inline-flex">
+                    <Facebook size={24} className="text-white" />
+                    <div className="text-white text-sm font-normal leading-[21px]">Facebook</div>
+                  </a>
+                  <a href="#" className="self-stretch py-2 justify-start items-center gap-3 inline-flex">
+                    <Instagram size={24} className="text-white" />
+                    <div className="text-white text-sm font-normal leading-[21px]">Instagram</div>
+                  </a>
+                  <a href="#" className="self-stretch py-2 justify-start items-center gap-3 inline-flex">
+                    <Twitter size={24} className="text-white" />
+                    <div className="text-white text-sm font-normal leading-[21px]">X</div>
+                  </a>
+                  <a href="#" className="self-stretch py-2 justify-start items-center gap-3 inline-flex">
+                    <Linkedin size={24} className="text-white" />
+                    <div className="text-white text-sm font-normal leading-[21px]">LinkedIn</div>
+                  </a>
+                  <a href="#" className="self-stretch py-2 justify-start items-center gap-3 inline-flex">
+                    <Youtube size={24} className="text-white" />
+                    <div className="text-white text-sm font-normal leading-[21px]">Youtube</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Section */}
+          <div className="self-stretch flex-col justify-start items-start gap-8 flex">
+            <div className="self-stretch h-0 border border-white/20"></div>
+            <div className="self-stretch justify-between items-start inline-flex">
+              <div className="text-white text-sm font-normal leading-[21px]">
+                © 2025 Mortel. Tous droits réservés.
+              </div>
+              <div className="justify-start items-start gap-6 flex">
+                <Link to="#" className="text-white text-sm font-normal underline leading-[21px]">
+                  Politique de confidentialité
+                </Link>
+                <Link to="#" className="text-white text-sm font-normal underline leading-[21px]">
+                  Conditions de service
+                </Link>
+                <Link to="#" className="text-white text-sm font-normal underline leading-[21px]">
+                  Paramètres des cookies
+                </Link>
+              </div>
             </div>
           </div>
         </div>
