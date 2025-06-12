@@ -44,7 +44,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
       }`}>
         <h3 
           className={`text-xl font-bold leading-7 transition-colors duration-300 ${
-            isActive ? 'text-mortel-blue' : 'text-white'
+            isActive ? 'text-mortel-blue' : 'text-white/60 opacity-70'
           }`}
           style={{ fontFamily: 'Inter' }}
         >
