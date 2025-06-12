@@ -1,7 +1,7 @@
-
 import React from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
+import EngagementSection from '../components/EngagementSection';
 import AdvantagesHeroSection from '../components/AdvantagesHeroSection';
 import PillarsSection from '../components/PillarsSection';
 import TestimonialSection from '../components/TestimonialSection';
@@ -19,6 +19,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
+      <EngagementSection />
       <AdvantagesHeroSection />
       <PillarsSection />
       <TestimonialSection />
