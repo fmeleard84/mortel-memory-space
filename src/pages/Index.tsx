@@ -8,6 +8,7 @@ import GestionAdminSection from '../components/GestionAdminSection';
 import OrganisationSection from '../components/OrganisationSection';
 import AutoPromoService from '../components/AutoPromoService';
 import SereniteProche from '../components/SereniteProche';
+import MemorySpaceNew from '../components/MemorySpaceNew';
 import AdvantagesHeroSection from '../components/AdvantagesHeroSection';
 import PillarsSection from '../components/PillarsSection';
 import ConsultantSection from '../components/ConsultantSection';
@@ -31,6 +32,7 @@ const Index = () => {
       <AutoPromoService />
       <SereniteProche />
       <NewVerbatimSection />
+      <MemorySpaceNew />
       <AdvantagesHeroSection />
       <PillarsSection />
       <ConsultantSection />
