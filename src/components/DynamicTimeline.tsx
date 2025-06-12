@@ -14,7 +14,6 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   step, 
   title, 
   description, 
-  icon, 
   isActive, 
   isLast = false 
 }) => {
@@ -29,7 +28,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
           <div className={`transition-all duration-300 ${
             isActive ? 'text-white scale-110' : 'text-white/60'
           }`}>
-            {icon}
+            <span className="text-white font-bold text-lg">{step}</span>
           </div>
         </div>
         {!isLast && (
@@ -44,7 +43,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         isActive ? 'transform translate-x-0 opacity-100' : 'transform translate-x-2 opacity-70'
       }`}>
         <h3 
-          className={`text-xl font-normal leading-7 transition-colors duration-300 ${
+          className={`text-xl font-bold leading-7 transition-colors duration-300 ${
             isActive ? 'text-mortel-blue' : 'text-white'
           }`}
           style={{ fontFamily: 'Inter' }}
