@@ -62,11 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Couleurs Mortel - Charte graphique
+				'mortel-dark': '#191919',
+				'mortel-dark-secondary': '#202020',
+				'mortel-blue': '#30B0C7',
+				'mortel-green': '#B4CB2A',
+				'mortel-violet': '#CB2AB4'
 			},
 			fontFamily: {
-				'mono': ['JetBrains Mono', 'monospace'],
 				'sans': ['Inter', 'system-ui', 'sans-serif'],
+				'mono': ['JetBrains Mono', 'monospace'],
 			},
 			borderRadius: {
 				'mortel-sm': '20px',

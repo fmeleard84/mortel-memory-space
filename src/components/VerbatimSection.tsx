@@ -3,81 +3,30 @@ import React from 'react';
 
 const VerbatimSection = () => {
   return (
-    <section className="w-full bg-[#1F1B23] overflow-hidden flex flex-col justify-start items-start">
-      <div className="w-full px-16 py-28 flex justify-center items-start gap-20">
-        <div className="flex-1 max-w-[1280px] flex flex-col justify-start items-start gap-20">
-          <div className="w-full flex justify-start items-center gap-20">
+    <section className="w-screen bg-mortel-dark-secondary overflow-hidden flex flex-col justify-start items-start">
+      <div className="w-full px-4 md:px-8 lg:px-16 py-16 lg:py-28 flex justify-center items-start">
+        <div className="flex-1 max-w-[1280px] flex flex-col justify-start items-start gap-12 lg:gap-20">
+          <div className="w-full flex flex-col lg:flex-row justify-start items-center gap-8 lg:gap-20">
             {/* Colonne gauche - Contenu */}
-            <div className="flex-1 flex flex-col justify-start items-start gap-8">
-              <div className="w-full flex flex-col justify-start items-start gap-6">
-                <h2 
-                  className="w-full break-words"
-                  style={{
-                    color: 'white',
-                    fontSize: '40px',
-                    fontFamily: 'Inter',
-                    fontWeight: '300',
-                    textTransform: 'uppercase',
-                    lineHeight: '48px',
-                    letterSpacing: '0.80px',
-                    wordWrap: 'break-word'
-                  }}
-                >
+            <div className="flex-1 flex flex-col justify-start items-start gap-6 lg:gap-8">
+              <div className="w-full flex flex-col justify-start items-start gap-4 lg:gap-6">
+                <h2 className="w-full text-white text-2xl md:text-3xl lg:text-[40px] font-inter font-light uppercase leading-tight lg:leading-[48px] tracking-wide lg:tracking-[0.80px] break-words">
                   Transformez vos obsèques avec notre service digital
                 </h2>
-                <p 
-                  className="w-full break-words"
-                  style={{
-                    color: 'var(--Gris-texte, #D4D4D4)',
-                    fontSize: '18px',
-                    fontFamily: 'Inter',
-                    fontWeight: '300',
-                    lineHeight: '27px',
-                    letterSpacing: '0.36px',
-                    wordWrap: 'break-word'
-                  }}
-                >
+                <p className="w-full text-gray-300 text-base md:text-lg font-inter font-light leading-relaxed lg:leading-[27px] tracking-wide lg:tracking-[0.36px] break-words">
                   Notre plateforme vous accompagne dans chaque étape des obsèques, allégeant ainsi votre charge administrative. Optez pour une cérémonie moderne et personnalisée, tout en restant connecté à vos proches.
                 </p>
               </div>
               
               {/* Boutons */}
-              <div className="flex justify-start items-start gap-4">
-                <button 
-                  className="px-6 py-2.5 bg-[#8A2BE2] rounded-xl border border-[#8A2BE2] flex justify-center items-center gap-2"
-                  style={{
-                    outline: '1px #8A2BE2 solid'
-                  }}
-                >
-                  <span 
-                    style={{
-                      color: 'white',
-                      fontSize: '16px',
-                      fontFamily: 'Inter',
-                      fontWeight: '400',
-                      lineHeight: '24px',
-                      wordWrap: 'break-word'
-                    }}
-                  >
+              <div className="flex flex-col sm:flex-row justify-start items-start gap-3 lg:gap-4 w-full sm:w-auto">
+                <button className="w-full sm:w-auto px-4 lg:px-6 py-2.5 bg-mortel-violet rounded-xl border border-mortel-violet flex justify-center items-center gap-2 hover:bg-mortel-violet/90 transition-colors">
+                  <span className="text-white text-sm lg:text-base font-inter font-normal leading-6">
                     Réserver
                   </span>
                 </button>
-                <button 
-                  className="px-6 py-2.5 bg-[#AD6AEA] rounded-xl flex justify-center items-center gap-2"
-                  style={{
-                    outline: '1px rgba(255, 255, 255, 0) solid'
-                  }}
-                >
-                  <span 
-                    style={{
-                      color: 'white',
-                      fontSize: '16px',
-                      fontFamily: 'Inter',
-                      fontWeight: '400',
-                      lineHeight: '24px',
-                      wordWrap: 'break-word'
-                    }}
-                  >
+                <button className="w-full sm:w-auto px-4 lg:px-6 py-2.5 bg-mortel-violet/70 rounded-xl flex justify-center items-center gap-2 hover:bg-mortel-violet/60 transition-colors">
+                  <span className="text-white text-sm lg:text-base font-inter font-normal leading-6">
                     Estimer
                   </span>
                 </button>
@@ -85,9 +34,9 @@ const VerbatimSection = () => {
             </div>
 
             {/* Colonne droite - Image */}
-            <div className="flex-1">
+            <div className="flex-1 w-full">
               <img 
-                className="w-full h-[600px] rounded-[28px] object-cover" 
+                className="w-full h-[300px] md:h-[400px] lg:h-[600px] rounded-[20px] lg:rounded-[28px] object-cover" 
                 src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600&h=600&fit=crop"
                 alt="Service funéraire digital"
               />

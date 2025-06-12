@@ -3,104 +3,54 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <section className="w-full h-full flex flex-col justify-start items-start gap-2.5">
-      <div className="w-full h-[900px] bg-[#191919] overflow-hidden flex flex-col justify-start items-center gap-20">
-        <div className="w-full flex-1 flex justify-start items-start">
-          <div className="flex-1 self-stretch pl-16 pr-20 flex flex-col justify-center items-end gap-8">
-            <div className="w-full max-w-[560px] flex flex-col justify-start items-start gap-8">
-              <div className="self-stretch flex flex-col justify-start items-start gap-6">
-                <h1 
-                  className="self-stretch break-words"
-                  style={{
-                    color: 'white',
-                    fontSize: '56px',
-                    fontFamily: 'Inter',
-                    fontWeight: '400',
-                    lineHeight: '67.20px',
-                    wordWrap: 'break-word'
-                  }}
-                >
+    <section className="w-screen h-full flex flex-col justify-start items-start">
+      <div className="w-full h-[900px] md:h-[800px] lg:h-[900px] bg-mortel-dark overflow-hidden flex flex-col justify-start items-center">
+        <div className="w-full flex-1 flex flex-col lg:flex-row justify-start items-start">
+          <div className="flex-1 self-stretch px-4 md:px-8 lg:pl-16 lg:pr-20 py-8 lg:py-0 flex flex-col justify-center items-start lg:items-end gap-6 lg:gap-8">
+            <div className="w-full max-w-[560px] flex flex-col justify-start items-start gap-6 lg:gap-8">
+              <div className="self-stretch flex flex-col justify-start items-start gap-4 lg:gap-6">
+                <h1 className="self-stretch text-white text-3xl md:text-4xl lg:text-[56px] font-inter font-normal leading-tight lg:leading-[67.20px] break-words">
                   Des obsèques sans tracas, en toute sérénité.
                 </h1>
-                <p 
-                  className="self-stretch break-words"
-                  style={{
-                    color: 'white',
-                    fontSize: '18px',
-                    fontFamily: 'Source Sans 3',
-                    fontWeight: '400',
-                    lineHeight: '27px',
-                    wordWrap: 'break-word'
-                  }}
-                >
+                <p className="self-stretch text-white text-base md:text-lg font-inter font-normal leading-relaxed lg:leading-[27px] break-words">
                   Nous vous accompagnons dans chaque étape de l'organisation des obsèques. Dites adieu à la paperasse et concentrez-vous sur l'essentiel.
                 </p>
               </div>
               
-              <div className="flex justify-start items-start gap-4">
-                <button 
-                  className="px-6 py-2.5 bg-white rounded-none border border-white flex justify-center items-center gap-2"
-                >
-                  <span 
-                    style={{
-                      color: 'black',
-                      fontSize: '16px',
-                      fontFamily: 'Source Sans 3',
-                      fontWeight: '400',
-                      lineHeight: '24px',
-                      wordWrap: 'break-word'
-                    }}
-                  >
+              <div className="flex flex-col sm:flex-row justify-start items-start gap-3 lg:gap-4 w-full sm:w-auto">
+                <button className="w-full sm:w-auto px-4 lg:px-6 py-2.5 bg-white rounded-none border border-white flex justify-center items-center gap-2 hover:bg-gray-100 transition-colors">
+                  <span className="text-black text-sm lg:text-base font-inter font-normal leading-6">
                     En savoir plus
                   </span>
                 </button>
-                <button 
-                  className="px-6 py-2.5 bg-[#30B0C7] rounded-none flex justify-center items-center gap-2"
-                >
-                  <span 
-                    style={{
-                      color: 'white',
-                      fontSize: '16px',
-                      fontFamily: 'Source Sans 3',
-                      fontWeight: '400',
-                      lineHeight: '24px',
-                      wordWrap: 'break-word'
-                    }}
-                  >
+                <button className="w-full sm:w-auto px-4 lg:px-6 py-2.5 bg-mortel-blue rounded-none flex justify-center items-center gap-2 hover:bg-mortel-blue/90 transition-colors">
+                  <span className="text-white text-sm lg:text-base font-inter font-normal leading-6">
                     Urgence : Rappel immédiat
                   </span>
                 </button>
               </div>
               
-              <div className="flex justify-start items-center gap-9">
-                <div className="w-[57px] h-[57px] relative">
+              <div className="flex justify-start items-center gap-4 lg:gap-9">
+                <div className="w-[57px] h-[57px] flex-shrink-0">
                   <img 
                     className="w-full h-full rounded-full border-2 border-white object-cover" 
                     src="https://images.unsplash.com/photo-1494790108755-2616b612b1e1?w=57&h=57&fit=crop&crop=face"
                     alt="Aline, conseillère disponible"
                   />
                 </div>
-                <div 
-                  className="break-words"
-                  style={{
-                    color: 'white',
-                    fontSize: '16px',
-                    fontFamily: 'Source Sans 3',
-                    fontWeight: '400',
-                    lineHeight: '24px',
-                    wordWrap: 'break-word'
-                  }}
-                >
+                <div className="text-white text-sm lg:text-base font-inter font-normal leading-6 break-words">
                   Aline, est actuellement disponible pour vous écouter
                 </div>
               </div>
             </div>
           </div>
-          <img 
-            className="flex-1 self-stretch object-cover" 
-            src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=720&h=900&fit=crop"
-            alt="Service funéraire serein"
-          />
+          <div className="flex-1 self-stretch min-h-[300px] lg:min-h-full">
+            <img 
+              className="w-full h-full object-cover" 
+              src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=720&h=900&fit=crop"
+              alt="Service funéraire serein"
+            />
+          </div>
         </div>
       </div>
     </section>
