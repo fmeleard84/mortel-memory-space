@@ -53,7 +53,7 @@ const VerbatimSection = () => {
                     style={{
                       color: 'white',
                       fontSize: '16px',
-                      fontFamily: 'Asap',
+                      fontFamily: 'Inter',
                       fontWeight: '400',
                       lineHeight: '24px',
                       wordWrap: 'break-word'
@@ -72,7 +72,7 @@ const VerbatimSection = () => {
                     style={{
                       color: 'white',
                       fontSize: '16px',
-                      fontFamily: 'Asap',
+                      fontFamily: 'Inter',
                       fontWeight: '400',
                       lineHeight: '24px',
                       wordWrap: 'break-word'
