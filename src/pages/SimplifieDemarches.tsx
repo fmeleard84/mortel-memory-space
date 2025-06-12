@@ -3,6 +3,7 @@ import React from 'react';
 import Navigation from '../components/Navigation';
 import SimplifieDemarcheHero from '../components/SimplifieDemarcheHero';
 import DynamicTimeline from '../components/DynamicTimeline';
+import SimplicitéSection from '../components/SimplicitéSection';
 import Footer from '../components/Footer';
 
 const SimplifieDemarches = () => {
@@ -11,6 +12,7 @@ const SimplifieDemarches = () => {
       <Navigation />
       <SimplifieDemarcheHero />
       <DynamicTimeline />
+      <SimplicitéSection />
       <Footer />
     </div>
   );
