@@ -64,7 +64,13 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				}
 			},
+			fontFamily: {
+				'mono': ['JetBrains Mono', 'monospace'],
+				'sans': ['Inter', 'system-ui', 'sans-serif'],
+			},
 			borderRadius: {
+				'mortel-sm': '20px',
+				'mortel-lg': '40px',
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
