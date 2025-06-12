@@ -3,7 +3,7 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <section className="w-screen h-full flex flex-col justify-start items-start">
+  <section className="w-screen min-h-screen flex flex-col justify-start items-start">
       <div className="w-full min-h-screen bg-mortel-dark flex flex-col justify-center">
         <div className="w-full flex-1 flex flex-col lg:flex-row justify-center items-stretch">
           
