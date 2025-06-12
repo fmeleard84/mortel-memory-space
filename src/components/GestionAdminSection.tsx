@@ -24,7 +24,7 @@ const GestionAdminSection = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row items-start gap-6">
+              <div className="flex flex-col sm:flex-row items-center gap-6">
                 <button className="px-6 py-2.5 bg-mortel-green text-white text-base font-inter font-normal leading-6 hover:bg-mortel-green/90 transition-colors">
                   En savoir plus
                 </button>
@@ -36,7 +36,7 @@ const GestionAdminSection = () => {
             </div>
             <div className="flex-1 h-[640px]">
               <img 
-                className="w-full h-full object-cover rounded-mortel-lg" 
+                className="w-full h-full object-cover" 
                 src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=640&fit=crop"
                 alt="Gestion administrative"
               />

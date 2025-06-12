@@ -75,8 +75,6 @@ export default {
 				'mono': ['JetBrains Mono', 'monospace'],
 			},
 			borderRadius: {
-				'mortel-sm': '20px',
-				'mortel-lg': '40px',
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
