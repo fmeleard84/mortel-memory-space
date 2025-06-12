@@ -69,25 +69,25 @@ const DynamicTimeline = () => {
   const steps = [
     {
       step: 1,
-      title: "Étape 1",
+      title: "S'incrire",
       description: "Inscrivez vous, en 1 clic",
       icon: <UserPlus className="w-6 h-6" />
     },
     {
       step: 2,
-      title: "Étape 2", 
-      description: "Transmettez nous votre justificatif de décès en 2 clics",
+      title: "Transmettre", 
+      description: "Transmettez nous votre justificatif de décès en 2 clics. Si vous ne l'avez pas, nous vous assitons dans les démarches",
       icon: <Upload className="w-6 h-6" />
     },
     {
       step: 3,
-      title: "Étape 3",
+      title: "Suivre l'avancement",
       description: "C'est fini, nous prenons le relais, vous n'avez plus à vous en soucier. Nous vous tenons informé en temps réel de l'avancement administratif.",
       icon: <Cog className="w-6 h-6" />
     },
     {
       step: 4,
-      title: "Étape 4",
+      title: "Choisir votre hommage",
       description: "Vous choisissez et personnalisez l'hommage que vous souhaitez adresser à votre proche, parmi notre sélection respectueuse de l'environnement et économiquement adaptée à chaque budget.",
       icon: <Heart className="w-6 h-6" />
     }
