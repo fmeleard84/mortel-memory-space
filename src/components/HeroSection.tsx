@@ -1,12 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
-import hpI1 from '../assets/hp_i_1.jpg';
-import hpI2 from '../assets/hp_i_2.jpg';
 import hpI3 from '../assets/hp_i_3.jpg';
 import hpI4 from '../assets/hp_i_4.jpg';
 
 const HeroSection = () => {
-  const images = [hpI1, hpI2, hpI3, hpI4];
+  const images = [hpI3, hpI4];
   const [randomImage, setRandomImage] = useState(images[0]);
 
   useEffect(() => {
