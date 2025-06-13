@@ -7,11 +7,12 @@ import hpI4 from '../assets/hp_i_4.jpg';
 
 const HeroSection = () => {
   const images = [hpI1, hpI2, hpI3, hpI4];
-  const [randomImage, setRandomImage] = useState(images[0]); // Initialiser avec la première image
+  const [randomImage, setRandomImage] = useState(images[0]);
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * images.length);
     setRandomImage(images[randomIndex]);
+    console.log('Image sélectionnée:', images[randomIndex]);
   }, []);
 
   return (
