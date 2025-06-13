@@ -1,5 +1,6 @@
 
 import React from 'react';
+import hpMortel from '../assets/hp_mortel.jpg';
 
 const HeroSection = () => {
   return (
@@ -29,16 +30,16 @@ const HeroSection = () => {
                   </span>
                 </button>
               </div>
-  </div>
-</div>
+            </div>
+          </div>
 
-          
           {/* Colonne droite - Image */}
           <div className="flex-1 h-full max-h-screen overflow-hidden">
             <img 
               className="w-full h-full object-cover object-center" 
-              src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=720&h=900&fit=crop"
+              src={hpMortel}
               alt="Service funéraire serein"
+              loading="eager"
             />
           </div>
         </div>
