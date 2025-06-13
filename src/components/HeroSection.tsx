@@ -6,6 +6,7 @@ import hpI4 from '../assets/hp_i_4.jpg';
 const HeroSection = () => {
   const images = [hpI3, hpI4];
   const [randomImage, setRandomImage] = useState(images[0]);
+  const [heroHeight, setHeroHeight] = useState('100vh');
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * images.length);
@@ -13,9 +14,16 @@ const HeroSection = () => {
     console.log('Image sélectionnée:', images[randomIndex]);
   }, []);
 
+  // 🔍 Récupérer la hauteur du header s’il a un ID
+    const header = document.getElementById('site-header');
+    if (header) {
+      const headerHeight = header.offsetHeight;
+      setHeroHeight(`calc(100vh - ${headerHeight}px)`);
+    }
+
   return (
     <section className="w-screen h-full flex flex-col justify-start items-start">
-      <div className="w-full min-h-screen bg-mortel-dark flex flex-col justify-center">
+      <div className="w-full style={{ height: heroHeight }}">
         <div className="w-full flex-1 flex flex-col lg:flex-row justify-center items-stretch">
           
           {/* Colonne gauche - Contenu centré verticalement */}
