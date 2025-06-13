@@ -1,8 +1,20 @@
 
-import React from 'react';
-import hpMortel from '../assets/hp_mortel.jpg';
+import React, { useState, useEffect } from 'react';
+import hpI1 from '../assets/hp_i_1.jpg';
+import hpI2 from '../assets/hp_i_2.jpg';
+import hpI3 from '../assets/hp_i_3.jpg';
+import hpI4 from '../assets/hp_i_4.jpg';
 
 const HeroSection = () => {
+  const [randomImage, setRandomImage] = useState('');
+
+  const images = [hpI1, hpI2, hpI3, hpI4];
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    setRandomImage(images[randomIndex]);
+  }, []);
+
   return (
     <section className="w-screen h-full flex flex-col justify-start items-start">
       <div className="w-full min-h-screen bg-mortel-dark flex flex-col justify-center">
@@ -37,7 +49,7 @@ const HeroSection = () => {
           <div className="flex-1 h-full max-h-screen overflow-hidden">
             <img 
               className="w-full h-full object-cover object-center" 
-              src={hpMortel}
+              src={randomImage}
               alt="Service funéraire serein"
               loading="eager"
             />
