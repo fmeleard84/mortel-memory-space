@@ -6,9 +6,8 @@ import hpI3 from '../assets/hp_i_3.jpg';
 import hpI4 from '../assets/hp_i_4.jpg';
 
 const HeroSection = () => {
-  const [randomImage, setRandomImage] = useState('');
-
   const images = [hpI1, hpI2, hpI3, hpI4];
+  const [randomImage, setRandomImage] = useState(images[0]); // Initialiser avec la première image
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * images.length);
