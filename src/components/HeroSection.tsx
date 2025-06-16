@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import hpI1 from '../assets/hp_i_1.jpg';
 import hpI2 from '../assets/hp_i_2.jpg';
 import hpI3 from '../assets/hp_i_3.jpg';
@@ -7,29 +7,26 @@ import hpI4 from '../assets/hp_i_4.jpg';
 const HeroSection = () => {
   const images = [hpI1, hpI2, hpI3, hpI4];
   const [randomImage, setRandomImage] = useState(images[0]);
-  const [heroHeight, setHeroHeight] = useState('100vh');
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    // Sélection d'une image aléatoire
     const randomIndex = Math.floor(Math.random() * images.length);
     setRandomImage(images[randomIndex]);
-    console.log('Image sélectionnée:', images[randomIndex]);
 
+    // Calcul et injection de la hauteur du header dans une variable CSS
     const header = document.getElementById('site-header');
     if (header) {
       const headerHeight = header.offsetHeight;
-      setHeroHeight(`calc(100vh - ${headerHeight}px)`);
+      document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
     }
   }, []);
 
   return (
-    <section className="w-screen h-full flex flex-col justify-start items-start">
-      <div
-        className="w-full"
-        style={{ height: heroHeight, backgroundColor: '#0e0e0e' }} // faux noir
-      >
-        <div className="w-full flex-1 flex flex-col lg:flex-row justify-center items-stretch">
+    <section className="hero w-screen flex flex-col justify-start items-start">
+      <div className="w-full h-full bg-[#0e0e0e]">
+        <div className="w-full flex flex-col lg:flex-row justify-center items-stretch h-full">
           
-          {/* Colonne gauche - Contenu centré verticalement */}
+          {/* Colonne gauche - Texte */}
           <div className="flex-1 flex items-center justify-center px-4 md:px-8 lg:pl-16 lg:pr-8">
             <div className="w-full max-w-[560px] flex flex-col justify-start items-start gap-6 lg:gap-8">
               <h1 className="text-white text-3xl md:text-4xl lg:text-[56px] font-inter font-normal leading-tight lg:leading-[67.20px] break-words">
@@ -38,9 +35,9 @@ const HeroSection = () => {
               <p className="text-white text-base md:text-lg font-inter font-normal leading-relaxed lg:leading-[27px] break-words">
                 Crémation, démarches, accompagnement : on s’occupe de tout, de A à Z.
               </p>
-          
+
               <div className="flex flex-col sm:flex-row justify-start items-start gap-3 lg:gap-4 w-full sm:w-auto">
-                <button className="w-full sm:w-auto px-4 lg:px-6 py-2.5 bg-white rounded-none border border-white flex justify-center items-center gap-2 hover:bg-gray-100 transition-colors">
+                <button className="w-full sm:w-auto px-4 lg:px-6 py-2.5 bg-white border border-white rounded-none flex justify-center items-center gap-2 hover:bg-gray-100 transition-colors">
                   <span className="text-mortel-dark text-sm lg:text-base font-inter font-normal leading-6">
                     Faire une demande
                   </span>
@@ -55,7 +52,7 @@ const HeroSection = () => {
           </div>
 
           {/* Colonne droite - Image */}
-          <div className="flex-1 h-full max-h-screen overflow-hidden">
+          <div className="flex-1 h-full max-h-full overflow-hidden">
             <img 
               className="w-full h-full object-cover object-center" 
               src={randomImage}

@@ -4,6 +4,9 @@
 @tailwind utilities;
 
 /* Design system Mortel avec faux noir/blanc et typographie Inter */
+.hero {
+  height: calc(100dvh - var(--header-height));
+}
 
 @layer base {
   :root {
