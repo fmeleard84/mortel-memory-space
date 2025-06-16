@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
@@ -11,6 +10,7 @@ import SereniteProche from '../components/SereniteProche';
 import MemorySpaceNew from '../components/MemorySpaceNew';
 import NewFAQ from '../components/NewFAQ';
 import Footer from '../components/Footer';
+import PricingSection from '../components/PricingSection';
 import verbatim1 from '../assets/verbatim_1.jpg';
 import verbatim2 from '../assets/verbatim_2.jpg';
 
@@ -43,6 +43,7 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <EngagementSection />
+      <PricingSection />
       <NewVerbatimSection 
         quote="« Le service proposé par Mortel a transformé notre expérience. Leur approche humaine et digitale a vraiment fait la différence dans un moment difficile. »"
         authorName="Alain"
