@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -73,6 +72,7 @@ export default {
 			fontFamily: {
 				'sans': ['Inter', 'system-ui', 'sans-serif'],
 				'mono': ['JetBrains Mono', 'monospace'],
+				'heading': ['Outfit', 'Inter', 'sans-serif'], // Nouvelle police pour les titres
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

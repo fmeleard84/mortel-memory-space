@@ -1,9 +1,8 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Design system Mortel avec faux noir/blanc et typographie Inter */
+/* Design system Mortel avec faux noir/blanc et typographie Outfit pour les titres */
 .hero {
   height: calc(100dvh - var(--header-height));
 }
@@ -103,6 +102,11 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
+  /* Titles use Outfit font */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Inter', sans-serif;
+  }
+
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
@@ -127,9 +131,9 @@
 }
 
 @layer components {
-  /* Typographie Mortel avec Inter */
+  /* Typographie Mortel avec Outfit pour les titres */
   .mortel-title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', 'Inter', sans-serif;
     text-transform: uppercase;
     letter-spacing: -0.02em;
     line-height: 1.2em;

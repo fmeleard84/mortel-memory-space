@@ -1,11 +1,10 @@
+
 import React, { useLayoutEffect, useState } from 'react';
-import hpI1 from '../assets/hp_i_1.jpg';
-import hpI2 from '../assets/hp_i_2.jpg';
 import hpI3 from '../assets/hp_i_3.jpg';
 import hpI4 from '../assets/hp_i_4.jpg';
 
 const HeroSection = () => {
-  const images = [hpI1, hpI2, hpI3, hpI4];
+  const images = [hpI3, hpI4];
   const [randomImage, setRandomImage] = useState(images[0]);
 
   useLayoutEffect(() => {
@@ -29,11 +28,11 @@ const HeroSection = () => {
           {/* Colonne gauche - Texte */}
           <div className="flex-1 flex items-center justify-center px-4 md:px-8 lg:pl-16 lg:pr-8">
             <div className="w-full max-w-[560px] flex flex-col justify-start items-start gap-6 lg:gap-8">
-              <h1 className="text-white text-3xl md:text-4xl lg:text-[56px] font-inter font-normal leading-tight lg:leading-[67.20px] break-words">
+              <h1 className="text-white text-3xl md:text-4xl lg:text-[56px] font-heading font-normal leading-tight lg:leading-[67.20px] break-words">
                 VĀYA, le service funéraire clair, humain et sans détour.
               </h1>
               <p className="text-white text-base md:text-lg font-inter font-normal leading-relaxed lg:leading-[27px] break-words">
-                Crémation, démarches, accompagnement : on s’occupe de tout, de A à Z.
+                Crémation, démarches, accompagnement : on s'occupe de tout, de A à Z.
               </p>
 
               <div className="flex flex-col sm:flex-row justify-start items-start gap-3 lg:gap-4 w-full sm:w-auto">
