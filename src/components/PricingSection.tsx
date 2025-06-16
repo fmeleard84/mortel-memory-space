@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
+import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 import { Button } from './ui/button';
 import { Check, Minus } from 'lucide-react';
 
@@ -104,6 +104,20 @@ const PricingSection = () => {
     ]
   };
 
+  // Composant pour les points de pagination du carousel
+  const CarouselDots = ({ images, activeIndex }: { images: string[], activeIndex: number }) => (
+    <div className="flex justify-center gap-2 mt-4">
+      {images.map((_, index) => (
+        <div
+          key={index}
+          className={`w-2 h-2 rounded-full transition-colors ${
+            index === activeIndex ? 'bg-mortel-blue' : 'bg-gray-600'
+          }`}
+        />
+      ))}
+    </div>
+  );
+
   return (
     <section className="w-full bg-mortel-dark">
       <div className="w-full px-4 md:px-16 py-28">
@@ -158,31 +172,31 @@ const PricingSection = () => {
           {/* Grille des propositions */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            {/* L'Épure */}
+            {/* Épure */}
             <div className="bg-mortel-dark-secondary rounded-[20px] p-8 border border-gray-700 hover:border-gray-600 transition-all duration-300">
               <div className="flex flex-col gap-6">
                 <div className="text-center">
-                  <div className="text-2xl mb-2">💠</div>
-                  <h3 className="text-xl font-heading font-semibold text-white mb-4">L'Épure</h3>
+                  <h3 className="text-xl font-heading font-semibold text-white mb-4">Épure</h3>
                   
-                  {/* Slider pour L'Épure */}
-                  <Carousel className="w-full max-w-xs mx-auto mb-6">
+                  {/* Slider pour Épure */}
+                  <Carousel className="w-full max-w-xs mx-auto mb-2">
                     <CarouselContent>
                       {propositionImages.epure.map((image, index) => (
                         <CarouselItem key={index}>
                           <img
                             src={image}
-                            alt={`L'Épure - Image ${index + 1}`}
-                            className="w-full h-40 object-cover rounded-[20px]"
+                            alt={`Épure - Image ${index + 1}`}
+                            className="w-full h-[220px] object-cover"
                           />
                         </CarouselItem>
                       ))}
                     </CarouselContent>
-                    <CarouselPrevious className="text-white border-gray-600" />
-                    <CarouselNext className="text-white border-gray-600" />
                   </Carousel>
                   
-                  <p className="text-gray-300 text-sm mb-4">L'essentiel avec soin</p>
+                  {/* Points de pagination */}
+                  <CarouselDots images={propositionImages.epure} activeIndex={0} />
+                  
+                  <p className="text-gray-300 text-sm mb-4 mt-4">L'essentiel avec soin</p>
                   <div className="text-3xl font-bold text-white mb-2">
                     {formatPrice(calculatePrice(basePrices.epure))}
                   </div>
@@ -208,42 +222,42 @@ const PricingSection = () => {
                   variant="outline"
                   className="w-full mt-6 bg-transparent border-gray-600 text-white hover:bg-gray-800"
                 >
-                  Choisir L'Épure
+                  Choisir Épure
                 </Button>
               </div>
             </div>
 
-            {/* La Présence (Recommandée) */}
+            {/* Présence (Recommandée) */}
             <div className="bg-mortel-dark-secondary rounded-[20px] p-8 border-2 border-mortel-blue relative hover:border-opacity-80 transition-all duration-300">
               <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <span className="bg-mortel-blue text-white px-4 py-1 rounded-full text-xs font-medium">
-                  ⭐ Notre recommandation
+                <span className="bg-mortel-blue text-white px-4 py-1 rounded-full text-xs font-medium whitespace-nowrap">
+                  Notre recommandation
                 </span>
               </div>
               
               <div className="flex flex-col gap-6">
                 <div className="text-center">
-                  <div className="text-2xl mb-2">⚫</div>
-                  <h3 className="text-xl font-heading font-semibold text-white mb-4">La Présence</h3>
+                  <h3 className="text-xl font-heading font-semibold text-white mb-4">Présence</h3>
                   
-                  {/* Slider pour La Présence */}
-                  <Carousel className="w-full max-w-xs mx-auto mb-6">
+                  {/* Slider pour Présence */}
+                  <Carousel className="w-full max-w-xs mx-auto mb-2">
                     <CarouselContent>
                       {propositionImages.presence.map((image, index) => (
                         <CarouselItem key={index}>
                           <img
                             src={image}
-                            alt={`La Présence - Image ${index + 1}`}
-                            className="w-full h-40 object-cover rounded-[20px]"
+                            alt={`Présence - Image ${index + 1}`}
+                            className="w-full h-[220px] object-cover"
                           />
                         </CarouselItem>
                       ))}
                     </CarouselContent>
-                    <CarouselPrevious className="text-white border-gray-600" />
-                    <CarouselNext className="text-white border-gray-600" />
                   </Carousel>
                   
-                  <p className="text-gray-300 text-sm mb-4">Un accompagnement renforcé</p>
+                  {/* Points de pagination */}
+                  <CarouselDots images={propositionImages.presence} activeIndex={0} />
+                  
+                  <p className="text-gray-300 text-sm mb-4 mt-4">Un accompagnement renforcé</p>
                   <div className="text-3xl font-bold text-white mb-2">
                     {formatPrice(calculatePrice(basePrices.presence))}
                   </div>
@@ -268,36 +282,36 @@ const PricingSection = () => {
                 <Button
                   className="w-full mt-6 bg-mortel-blue hover:bg-mortel-blue/90 text-white"
                 >
-                  Choisir La Présence
+                  Choisir Présence
                 </Button>
               </div>
             </div>
 
-            {/* La Signature */}
+            {/* Signature */}
             <div className="bg-mortel-dark-secondary rounded-[20px] p-8 border border-gray-700 hover:border-mortel-green transition-all duration-300">
               <div className="flex flex-col gap-6">
                 <div className="text-center">
-                  <div className="text-2xl mb-2">⚪</div>
-                  <h3 className="text-xl font-heading font-semibold text-white mb-4">La Signature</h3>
+                  <h3 className="text-xl font-heading font-semibold text-white mb-4">Signature</h3>
                   
-                  {/* Slider pour La Signature */}
-                  <Carousel className="w-full max-w-xs mx-auto mb-6">
+                  {/* Slider pour Signature */}
+                  <Carousel className="w-full max-w-xs mx-auto mb-2">
                     <CarouselContent>
                       {propositionImages.signature.map((image, index) => (
                         <CarouselItem key={index}>
                           <img
                             src={image}
-                            alt={`La Signature - Image ${index + 1}`}
-                            className="w-full h-40 object-cover rounded-[20px]"
+                            alt={`Signature - Image ${index + 1}`}
+                            className="w-full h-[220px] object-cover"
                           />
                         </CarouselItem>
                       ))}
                     </CarouselContent>
-                    <CarouselPrevious className="text-white border-gray-600" />
-                    <CarouselNext className="text-white border-gray-600" />
                   </Carousel>
                   
-                  <p className="text-gray-300 text-sm mb-4">Une cérémonie personnalisée</p>
+                  {/* Points de pagination */}
+                  <CarouselDots images={propositionImages.signature} activeIndex={0} />
+                  
+                  <p className="text-gray-300 text-sm mb-4 mt-4">Une cérémonie personnalisée</p>
                   <div className="text-3xl font-bold text-white mb-2">
                     {formatPrice(calculatePrice(basePrices.signature))}
                   </div>
@@ -323,7 +337,7 @@ const PricingSection = () => {
                   variant="outline"
                   className="w-full mt-6 bg-transparent border-mortel-green text-mortel-green hover:bg-mortel-green hover:text-mortel-dark"
                 >
-                  Choisir La Signature
+                  Choisir Signature
                 </Button>
               </div>
             </div>
