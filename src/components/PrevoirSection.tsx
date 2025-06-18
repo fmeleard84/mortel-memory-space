@@ -6,7 +6,7 @@ const PrevoirSection = () => {
     <section className="w-full bg-mortel-dark">
       <div className="w-full px-4 md:px-16 py-20">
         <div className="w-full max-w-[1280px] mx-auto">
-          <div className="flex flex-col lg:flex-row-reverse items-start gap-16">
+          <div className="flex flex-col-reverse lg:flex-row-reverse items-start gap-16">
             
             {/* Right Column - Image */}
             <div className="w-full lg:w-1/2">
@@ -21,9 +21,9 @@ const PrevoirSection = () => {
             <div className="w-full lg:w-1/2 flex flex-col gap-8">
               {/* Header */}
               <div className="flex flex-col gap-6">
-                {/* Étiquette "Prévoir" */}
-                <div className="inline-block px-3 py-1 bg-white text-mortel-blue text-sm font-semibold font-inter uppercase tracking-wide rounded-full w-fit">
-                  Prévoir
+                {/* Étiquette "prévoir" stylée */}
+                <div className="text-mortel-blue text-base font-inter font-normal border-b border-mortel-blue w-fit">
+                  prévoir
                 </div>
 
                 {/* Titre et intro */}
@@ -67,7 +67,7 @@ const PrevoirSection = () => {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-4">
                 <button className="px-6 py-2.5 bg-mortel-blue text-white text-base font-normal font-inter leading-normal rounded-none transition-all duration-200 hover:rounded-[5px] hover:shadow-[0_0_10px_rgba(255,255,255,0.3)]">
                   Préparer
                 </button>
