@@ -63,7 +63,7 @@ const PrevoirSection = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-start gap-6">
-                <button className="px-6 py-2.5 bg-mortel-blue text-white text-base font-normal font-inter leading-normal hover:shadow-[0_0_12px_1px_white] transition-all duration-200">
+                <button className="px-6 py-2.5 bg-mortel-blue text-white text-base font-normal font-inter leading-normal hover:shadow-[0_0_8px_rgba(255,255,255,0.25)] transition-all duration-200">
                   Préparer
                 </button>
                 <button className="flex items-center gap-2 text-white text-base font-normal font-mono leading-normal hover:text-mortel-blue transition-colors">
