@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
@@ -8,6 +9,7 @@ import OrganisationSection from '../components/OrganisationSection';
 import AutoPromoService from '../components/AutoPromoService';
 import SereniteProche from '../components/SereniteProche';
 import MemorySpaceNew from '../components/MemorySpaceNew';
+import NosPlus from '../components/NosPlus';
 import NewFAQ from '../components/NewFAQ';
 import Footer from '../components/Footer';
 import PricingSection from '../components/PricingSection';
@@ -59,6 +61,7 @@ const Index = () => {
         imageAlt="Témoignage client Marie"
       />
       <MemorySpaceNew />
+      <NosPlus />
       <EngagementSection />
       <NewFAQ 
         faqItems={homepageFAQItems}
