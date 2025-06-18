@@ -40,7 +40,7 @@ const PrevoirSection = () => {
                       <h3 className="text-white text-xl font-normal font-inter leading-7">
                         Préparer maintenant
                       </h3>
-                      <p className="text-gray-300 text-base font-normal font-inter leading-normal">
+                      <p className="text-gray-400 text-base font-normal font-inter leading-normal">
                         Assurez-vous que vos choix soient respectés et connus.
                       </p>
                     </div>
@@ -53,7 +53,7 @@ const PrevoirSection = () => {
                       <h3 className="text-white text-xl font-normal font-inter leading-7">
                         Soulager vos proches
                       </h3>
-                      <p className="text-gray-300 text-base font-normal font-inter leading-normal">
+                      <p className="text-gray-400 text-base font-normal font-inter leading-normal">
                         Facilitez la gestion des formalités pour ceux que vous aimez.
                       </p>
                     </div>
