@@ -42,8 +42,8 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
-      <EngagementSection />
       <PricingSection />
+      <OrganisationSection />
       <NewVerbatimSection 
         quote="« Le service proposé par Mortel a transformé notre expérience. Leur approche humaine et digitale a vraiment fait la différence dans un moment difficile. »"
         authorName="Alain"
@@ -51,8 +51,6 @@ const Index = () => {
         imageAlt="Témoignage client Alain"
       />
       <GestionAdminSection />
-      <OrganisationSection />
-      <AutoPromoService />
       <SereniteProche />
       <NewVerbatimSection 
         quote="« Mortel nous a accompagnés avec une grande humanité. Le streaming des obsèques a permis à toute la famille de se rassembler malgré la distance. »"
@@ -61,6 +59,7 @@ const Index = () => {
         imageAlt="Témoignage client Marie"
       />
       <MemorySpaceNew />
+      <EngagementSection />
       <NewFAQ 
         faqItems={homepageFAQItems}
         defaultOpenItem={0}
