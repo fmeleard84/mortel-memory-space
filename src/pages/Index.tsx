@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
@@ -13,6 +12,7 @@ import NosPlus from '../components/NosPlus';
 import NewFAQ from '../components/NewFAQ';
 import Footer from '../components/Footer';
 import PricingSection from '../components/PricingSection';
+import PrevoirSection from '../components/PrevoirSection';
 import verbatim1 from '../assets/verbatim_1.jpg';
 import verbatim2 from '../assets/verbatim_2.jpg';
 
@@ -63,6 +63,7 @@ const Index = () => {
       <MemorySpaceNew />
       <NosPlus />
       <EngagementSection />
+      <PrevoirSection />
       <NewFAQ 
         faqItems={homepageFAQItems}
         defaultOpenItem={0}
