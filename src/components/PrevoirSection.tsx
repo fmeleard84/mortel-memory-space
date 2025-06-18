@@ -22,7 +22,7 @@ const PrevoirSection = () => {
               {/* Header */}
               <div className="flex flex-col gap-6">
                 {/* Étiquette "prévoir" stylée */}
-                <div className="text-mortel-blue text-base font-inter font-normal border-b border-mortel-blue w-fit">
+                <div className="etiquette">
                   Prévoir
                 </div>
 
@@ -46,7 +46,7 @@ const PrevoirSection = () => {
                     <h3 className="text-white text-lg font-normal font-inter leading-6">
                       Préparer maintenant
                     </h3>
-                    <p className="text-gray-400 text-sm font-normal font-inter leading-normal">
+                    <p className="texte-normal">
                       Assurez-vous que vos choix soient respectés et connus.
                     </p>
                   </div>
@@ -59,7 +59,7 @@ const PrevoirSection = () => {
                     <h3 className="text-white text-lg font-normal font-inter leading-6">
                       Soulager vos proches
                     </h3>
-                    <p className="text-gray-400 text-sm font-normal font-inter leading-normal">
+                    <p className="texte-normal">
                       Facilitez la gestion des formalités pour ceux que vous aimez.
                     </p>
                   </div>
@@ -68,10 +68,10 @@ const PrevoirSection = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-4">
-                <button className="px-6 py-2.5 bg-mortel-blue text-white text-base font-normal font-inter leading-normal rounded-none transition-all duration-200 hover:rounded-[5px] hover:shadow-[0_0_10px_rgba(255,255,255,0.3)]">
+                <button className="btn-principal">
                   Préparer
                 </button>
-                <button className="flex items-center gap-2 text-white text-base font-normal font-inter leading-normal hover:text-mortel-blue transition-all group">
+                <button className="btn-secondaire">
                   <span>En savoir plus</span>
                   <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                 </button>
