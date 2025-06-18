@@ -23,7 +23,7 @@ const PrevoirSection = () => {
                     <h2 className="text-white text-3xl md:text-5xl font-normal font-inter leading-tight">
                       Anticiper pour alléger ceux que vous aimez
                     </h2>
-                    <p className="text-white text-lg font-normal font-mono leading-relaxed">
+                    <p className="text-white text-lg font-normal font-inter leading-relaxed">
                       Préparer vos volontés dès maintenant permet de garantir une organisation qui vous ressemble. Cela soulage également vos proches au moment où ils en ont le plus besoin.
                     </p>
                   </div>
@@ -40,7 +40,7 @@ const PrevoirSection = () => {
                       <h3 className="text-white text-xl font-normal font-inter leading-7">
                         Préparer maintenant
                       </h3>
-                      <p className="text-white text-base font-normal font-mono leading-normal">
+                      <p className="text-gray-300 text-base font-normal font-inter leading-normal">
                         Assurez-vous que vos choix soient respectés et connus.
                       </p>
                     </div>
@@ -53,7 +53,7 @@ const PrevoirSection = () => {
                       <h3 className="text-white text-xl font-normal font-inter leading-7">
                         Soulager vos proches
                       </h3>
-                      <p className="text-white text-base font-normal font-mono leading-normal">
+                      <p className="text-gray-300 text-base font-normal font-inter leading-normal">
                         Facilitez la gestion des formalités pour ceux que vous aimez.
                       </p>
                     </div>
@@ -78,7 +78,7 @@ const PrevoirSection = () => {
               <img 
                 src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=600&h=640&fit=crop"
                 alt="Prévoir ses obsèques"
-                className="w-full h-[640px] object-cover rounded-[40px]"
+                className="w-full h-[640px] object-cover"
               />
             </div>
           </div>
