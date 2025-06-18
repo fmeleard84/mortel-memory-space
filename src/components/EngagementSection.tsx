@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ChevronRight, Leaf, CreditCard, Shield, Users } from 'lucide-react';
 
@@ -33,19 +32,17 @@ const EngagementSection = () => {
     <section className="w-full bg-mortel-dark">
       <div className="w-full px-4 md:px-16 py-28">
         <div className="w-full max-w-[1280px] mx-auto flex flex-col gap-20">
-          
+
           {/* Header */}
           <div className="w-full max-w-[768px] mx-auto flex flex-col gap-4">
             <div className="flex justify-center">
-              <span className="text-mortel-blue text-lg font-outfit font-semibold leading-[27px]">
-                Engagements
-              </span>
+              <span className="etiquette">Engagements</span>
             </div>
             <div className="flex flex-col gap-6">
               <h2 className="text-center text-white text-3xl md:text-5xl font-inter font-normal leading-tight">
                 Nos convictions guident nos actions
               </h2>
-              <p className="text-center text-white text-lg font-mono font-normal leading-[27px]">
+              <p className="text-center texte-normal max-w-[640px] mx-auto">
                 Nous croyons en une approche écoresponsable et humaine. Chaque étape de notre service est pensée pour respecter vos valeurs.
               </p>
             </div>
@@ -53,8 +50,8 @@ const EngagementSection = () => {
 
           {/* Main Content - Three columns layout */}
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            
-            {/* Left Column - 2 engagements */}
+
+            {/* Left Column */}
             <div className="flex-1 flex flex-col gap-16">
               {leftEngagements.map((engagement, index) => (
                 <div key={index} className="flex flex-col items-center gap-6">
@@ -65,7 +62,7 @@ const EngagementSection = () => {
                     <h3 className="text-center text-white text-2xl font-outfit font-normal leading-[33.6px]">
                       {engagement.title}
                     </h3>
-                    <p className="text-center text-white text-base font-mono font-normal leading-6">
+                    <p className="text-center texte-normal">
                       {engagement.description}
                     </p>
                   </div>
@@ -82,7 +79,7 @@ const EngagementSection = () => {
               />
             </div>
 
-            {/* Right Column - 2 engagements */}
+            {/* Right Column */}
             <div className="flex-1 flex flex-col gap-16">
               {rightEngagements.map((engagement, index) => (
                 <div key={index} className="flex flex-col items-center gap-6">
@@ -93,7 +90,7 @@ const EngagementSection = () => {
                     <h3 className="text-center text-white text-2xl font-outfit font-normal leading-[33.6px]">
                       {engagement.title}
                     </h3>
-                    <p className="text-center text-white text-base font-mono font-normal leading-6">
+                    <p className="text-center texte-normal">
                       {engagement.description}
                     </p>
                   </div>
@@ -104,10 +101,10 @@ const EngagementSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-            <button className="px-6 py-2.5 bg-white/10 text-white text-base font-mono font-normal leading-6 hover:bg-white/20 transition-colors">
+            <button className="btn-principal">
               En savoir plus
             </button>
-            <button className="flex items-center gap-2 text-white text-base font-mono font-normal leading-6 hover:text-mortel-blue transition-colors">
+            <button className="btn-secondaire">
               <span>Contact</span>
               <ChevronRight className="w-6 h-6" />
             </button>

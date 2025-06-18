@@ -6,7 +6,7 @@ const PrevoirSection = () => {
     <section className="w-full bg-mortel-dark">
       <div className="w-full px-4 md:px-16 py-20">
         <div className="w-full max-w-[1280px] mx-auto">
-          <div className="flex flex-col-reverse lg:flex-row-reverse items-start gap-16">
+          <div className="flex flex-col lg:flex-row-reverse items-start gap-16">
             
             {/* Right Column - Image */}
             <div className="w-full lg:w-1/2">
