@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronRight, Clock, Users } from 'lucide-react';
+import anticiperImg from '../assets/anticiper.png'; // ajuste le chemin selon ta structure
 
 const PrevoirSection = () => {
   return (
@@ -11,7 +12,7 @@ const PrevoirSection = () => {
             {/* Right Column - Image */}
             <div className="w-full lg:w-1/2">
               <img 
-                src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=600&h=400&fit=crop"
+                 src={anticiperImg}
                 alt="Prévoir ses obsèques"
                 className="w-full h-auto object-cover"
               />
