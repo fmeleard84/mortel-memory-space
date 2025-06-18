@@ -23,7 +23,7 @@ const PrevoirSection = () => {
               <div className="flex flex-col gap-6">
                 {/* Étiquette "prévoir" stylée */}
                 <div className="text-mortel-blue text-base font-inter font-normal border-b border-mortel-blue w-fit">
-                  prévoir
+                  Prévoir
                 </div>
 
                 {/* Titre et intro */}
