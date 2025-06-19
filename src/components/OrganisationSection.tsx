@@ -1,5 +1,8 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import orgaVideo from '../assets/bougie_bouge.jpg'; // Utilisation de l'image existante
+import procheImg from '../assets/proche.jpg'; // Utilisation de l'image existante
+import adminImg from '../assets/administratif_1.jpg'; // Utilisation de l'image existante
 
 const OrganisationSection = () => {
   return (
@@ -9,14 +12,21 @@ const OrganisationSection = () => {
           
           {/* En-tête */}
           <div className="flex flex-col lg:flex-row gap-20">
-            <div className="flex-1 flex flex-col gap-4">
-              <div className="flex items-center">
-                <span className="etiquette">Services</span>
+            {/* Partie gauche : Titre */}
+            <div className="w-full lg:w-1/3 flex items-start">
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center">
+                  <span className="etiquette">Services</span>
+                </div>
+                <h2 className="mortel-titre-hero text-white text-left">Ce que nous faisons, vraiment</h2>
               </div>
-              <h2 className="mortel-titre-hero text-white">Ce que nous faisons, vraiment</h2>
             </div>
-            <div className="mortel-text text-white">
-              Nous accompagnons chaque famille dans ce moment difficile, avec une organisation simple, des démarches prises en charge, et une attention particulière portée aux proches. Rien n’est laissé au hasard. Vous n’êtes pas seuls.
+
+            {/* Partie droite : Texte, centré verticalement */}
+            <div className="w-full lg:w-2/3 flex items-center">
+              <p className="mortel-text text-white">
+                Nous accompagnons chaque famille dans ce moment difficile, avec une organisation simple, des démarches prises en charge, et une attention particulière portée aux proches. Rien n’est laissé au hasard. Vous n’êtes pas seuls.
+              </p>
             </div>
           </div>
 
@@ -28,7 +38,7 @@ const OrganisationSection = () => {
               <div className="flex flex-col gap-8">
                 <img 
                   className="w-full h-60 object-cover" 
-                  src="https://images.unsplash.com/photo-1544967882-f3d985ac39a6?w=395&h=240&fit=crop"
+                  src={adminImg}
                   alt="Coordination et logistique"
                 />
                 <div className="flex flex-col gap-6">
@@ -40,9 +50,9 @@ const OrganisationSection = () => {
                     <br />
                     Nous nous chargeons de toutes les formalités administratives, autorisations, et documents nécessaires. En toute transparence.
                   </p>
-                  <button className="flex items-center gap-2 text-white text-base font-inter font-normal leading-6 hover:text-mortel-green transition-colors">
+                  <button className="btn-secondaire group">
                     <span>En savoir plus</span>
-                    <ChevronRight className="w-5 h-5" />
+                    <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                   </button>
                 </div>
               </div>
@@ -51,7 +61,7 @@ const OrganisationSection = () => {
               <div className="flex flex-col gap-8">
                 <img 
                   className="w-full h-60 object-cover" 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=395&h=240&fit=crop"
+                  src={orgaVideo}
                   alt="Hommages mémorables"
                 />
                 <div className="flex flex-col gap-6">
@@ -63,9 +73,9 @@ const OrganisationSection = () => {
                     <br />
                     Nos propositions sont pensées pour s’adapter à vos besoins. Claires, justes, personnalisables. Et tout est pris en charge.
                   </p>
-                  <button className="flex items-center gap-2 text-white text-base font-inter font-normal leading-6 hover:text-mortel-green transition-colors">
+                  <button className="btn-secondaire group">
                     <span>En savoir plus</span>
-                    <ChevronRight className="w-5 h-5" />
+                    <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                   </button>
                 </div>
               </div>
@@ -74,7 +84,7 @@ const OrganisationSection = () => {
               <div className="flex flex-col gap-8">
                 <img 
                   className="w-full h-60 object-cover" 
-                  src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=395&h=240&fit=crop"
+                  src={procheImg}
                   alt="Décorations durables"
                 />
                 <div className="flex flex-col gap-6">
@@ -86,9 +96,9 @@ const OrganisationSection = () => {
                     <br />
                     Nous facilitons l’information des proches et créons un espace commun pour les souvenirs et les échanges.
                   </p>
-                  <button className="flex items-center gap-2 text-white text-base font-inter font-normal leading-6 hover:text-mortel-green transition-colors">
+                  <button className="btn-secondaire group">
                     <span>En savoir plus</span>
-                    <ChevronRight className="w-5 h-5" />
+                    <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                   </button>
                 </div>
               </div>
