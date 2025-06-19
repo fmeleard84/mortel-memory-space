@@ -52,16 +52,17 @@ const GestionAdminSection = () => {
             </div>
 
             {/* Colonne droite - Image */}
-            <div className="flex-1 h-[640px]">
-              <video
-                  className="w-full h-full object-cover scale-[1.3]"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                ><source src={admin_video} type="video/mp4" />
-                </video>
-            </div>
+            <div className="flex-1 h-[640px] overflow-hidden relative">
+            <video
+              className="absolute top-0 left-0 w-full h-full object-cover scale-[1.2]"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src={admin_video} type="video/mp4" />
+            </video>
+          </div>
           </div>
         </div>
       </div>
