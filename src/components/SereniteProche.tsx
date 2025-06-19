@@ -32,7 +32,7 @@ const SereniteProche = () => {
                       <h3 className="text-white text-xl font-inter font-normal leading-7">
                         Gestion Simplifiée
                       </h3>
-                      <p className="mortel-text">
+                      <p className="texte-normal">
                         Informez facilement vos proches des détails importants concernant les obsèques.
                       </p>
                     </div>
@@ -40,7 +40,7 @@ const SereniteProche = () => {
                       <h3 className="text-white text-xl font-inter font-normal leading-7">
                         Espace Commun
                       </h3>
-                      <p className="mortel-text">
+                      <p className="texte-normal">
                         Un espace dédié pour partager souvenirs et informations avec vos proches.
                       </p>
                     </div>

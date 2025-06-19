@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
-import admin_video from '../assets/admin_video.mp4'; // Utilisation de l'image existante
+import admin_video from '../assets/admini_simple.mp4'; // Utilisation de l'image existante
 
 const GestionAdminSection = () => {
   return (
@@ -54,7 +54,7 @@ const GestionAdminSection = () => {
             {/* Colonne droite - Image */}
             <div className="flex-1 h-[640px]">
               <video
-                  className="w-full h-60 object-cover"
+                  className="w-full h-full object-cover"
                   autoPlay
                   muted
                   loop

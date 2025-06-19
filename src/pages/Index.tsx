@@ -15,6 +15,7 @@ import PricingSection from '../components/PricingSection';
 import PrevoirSection from '../components/PrevoirSection';
 import verbatimVideo_1 from '../assets/verbatim_2.mp4';
 import verbatimVideo_2 from '../assets/verbatim_1.mp4';
+import LightPricingSection from '../components/LightPricingSection';
 
 const Index = () => {
   const homepageFAQItems = [
@@ -52,7 +53,7 @@ const Index = () => {
         imageAlt="Témoignage client Alain"
       />
       <GestionAdminSection />
-      <PricingSection />
+      <LightPricingSection />
       <SereniteProche />
       <NewVerbatimSection 
         quote="« Mortel nous a accompagnés avec une grande humanité. Le streaming des obsèques a permis à toute la famille de se rassembler malgré la distance. »"
