@@ -15,7 +15,8 @@ import PricingSection from '../components/PricingSection';
 import PrevoirSection from '../components/PrevoirSection';
 import verbatim1 from '../assets/verbatim_1.jpg';
 import verbatim2 from '../assets/verbatim_2.jpg';
-import verbatimVideo from '../assets/verbatim_1.mp4';
+import verbatimVideo_1 from '../assets/verbatim_1.mp4';
+import verbatimVideo_2 from '../assets/verbatim_2.mp4';
 
 const Index = () => {
   const homepageFAQItems = [
@@ -46,11 +47,10 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <PricingSection />
-      <OrganisationSection />
       <NewVerbatimSection 
         quote="« Le service proposé par Mortel a transformé notre expérience. Leur approche humaine et digitale a vraiment fait la différence dans un moment difficile. »"
         authorName="Alain"
-        imageSrc={verbatim1}
+        imageSrc={verbatimVideo_1}
         imageAlt="Témoignage client Alain"
       />
       <GestionAdminSection />
@@ -58,13 +58,15 @@ const Index = () => {
       <NewVerbatimSection 
         quote="« Mortel nous a accompagnés avec une grande humanité. Le streaming des obsèques a permis à toute la famille de se rassembler malgré la distance. »"
         authorName="Marie"
-        imageSrc={verbatimVideo}
+        imageSrc={verbatimVideo_2}
         imageAlt="Témoignage client Marie"
       />
       <MemorySpaceNew />
       <NosPlus />
       <EngagementSection />
       <PrevoirSection />
+      <OrganisationSection />
+
       <NewFAQ 
         faqItems={homepageFAQItems}
         defaultOpenItem={0}

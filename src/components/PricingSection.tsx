@@ -179,10 +179,10 @@ const features = {
         <div className="w-full max-w-[1280px] mx-auto flex flex-col gap-12">
           <div className="flex flex-col gap-4 text-center">
             <h2 className="text-white text-3xl md:text-5xl font-heading font-normal leading-tight">
-              Nos propositions claires
+              Des propositions claires
             </h2>
             <p className="text-gray-300 text-lg font-inter font-normal leading-[27px]">
-              Une organisation lisible, des tarifs transparents.
+              Une organisation lisible, des tarifs transparents, une personalisation sur mesure.
             </p>
           </div>
 
