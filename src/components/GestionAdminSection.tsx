@@ -16,7 +16,7 @@ const GestionAdminSection = () => {
                   </span>
                 </div>
                 <div className="flex flex-col gap-6">
-                  <h2 className="text-white text-2xl md:text-4xl font-normal font-sans leading-tight">
+                  <h2 className="mortel-title">
                     Démarches administratives simplifiées : nous gérons tout pour vous.
                   </h2>
                   <p className="text-white text-lg font-inter font-normal leading-[27px]">
@@ -39,16 +39,15 @@ const GestionAdminSection = () => {
               </div>
 
               {/* CTA */}
-              <div className="btn-principal">
-                <button className="btn-secondaire group">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-4">
+                  <button className="btn-principal">
+                    Préparer
+                  </button>
+                  <button className="btn-secondaire group">
                     <span>En savoir plus</span>
                     <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                   </button>
-
-                <button className="over:bg-mortel-green/90 transition-colors">
-                  Contactez-nous
-                </button>
-              </div>
+                </div>
             </div>
 
             {/* Colonne droite - Image */}
