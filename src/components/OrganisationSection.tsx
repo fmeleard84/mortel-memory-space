@@ -60,11 +60,15 @@ const OrganisationSection = () => {
 
               {/* Bloc 2 */}
               <div className="flex flex-col gap-8">
-                <img 
-                  className="w-full h-60 object-cover" 
-                  src={bougieVideo}
-                  alt="Hommages mémorables"
-                />
+                <video
+                  className="w-full h-60 object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                ><source src={bougieVideo} type="video/mp4" />
+                </video>
+                Votre navigateur ne supporte pas la vidéo.
                 <div className="flex flex-col gap-6">
                   <h3 className="text-white text-2xl md:text-[32px] font-inter font-normal leading-tight">
                     Organisation claire
