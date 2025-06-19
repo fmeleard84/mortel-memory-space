@@ -189,6 +189,14 @@
     background-clip: text;
   }
 
+  .etiquette {
+    @apply text-mortel-blue text-base font-sans font-normal border-b border-mortel-blue w-fit;
+  }
+
+  .texte-normal {
+    @apply text-gray-400 text-sm font-normal font-sans leading-normal;
+  }
+
     /* Bouton principal actif (bleu plein) — déjà présent */
   .btn-principal {
     @apply px-6 py-2.5 bg-mortel-blue text-white text-base font-normal font-sans rounded-none transition-all duration-200 hover:rounded-[5px] hover:shadow-[0_0_10px_rgba(255,255,255,0.3)];
