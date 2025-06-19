@@ -167,6 +167,14 @@
     font-weight: 600;
   }
 
+  .mortel-text-introdution {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.25em;
+    font-weight: 400;
+  }
+
   .mortel-text {
     font-family: 'Inter', sans-serif;
     letter-spacing: -0.02em;
