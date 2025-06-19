@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import adminfImg from '../assets/administratif.jpg'; // Utilisation de l'image existante
 
 const GestionAdminSection = () => {
   return (
@@ -16,7 +17,7 @@ const GestionAdminSection = () => {
                   </span>
                 </div>
                 <div className="flex flex-col gap-6">
-                  <h2 className="mortel-title">
+                  <h2 className="mortel-titre-hero text-white">
                     Démarches administratives simplifiées : nous gérons tout pour vous.
                   </h2>
                   <p className="text-white text-lg font-inter font-normal leading-[27px]">
@@ -54,7 +55,7 @@ const GestionAdminSection = () => {
             <div className="flex-1 h-[640px]">
               <img 
                 className="w-full h-full object-cover" 
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=640&fit=crop"
+                src="adminfImg"
                 alt="Gestion administrative"
               />
             </div>

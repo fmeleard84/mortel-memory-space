@@ -47,7 +47,7 @@ const NewVerbatimSection: React.FC<NewVerbatimSectionProps> = ({
               {quote}
             </blockquote>
             <div className="flex items-center gap-5">
-              <cite className="text-neutral-400 text-base font-outfit font-normal leading-6 not-italic">
+              <cite className="mortel-verbatim-name text-neutral-300">
                 {authorName}
               </cite>
             </div>
