@@ -11,12 +11,12 @@ const GestionAdminSection = () => {
             <div className="flex-1 flex flex-col gap-8">
               <div className="flex flex-col gap-4">
                 <div className="flex items-center">
-                  <span className="text-mortel-green text-lg font-inter font-semibold leading-[27px]">
+                  <span className="etiquette">
                     Sérénité
                   </span>
                 </div>
                 <div className="flex flex-col gap-6">
-                  <h2 className="text-white text-3xl md:text-5xl font-inter font-normal leading-tight">
+                  <h2 className="text-white text-2xl md:text-4xl font-normal font-sans leading-tight">
                     Démarches administratives simplifiées : nous gérons tout pour vous.
                   </h2>
                   <p className="text-white text-lg font-inter font-normal leading-[27px]">
@@ -28,7 +28,7 @@ const GestionAdminSection = () => {
                   {/* ✅ Ajout du bloc "Ce que nous gérons" */}
                   <div className="flex flex-col gap-2 pt-2">
                     <p className="text-white text-lg font-inter font-semibold">Ce que nous gérons :</p>
-                    <ul className="text-white text-base font-inter font-normal list-disc list-inside space-y-1">
+                    <ul className="texte-normal list-disc list-inside space-y-1">
                       <li>Transport du défunt</li>
                       <li>Demandes d’autorisations (crémation, inhumation…)</li>
                       <li>Coordination avec les mairies et services concernés</li>
@@ -39,13 +39,14 @@ const GestionAdminSection = () => {
               </div>
 
               {/* CTA */}
-              <div className="flex flex-col sm:flex-row items-center gap-6">
-                <button className="px-6 py-2.5 bg-mortel-green text-white text-base font-inter font-normal leading-6 hover:bg-mortel-green/90 transition-colors">
-                  En savoir plus
-                </button>
-                <button className="flex items-center gap-2 text-white text-base font-inter font-normal leading-6 hover:text-mortel-green transition-colors">
-                  <span>Contactez-nous</span>
-                  <ChevronRight className="w-6 h-6" />
+              <div className="btn-principal">
+                <button className="btn-secondaire group">
+                    <span>En savoir plus</span>
+                    <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+                  </button>
+
+                <button className="over:bg-mortel-green/90 transition-colors">
+                  Contactez-nous
                 </button>
               </div>
             </div>
