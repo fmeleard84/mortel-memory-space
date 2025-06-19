@@ -6,12 +6,12 @@ import { Check, Minus } from 'lucide-react';
 const PricingSection = () => {
   const [paymentMode, setPaymentMode] = useState<'1x' | '4x' | '12x'>('4x');
   const [activeSlide, setActiveSlide] = useState(0);
+  const [hoveredKey, setHoveredKey] = useState<'epure' | 'presence' | 'signature' | null>(null);
 
-  // Prix de base
   const basePrices = {
     epure: 2850,
     presence: 3650,
-    signature: 4500
+    signature: 4500,
   };
 
 // Images placeholder pour les sliders
@@ -41,12 +41,9 @@ const PricingSection = () => {
   }, []);
 
   const calculatePrice = (basePrice: number) => {
-    switch (paymentMode) {
-      case '1x': return basePrice;
-      case '4x': return Math.round((basePrice / 4) * 100) / 100;
-      case '12x': return Math.round((basePrice / 12) * 100) / 100;
-      default: return basePrice;
-    }
+    if (paymentMode === '4x') return Math.round((basePrice / 4) * 100) / 100;
+    if (paymentMode === '12x') return Math.round((basePrice / 12) * 100) / 100;
+    return basePrice;
   };
 
   const formatPrice = (price: number) =>
@@ -59,6 +56,7 @@ const PricingSection = () => {
       ? 'Paiement en 4 fois'
       : 'Paiement en 12 fois';
   };
+
 
 const features = {
     epure: [
@@ -110,74 +108,70 @@ const features = {
     </div>
   );
 
-  const renderCard = (title: string, key: 'epure' | 'presence' | 'signature', recommended = false) => (
-    <div
-      className={`bg-mortel-dark-secondary p-8 border ${
-        recommended ? 'border-2 border-mortel-blue' : 'border-gray-700'
-      } hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300`}
-    >
-      {recommended && (
-        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-          <span className="bg-mortel-blue text-white px-4 py-1 rounded-full text-xs font-medium">
-            Notre recommandation
-          </span>
-        </div>
-      )}
+ const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
+    const isSelected = key === 'presence' || hoveredKey === key;
 
-      <div className="flex flex-col gap-6 relative">
-        <div className="text-center">
-          <h3 className="text-xl font-heading font-semibold text-white mb-4">{title}</h3>
-          <Carousel className="w-full max-w-xs mx-auto mb-2">
-            <CarouselContent>
-              {propositionImages[key].map((image, index) => (
-                <CarouselItem key={index}>
-                  <img
-                    src={image}
-                    alt={`${title} - Image ${index + 1}`}
-                    className="w-full h-[220px] object-cover"
-                  />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-          <CarouselDots images={propositionImages[key]} />
-          <p className="text-gray-300 text-sm mt-4">{key === 'epure' ? "L'essentiel avec soin" : key === 'presence' ? 'Un accompagnement renforcé' : 'Une cérémonie personnalisée'}</p>
-          <div className="text-3xl font-bold text-white mb-2">{formatPrice(calculatePrice(basePrices[key]))}</div>
-          <p className="text-xs text-gray-400">{getPaymentLabel()}</p>
-        </div>
+    return (
+      <div
+        onMouseEnter={() => setHoveredKey(key)}
+        onMouseLeave={() => setHoveredKey(null)}
+        className={`group relative bg-mortel-dark-secondary p-8 border transition-all duration-300
+          ${isSelected ? 'border-2 border-mortel-blue shadow-[0_0_15px_rgba(255,255,255,0.2)]' : 'border-gray-700'}`}
+      >
+        {key === 'presence' && (
+          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+            <span className="bg-mortel-blue text-white px-4 py-1 rounded-full text-xs font-medium">
+              Notre recommandation
+            </span>
+          </div>
+        )}
 
-        <div className="space-y-3">
-          {features[key].map((feature, index) => (
-            <div key={index} className="flex items-center gap-3">
-              {feature.included ? (
-                <Check className="w-4 h-4 text-mortel-green" />
-              ) : (
-                <Minus className="w-4 h-4 text-gray-500" />
-              )}
-              <span className={`text-sm ${feature.included ? 'text-white' : 'text-gray-500'}`}>
-                {feature.name}
-              </span>
-            </div>
-          ))}
-        </div>
+        <div className="flex flex-col gap-6">
+          <div className="text-center">
+            <h3 className="text-xl font-heading font-semibold text-white mb-4">{title}</h3>
 
-        <div className="flex flex-col items-center gap-2 mt-6">
-          <Button className={
-            `w-full ${
-              key === 'epure' ? 'mortel-button-black' :
-              key === 'signature' ? 'mortel-button-green' :
-              'mortel-button-primary'
-            }`
-          }>
-            Choisir {title}
-          </Button>
-          <a href={`#details-${key}`} className="text-sm text-gray-300 hover:text-white underline">
-            En savoir plus sur {title}
-          </a>
+            <Carousel className="w-full max-w-xs mx-auto mb-2">
+              <CarouselContent>
+                {propositionImages[key].map((image, index) => (
+                  <CarouselItem key={index}>
+                    <img src={image} alt={`${title} - Image ${index + 1}`} className="w-full h-[220px] object-cover" />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+            <CarouselDots images={propositionImages[key]} />
+            <p className="text-gray-300 text-sm mt-4">
+              {key === 'epure' ? "L'essentiel avec soin" : key === 'presence' ? 'Un accompagnement renforcé' : 'Une cérémonie personnalisée'}
+            </p>
+            <div className="text-3xl font-bold text-white mb-2">{formatPrice(calculatePrice(basePrices[key]))}</div>
+            <p className="text-xs text-gray-400">{getPaymentLabel()}</p>
+          </div>
+
+          <div className="space-y-3">
+            {features[key].map((feature, index) => (
+              <div key={index} className="flex items-center gap-3">
+                {feature.included ? (
+                  <Check className="w-4 h-4 text-mortel-green" />
+                ) : (
+                  <Minus className="w-4 h-4 text-gray-500" />
+                )}
+                <span className={`text-sm ${feature.included ? 'text-white' : 'text-gray-500'}`}>{feature.name}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-col items-center gap-2 mt-6">
+            <Button className={`w-full transition-all duration-200 ${isSelected ? 'btn-principal' : 'btn-inactif'}`}>
+              Choisir {title}
+            </Button>
+            <a href={`#details-${key}`} className="text-sm text-gray-300 hover:text-white underline">
+              En savoir plus sur {title}
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <section className="w-full bg-mortel-dark">
@@ -212,7 +206,7 @@ const features = {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {renderCard('Épure', 'epure')}
-            {renderCard('Présence', 'presence', true)}
+            {renderCard('Présence', 'presence')}
             {renderCard('Signature', 'signature')}
           </div>
 
