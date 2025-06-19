@@ -51,10 +51,10 @@ const OrganisationSection = () => {
                     <br />
                     Nous nous chargeons de toutes les formalités administratives, autorisations, et documents nécessaires. En toute transparence.
                   </p>
-                  <button className="btn-secondaire group">
-                    <span>En savoir plus</span>
-                    <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
-                  </button>
+                <a href="#demarches" className="btn-secondaire group">
+                  <span>En savoir plus</span>
+                  <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+                </a>
                 </div>
               </div>
 
@@ -68,7 +68,6 @@ const OrganisationSection = () => {
                   playsInline
                 ><source src={bougieVideo} type="video/mp4" />
                 </video>
-                Votre navigateur ne supporte pas la vidéo.
                 <div className="flex flex-col gap-6">
                   <h3 className="text-white text-2xl md:text-[32px] font-inter font-normal leading-tight">
                     Organisation claire
@@ -78,10 +77,10 @@ const OrganisationSection = () => {
                     <br />
                     Nos propositions sont pensées pour s'adapter à vos besoins. Claires, justes, personnalisables. Et tout est pris en charge.
                   </p>
-                  <button className="btn-secondaire group">
-                    <span>En savoir plus</span>
-                    <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
-                  </button>
+                <a href="#organisation" className="btn-secondaire group">
+                  <span>En savoir plus</span>
+                  <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+                </a>
                 </div>
               </div>
 
@@ -101,10 +100,10 @@ const OrganisationSection = () => {
                     <br />
                     Nous facilitons l'information des proches et créons un espace commun pour les souvenirs et les échanges.
                   </p>
-                  <button className="btn-secondaire group">
-                    <span>En savoir plus</span>
-                    <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
-                  </button>
+                <a href="#proche" className="btn-secondaire group">
+                  <span>En savoir plus</span>
+                  <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+                </a>
                 </div>
               </div>
 

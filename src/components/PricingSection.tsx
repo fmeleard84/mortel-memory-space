@@ -174,7 +174,7 @@ const features = {
   };
 
   return (
-    <section className="w-full bg-mortel-dark">
+    <section id="organisation" className="w-full bg-mortel-dark">
       <div className="w-full px-4 md:px-16 py-28">
         <div className="w-full max-w-[1280px] mx-auto flex flex-col gap-12">
           <div className="flex flex-col gap-4 text-center">

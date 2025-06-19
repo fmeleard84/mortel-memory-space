@@ -1,10 +1,10 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
-import adminfImg from '../assets/administratif.jpg'; // Utilisation de l'image existante
+import admin_video from '../assets/admin_video.mp4'; // Utilisation de l'image existante
 
 const GestionAdminSection = () => {
   return (
-    <section className="w-full bg-mortel-dark-secondary">
+    <section id="demarches" className="w-full bg-mortel-dark-secondary">
       <div className="w-full px-4 md:px-16 py-28">
         <div className="w-full max-w-[1280px] mx-auto flex flex-col gap-20">
           <div className="w-full h-[640px] flex flex-col md:flex-row items-center gap-20">
@@ -53,11 +53,14 @@ const GestionAdminSection = () => {
 
             {/* Colonne droite - Image */}
             <div className="flex-1 h-[640px]">
-              <img 
-                className="w-full h-full object-cover" 
-                src={adminfImg}
-                alt="Gestion administrative"
-              />
+              <video
+                  className="w-full h-60 object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                ><source src={admin_video} type="video/mp4" />
+                </video>
             </div>
           </div>
         </div>

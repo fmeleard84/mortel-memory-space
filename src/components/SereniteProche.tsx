@@ -1,10 +1,11 @@
 
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import procheImg from '../assets/proche.jpg'; // Utilisation de l'image existante
 
 const SereniteProche = () => {
   return (
-    <section className="w-full bg-mortel-dark">
+    <section id="proche" className="w-full bg-mortel-dark">
       <div className="w-full px-4 md:px-16 py-28">
         <div className="w-full max-w-[1280px] mx-auto flex flex-col gap-20">
           <div className="flex flex-col lg:flex-row items-center gap-20">
@@ -59,7 +60,7 @@ const SereniteProche = () => {
             <div className="flex-1">
               <img 
                 className="w-full h-[640px] object-cover" 
-                src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=640&fit=crop"
+                src={procheImg}
                 alt="Gestion centralisée des proches"
               />
             </div>
