@@ -2,6 +2,7 @@
 import React, { useLayoutEffect, useState } from 'react';
 import hpI3 from '../assets/hp_i_3.jpg';
 import hpI4 from '../assets/hp_i_4.jpg';
+import { ChevronRight, Clock, Users } from 'lucide-react';
 
 const HeroSection = () => {
   const images = [hpI3, hpI4];
@@ -28,23 +29,22 @@ const HeroSection = () => {
           {/* Colonne gauche - Texte */}
           <div className="flex-1 flex items-center justify-center px-4 md:px-8 lg:pl-16 lg:pr-8">
             <div className="w-full max-w-[560px] flex flex-col justify-start items-start gap-6 lg:gap-8">
-              <h1 className="text-white text-3xl md:text-4xl lg:text-[56px] font-heading font-normal leading-tight lg:leading-[67.20px] break-words">
+              <h1 className="mortel-titre-hero">
                 VĀYA, le service funéraire clair, humain et sans détour.
               </h1>
-              <p className="text-white text-base md:text-lg font-inter font-normal leading-relaxed lg:leading-[27px] break-words">
+              <p className="mortel-text">
                 Crémation, démarches, accompagnement : on s'occupe de tout, de A à Z.
               </p>
 
               <div className="flex flex-col sm:flex-row justify-start items-start gap-3 lg:gap-4 w-full sm:w-auto">
-                <button className="w-full sm:w-auto px-4 lg:px-6 py-2.5 bg-white border border-white rounded-none flex justify-center items-center gap-2 hover:bg-gray-100 transition-colors">
-                  <span className="text-mortel-dark text-sm lg:text-base font-inter font-normal leading-6">
-                    Faire une demande
-                  </span>
-                </button>
                 <button className="w-full sm:w-auto px-4 lg:px-6 py-2.5 bg-mortel-blue rounded-none flex justify-center items-center gap-2 hover:bg-mortel-blue/90 transition-colors">
-                  <span className="text-white text-sm lg:text-base font-inter font-normal leading-6">
+                  <span className="btn-principal">
                     Être rappelé
                   </span>
+                </button>
+                <button className="btn-secondaire group">
+                  <span>En savoir plus</span>
+                  <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                 </button>
               </div>
             </div>

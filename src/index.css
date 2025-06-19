@@ -131,7 +131,18 @@
 }
 
 @layer components {
+
+  /* Texte */
   /* Typographie Mortel avec Outfit pour les titres */
+
+  .mortel-titre-hero {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem; /* Taille de police pour les titres principaux */
+    line-height: 1.2em;
+    letter-spacing: -0.02em;
+  }
+
   .mortel-title {
     font-family: 'Outfit', 'Inter', sans-serif;
     text-transform: uppercase;
@@ -146,6 +157,15 @@
     line-height: 1.2em;
   }
 
+  .etiquette {
+    @apply text-mortel-blue text-base font-sans font-normal border-b border-mortel-blue w-fit;
+  }
+
+  .texte-normal {
+    @apply text-gray-400 text-sm font-normal font-sans leading-normal;
+  }
+
+  /*
   .mortel-tag {
     @apply mortel-text text-xs uppercase tracking-wider px-3 py-1 bg-primary/10 text-primary border border-primary/20;
   }
@@ -169,33 +189,10 @@
   .mortel-button-secondary {
     @apply mortel-text uppercase tracking-wide px-6 py-3 border border-foreground/20 text-foreground hover:bg-foreground/5 transition-all duration-200 font-medium;
   }
+*/
 
-  .story-link {
-    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
-  }
-  
-  .hover-scale {
-    @apply transition-transform duration-200 hover:scale-105;
-  }
-  
-  .gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.8) 100%);
-  }
-  
-  .text-gradient {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.7) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
 
-  .etiquette {
-    @apply text-mortel-blue text-base font-sans font-normal border-b border-mortel-blue w-fit;
-  }
-
-  .texte-normal {
-    @apply text-gray-400 text-sm font-normal font-sans leading-normal;
-  }
+  /* CTA*/
 
     /* Bouton principal actif (bleu plein) — déjà présent */
   .btn-principal {
