@@ -29,20 +29,20 @@ const HeroSection = () => {
           {/* Colonne gauche - Texte */}
           <div className="flex-1 flex items-center justify-center px-4 md:px-8 lg:pl-16 lg:pr-8">
             <div className="w-full max-w-[560px] flex flex-col justify-start items-start gap-6 lg:gap-8">
-              <h1 className="mortel-titre-hero">
+              <h1 className="mortel-titre-hero text-white">
                 VĀYA, le service funéraire clair, humain et sans détour.
               </h1>
-              <p className="mortel-text">
+              <p className="mortel-text text-white">
                 Crémation, démarches, accompagnement : on s'occupe de tout, de A à Z.
               </p>
 
               <div className="flex flex-col sm:flex-row justify-start items-start gap-3 lg:gap-4 w-full sm:w-auto">
-                <button className="w-full sm:w-auto px-4 lg:px-6 py-2.5 bg-mortel-blue rounded-none flex justify-center items-center gap-2 hover:bg-mortel-blue/90 transition-colors">
-                  <span className="btn-principal">
+                <button className="btn-principal">
+                  <span>
                     Être rappelé
                   </span>
                 </button>
-                <button className="btn-secondaire group">
+                <button className="btn-secondaire group text-white">
                   <span>En savoir plus</span>
                   <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                 </button>
