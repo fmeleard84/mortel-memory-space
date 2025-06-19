@@ -13,18 +13,32 @@ const NewVerbatimSection: React.FC<NewVerbatimSectionProps> = ({
   imageSrc,
   imageAlt
 }) => {
+  const isVideo = imageSrc.endsWith('.mp4');
+
   return (
     <section className="w-full bg-white">
       <div className="w-full px-4 md:px-16 py-28">
         <div className="w-full max-w-[1280px] mx-auto flex flex-col md:flex-row">
-          
-          {/* Image */}
+
+          {/* Media (image ou vidéo) */}
           <div className="w-full md:w-1/2 aspect-square">
-            <img 
-              className="w-full h-full object-cover" 
-              src={imageSrc}
-              alt={imageAlt}
-            />
+            {isVideo ? (
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src={imageSrc} type="video/mp4" />
+              </video>
+            ) : (
+              <img
+                className="w-full h-full object-cover"
+                src={imageSrc}
+                alt={imageAlt}
+              />
+            )}
           </div>
 
           {/* Verbatim bloc noir */}

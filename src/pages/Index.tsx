@@ -15,6 +15,7 @@ import PricingSection from '../components/PricingSection';
 import PrevoirSection from '../components/PrevoirSection';
 import verbatim1 from '../assets/verbatim_1.jpg';
 import verbatim2 from '../assets/verbatim_2.jpg';
+import verbatimVideo from '../assets/verbatim_1.mp4';
 
 const Index = () => {
   const homepageFAQItems = [
@@ -57,7 +58,7 @@ const Index = () => {
       <NewVerbatimSection 
         quote="« Mortel nous a accompagnés avec une grande humanité. Le streaming des obsèques a permis à toute la famille de se rassembler malgré la distance. »"
         authorName="Marie"
-        imageSrc={verbatim2}
+        imageSrc={verbatimVideo}
         imageAlt="Témoignage client Marie"
       />
       <MemorySpaceNew />
