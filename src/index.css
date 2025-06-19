@@ -176,9 +176,9 @@
   }
 
   .mortel-text {
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -0.02em;
+    font-family: 'Outfit', 'Inter', sans-serif;
     line-height: 1.2em;
+    font-weight: 400;
   }
 
   .etiquette {

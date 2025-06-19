@@ -20,7 +20,7 @@ const GestionAdminSection = () => {
                   <h2 className="mortel-titre-hero text-white">
                     Démarches administratives simplifiées : nous gérons tout pour vous.
                   </h2>
-                  <p className="text-white text-lg font-inter font-normal leading-[27px]">
+                  <p className="mortel-text text-white">
                     Une fois la déclaration de décès établie par un professionnel habilité (médecin, établissement),
                     nous prenons le relais pour organiser l’ensemble des démarches nécessaires.
                     Vous n’avez rien à faire. Tout est pris en charge, et chaque étape est suivie en toute transparence.
