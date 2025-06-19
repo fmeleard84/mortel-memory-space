@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 import { Button } from './ui/button';
 
@@ -32,42 +32,111 @@ const propositionImages = {
   ],
 };
 
-const calculatePrice = (base: number) => {
-  const divided = base / 4;
-  return new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(divided);
-};
-
 const LightPricingSection = () => {
+  const [paymentMode, setPaymentMode] = useState<'1x' | '4x' | '12x'>('4x');
+  const [hoveredKey, setHoveredKey] = useState<'epure' | 'presence' | 'signature' | null>(null);
+
+  const calculatePrice = (basePrice: number) => {
+    if (paymentMode === '4x') return Math.round((basePrice / 4) * 100) / 100;
+    if (paymentMode === '12x') return Math.round((basePrice / 12) * 100) / 100;
+    return basePrice;
+  };
+
+  const formatPrice = (price: number) =>
+    new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(price);
+
+  const getPaymentLabel = () => {
+    return paymentMode === '1x'
+      ? 'Paiement en une fois'
+      : paymentMode === '4x'
+      ? 'Paiement en 4 fois'
+      : 'Paiement en 12 fois';
+  };
+
+  const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
+    const isSelected = key === 'presence' || hoveredKey === key;
+
+    return (
+      <div
+        onMouseEnter={() => setHoveredKey(key)}
+        onMouseLeave={() => setHoveredKey(null)}
+        className={`group relative bg-mortel-dark-secondary p-6 border transition-all duration-300
+          ${isSelected ? 'border-2 border-mortel-blue shadow-[0_0_15px_rgba(255,255,255,0.2)]' : 'border-gray-700'}`}
+      >
+        {key === 'presence' && (
+          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+            <span className="bg-mortel-blue text-white px-4 py-1 rounded-full text-xs font-medium">
+              Notre recommandation
+            </span>
+          </div>
+        )}
+
+        <div className="text-center flex flex-col items-center gap-4">
+          <h3 className="text-xl font-light uppercase text-white">{title}</h3>
+          <Carousel className="w-full max-w-xs mx-auto">
+            <CarouselContent>
+              {propositionImages[key].map((image, index) => (
+                <CarouselItem key={index}>
+                  <img src={image} alt={`${title} - Image ${index + 1}`} className="w-full h-[200px] object-cover" />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+          <p className="text-gray-300 text-sm">{descriptions[key]}</p>
+          <div className="text-3xl font-bold text-white">{formatPrice(calculatePrice(basePrices[key]))}</div>
+          <p className="text-xs text-gray-400">{getPaymentLabel()}</p>
+
+          <div className="flex flex-col items-center gap-2 mt-4 w-full">
+            <Button variant="ghost" className={`w-full transition-all duration-200 ${isSelected ? 'btn-principal' : 'btn-inactif'}`}>
+              Choisir {title}
+            </Button>
+            <a href={`#details-${key}`} className="text-sm text-gray-300 hover:text-white underline">
+              Personnaliser {title}
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <section className="w-full bg-mortel-dark py-24 px-4">
-      <div className="max-w-6xl mx-auto flex flex-col gap-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {['epure', 'presence', 'signature'].map((key) => (
-            <div key={key} className="bg-mortel-dark-secondary p-6 border border-gray-700 flex flex-col items-center text-center">
-              <h3 className="text-xl font-light uppercase text-white mb-4">{key === 'epure' ? 'Épure' : key === 'presence' ? 'Présence' : 'Signature'}</h3>
-
-              <Carousel className="w-full max-w-xs mx-auto mb-2">
-                <CarouselContent>
-                  {propositionImages[key].map((img, idx) => (
-                    <CarouselItem key={idx}>
-                      <img src={img} alt={`image ${idx}`} className="w-full h-[200px] object-cover" />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-              </Carousel>
-
-              <p className="text-gray-300 text-sm mt-4">{descriptions[key]}</p>
-              <div className="text-2xl font-bold text-white mt-2">{calculatePrice(basePrices[key])}</div>
-              <p className="text-xs text-gray-400 mb-6">Paiement en 4 fois</p>
-
-              <div className="flex flex-col gap-2 w-full">
-                <Button variant="ghost" className="w-full btn-principal">Choisir {key === 'epure' ? 'Épure' : key === 'presence' ? 'Présence' : 'Signature'}</Button>
-                <a href={`#details-${key}`} className="text-sm text-gray-300 hover:text-white underline">Personnaliser</a>
-              </div>
-            </div>
-          ))}
+      <div className="w-full max-w-[1280px] mx-auto flex flex-col gap-12">
+        {/* Titre */}
+        <div className="flex flex-col gap-4 text-center">
+          <h2 className="mortel-titre-hero text-white">Des propositions claires</h2>
+          <p className="mortel-text text-white">
+            Une organisation lisible, des tarifs transparents, une personnalisation sur mesure.
+          </p>
         </div>
 
+        {/* Sélecteur de paiement */}
+        <div className="flex justify-center">
+          <div className="flex bg-mortel-dark-secondary rounded-full p-1 border border-gray-700">
+            {['1x', '4x', '12x'].map((mode) => (
+              <button
+                key={mode}
+                onClick={() => setPaymentMode(mode as '1x' | '4x' | '12x')}
+                className={`px-6 py-3 text-sm font-medium rounded-full transition-all duration-300 ${
+                  paymentMode === mode
+                    ? 'bg-mortel-blue text-white shadow-lg'
+                    : 'text-gray-300 hover:text-white'
+                }`}
+              >
+                {mode === '1x' ? '1 fois' : mode}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Offres allégées */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {renderCard('Épure', 'epure')}
+          {renderCard('Présence', 'presence')}
+          {renderCard('Signature', 'signature')}
+        </div>
+
+        {/* Texte de bas de page */}
         <div className="text-center text-white max-w-4xl mx-auto text-lg leading-relaxed mt-12">
           Toutes nos propositions sont conçues avec la même exigence : qualité, dignité et respect des volontés de chacun. Elles incluent un accompagnement humain 24/7, la prise en charge complète des démarches administratives, une information fluide pour les proches, et un engagement sincère pour l’environnement. Notre transparence est totale : aucun frais caché, aucun supplément inattendu. <a href="#valeurs" className="underline hover:text-mortel-blue transition">En savoir plus sur nos valeurs</a>.
         </div>
