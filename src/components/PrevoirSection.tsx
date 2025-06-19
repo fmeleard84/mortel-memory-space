@@ -15,7 +15,7 @@ const PrevoirSection = () => {
               <img 
                  src={anticiperImg}
                 alt="Prévoir ses obsèques"
-                className="w-full h-auto object-cover rounded-[40px]"
+                className="w-full h-auto object-cover"
               />
             </div>
 
