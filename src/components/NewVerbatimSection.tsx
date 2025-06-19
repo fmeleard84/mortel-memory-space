@@ -43,7 +43,7 @@ const NewVerbatimSection: React.FC<NewVerbatimSectionProps> = ({
 
           {/* Verbatim bloc noir */}
           <div className="w-full md:w-1/2 bg-mortel-dark flex flex-col justify-center gap-8 p-8">
-            <blockquote className="text-white text-xl md:text-2xl font-outfit font-normal leading-[33.6px]">
+            <blockquote className="mortel-verbatim">
               {quote}
             </blockquote>
             <div className="flex items-center gap-5">

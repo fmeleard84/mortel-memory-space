@@ -178,10 +178,10 @@ const features = {
       <div className="w-full px-4 md:px-16 py-28">
         <div className="w-full max-w-[1280px] mx-auto flex flex-col gap-12">
           <div className="flex flex-col gap-4 text-center">
-            <h2 className="text-white text-3xl md:text-5xl font-heading font-normal leading-tight">
+            <h2 className="mortel-titre-hero text-white">
               Des propositions claires
             </h2>
-            <p className="text-gray-300 text-lg font-inter font-normal leading-[27px]">
+            <p className="mortel-text text-white">
               Une organisation lisible, des tarifs transparents, une personalisation sur mesure.
             </p>
           </div>

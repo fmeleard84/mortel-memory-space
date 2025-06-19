@@ -143,6 +143,14 @@
     letter-spacing: -0.02em;
   }
 
+  .mortel-verbatim {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 2.2rem; /* Taille de police pour les titres principaux */
+    line-height: 1.2em;
+    letter-spacing: -0.02em;
+  }
+
   .mortel-title {
     font-family: 'Outfit', 'Inter', sans-serif;
     text-transform: uppercase;

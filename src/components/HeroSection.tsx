@@ -42,7 +42,7 @@ const HeroSection = () => {
                     Être rappelé
                   </span>
                 </button>
-                <button className="btn-secondaire group text-white">
+                <button className="btn-secondaire group text-white h-[42px] flex items-center">
                   <span>En savoir plus</span>
                   <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                 </button>
