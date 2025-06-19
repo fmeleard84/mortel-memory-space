@@ -137,8 +137,8 @@
 
   .mortel-titre-hero {
     font-family: 'Outfit', 'Inter', sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem; /* Taille de police pour les titres principaux */
+    font-weight: 400;
+    font-size: 3.2rem; /* Taille de police pour les titres principaux */
     line-height: 1.2em;
     letter-spacing: -0.02em;
   }
@@ -198,6 +198,10 @@
   .btn-principal {
     @apply px-6 py-2.5 bg-mortel-blue text-white text-base font-normal font-sans rounded-none transition-all duration-200 hover:rounded-[5px] hover:shadow-[0_0_10px_rgba(255,255,255,0.3)];
   }
+
+  .btn-secondaire {
+  @apply flex items-center gap-2 text-white text-base font-normal font-sans transition-all duration-200 hover:text-mortel-blue;
+}
 
   /* Bouton inactif (filet bleu) */
   .btn-inactif {
