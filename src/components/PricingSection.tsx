@@ -128,7 +128,7 @@ const features = {
 
         <div className="flex flex-col gap-6">
           <div className="text-center">
-            <h3 className="text-xl font-heading font-semibold text-white mb-4">{title}</h3>
+            <h3 className="text-xl font-heading font-light uppercase text-white mb-4">{title}</h3>
 
             <Carousel className="w-full max-w-xs mx-auto mb-2">
               <CarouselContent>
@@ -165,7 +165,7 @@ const features = {
               Choisir {title}
             </Button>
             <a href={`#details-${key}`} className="text-sm text-gray-300 hover:text-white underline">
-              En savoir plus sur {title}
+              Personnaliser {title}
             </a>
           </div>
         </div>
