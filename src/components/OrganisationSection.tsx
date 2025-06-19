@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 
@@ -12,23 +11,20 @@ const OrganisationSection = () => {
           <div className="flex flex-col lg:flex-row gap-20">
             <div className="flex-1 flex flex-col gap-4">
               <div className="flex items-center">
-                <span className="text-mortel-green text-lg font-inter font-semibold leading-[27px]">
-                  Services
-                </span>
+                <span className="etiquette">Services</span>
               </div>
-              <h2 className="text-white text-3xl md:text-5xl font-inter font-normal leading-tight">
-                Organisation des obsèques sans souci
-              </h2>
+              <h2 className="mortel-titre-hero text-white">Ce que nous faisons, vraiment</h2>
             </div>
-            <div className="flex-1 text-white text-lg font-inter font-normal leading-[27px]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
+            <div className="mortel-text text-white">
+              Nous accompagnons chaque famille dans ce moment difficile, avec une organisation simple, des démarches prises en charge, et une attention particulière portée aux proches. Rien n’est laissé au hasard. Vous n’êtes pas seuls.
             </div>
           </div>
 
           {/* Services en 3 colonnes */}
           <div className="flex flex-col gap-16">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              
+
+              {/* Bloc 1 */}
               <div className="flex flex-col gap-8">
                 <img 
                   className="w-full h-60 object-cover" 
@@ -37,14 +33,21 @@ const OrganisationSection = () => {
                 />
                 <div className="flex flex-col gap-6">
                   <h3 className="text-white text-2xl md:text-[32px] font-inter font-normal leading-tight">
-                    Coordination et logistique sans stress
+                    Démarches simplifiées
                   </h3>
-                  <p className="text-neutral-400 text-base font-inter font-normal leading-6">
-                    Nous gérons tous les intervenants pour un déroulement fluide.
+                  <p className="texte-normal">
+                    <b>Zéro paperasse, zéro stress</b>
+                    <br />
+                    Nous nous chargeons de toutes les formalités administratives, autorisations, et documents nécessaires. En toute transparence.
                   </p>
+                  <button className="flex items-center gap-2 text-white text-base font-inter font-normal leading-6 hover:text-mortel-green transition-colors">
+                    <span>En savoir plus</span>
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
                 </div>
               </div>
 
+              {/* Bloc 2 */}
               <div className="flex flex-col gap-8">
                 <img 
                   className="w-full h-60 object-cover" 
@@ -53,14 +56,21 @@ const OrganisationSection = () => {
                 />
                 <div className="flex flex-col gap-6">
                   <h3 className="text-white text-2xl md:text-[32px] font-inter font-normal leading-tight">
-                    Création d'hommages mémorables et touchants
+                    Organisation claire
                   </h3>
-                  <p className="text-neutral-400 text-base font-inter font-normal leading-6">
-                    Des hommages créatifs qui racontent une histoire.
+                  <p className="texte-normal">
+                    <b>Des propositions lisibles, sans surprises</b>
+                    <br />
+                    Nos propositions sont pensées pour s’adapter à vos besoins. Claires, justes, personnalisables. Et tout est pris en charge.
                   </p>
+                  <button className="flex items-center gap-2 text-white text-base font-inter font-normal leading-6 hover:text-mortel-green transition-colors">
+                    <span>En savoir plus</span>
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
                 </div>
               </div>
 
+              {/* Bloc 3 */}
               <div className="flex flex-col gap-8">
                 <img 
                   className="w-full h-60 object-cover" 
@@ -69,25 +79,21 @@ const OrganisationSection = () => {
                 />
                 <div className="flex flex-col gap-6">
                   <h3 className="text-white text-2xl md:text-[32px] font-inter font-normal leading-tight">
-                    Décorations durables et respectueuses de l'environnement
+                    Soutien aux proches
                   </h3>
-                  <p className="text-neutral-400 text-base font-inter font-normal leading-6">
-                    Nous utilisons des fleurs locales et compostables.
+                  <p className="texte-normal">
+                    <b>Une présence humaine et numérique</b>
+                    <br />
+                    Nous facilitons l’information des proches et créons un espace commun pour les souvenirs et les échanges.
                   </p>
+                  <button className="flex items-center gap-2 text-white text-base font-inter font-normal leading-6 hover:text-mortel-green transition-colors">
+                    <span>En savoir plus</span>
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
                 </div>
               </div>
-            </div>
-          </div>
 
-          {/* Boutons CTA */}
-          <div className="flex flex-col sm:flex-row items-center gap-6">
-            <button className="px-6 py-2.5 bg-mortel-green text-white text-base font-inter font-normal leading-6 hover:bg-mortel-green/90 transition-colors">
-              En savoir plus
-            </button>
-            <button className="flex items-center gap-2 text-white text-base font-inter font-normal leading-6 hover:text-mortel-green transition-colors">
-              <span>Contact</span>
-              <ChevronRight className="w-6 h-6" />
-            </button>
+            </div>
           </div>
         </div>
       </div>
