@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { ChevronRight, Clock, Users } from 'lucide-react';
-import anticiperImg from '../assets/anticiper.png'; // ajuste le chemin selon ta structure
+import anticiperImg from '../assets/anticiper.jpg'; // Utilisation de l'image existante
 
 const PrevoirSection = () => {
   return (
@@ -14,7 +15,7 @@ const PrevoirSection = () => {
               <img 
                  src={anticiperImg}
                 alt="Prévoir ses obsèques"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover rounded-[40px]"
               />
             </div>
 
@@ -28,10 +29,10 @@ const PrevoirSection = () => {
                 </div>
 
                 {/* Titre et intro */}
-                <h2 className="text-white text-2xl md:text-4xl font-normal font-inter leading-tight">
+                <h2 className="text-white text-2xl md:text-4xl font-normal font-sans leading-tight">
                   Anticiper pour alléger ceux que vous aimez
                 </h2>
-                <p className="text-white text-base font-normal font-inter leading-relaxed">
+                <p className="text-white text-base font-normal font-sans leading-relaxed">
                   Préparer vos volontés dès maintenant permet de garantir une organisation qui vous ressemble. Cela soulage également vos proches au moment où ils en ont le plus besoin.
                 </p>
               </div>
@@ -44,7 +45,7 @@ const PrevoirSection = () => {
                     <div className="w-12 h-12 flex items-center justify-center">
                       <Clock className="w-8 h-8 text-white" strokeWidth={1.5} />
                     </div>
-                    <h3 className="text-white text-lg font-normal font-inter leading-6">
+                    <h3 className="text-white text-lg font-normal font-sans leading-6">
                       Préparer maintenant
                     </h3>
                     <p className="texte-normal">
@@ -57,7 +58,7 @@ const PrevoirSection = () => {
                     <div className="w-12 h-12 flex items-center justify-center">
                       <Users className="w-8 h-8 text-white" strokeWidth={1.5} />
                     </div>
-                    <h3 className="text-white text-lg font-normal font-inter leading-6">
+                    <h3 className="text-white text-lg font-normal font-sans leading-6">
                       Soulager vos proches
                     </h3>
                     <p className="texte-normal">
@@ -72,7 +73,7 @@ const PrevoirSection = () => {
                 <button className="btn-principal">
                   Préparer
                 </button>
-                <button className="btn-secondaire">
+                <button className="btn-secondaire group">
                   <span>En savoir plus</span>
                   <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                 </button>
