@@ -1,6 +1,6 @@
+
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
-import orgaVideo from '../assets/bougie_bouge.jpg'; // Utilisation de l'image existante
 import procheImg from '../assets/proche.jpg'; // Utilisation de l'image existante
 import adminImg from '../assets/administratif_1.jpg'; // Utilisation de l'image existante
 
@@ -25,7 +25,7 @@ const OrganisationSection = () => {
             {/* Partie droite : Texte, centré verticalement */}
             <div className="w-full lg:w-2/3 flex items-center">
               <p className="mortel-text text-white">
-                Nous accompagnons chaque famille dans ce moment difficile, avec une organisation simple, des démarches prises en charge, et une attention particulière portée aux proches. Rien n’est laissé au hasard. Vous n’êtes pas seuls.
+                Nous accompagnons chaque famille dans ce moment difficile, avec une organisation simple, des démarches prises en charge, et une attention particulière portée aux proches. Rien n'est laissé au hasard. Vous n'êtes pas seuls.
               </p>
             </div>
           </div>
@@ -37,7 +37,7 @@ const OrganisationSection = () => {
               {/* Bloc 1 */}
               <div className="flex flex-col gap-8">
                 <img 
-                  className="w-full h-60 object-cover" 
+                  className="w-full h-60 object-cover rounded-[20px]" 
                   src={adminImg}
                   alt="Coordination et logistique"
                 />
@@ -60,8 +60,8 @@ const OrganisationSection = () => {
               {/* Bloc 2 */}
               <div className="flex flex-col gap-8">
                 <img 
-                  className="w-full h-60 object-cover" 
-                  src={orgaVideo}
+                  className="w-full h-60 object-cover rounded-[20px]" 
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop"
                   alt="Hommages mémorables"
                 />
                 <div className="flex flex-col gap-6">
@@ -71,7 +71,7 @@ const OrganisationSection = () => {
                   <p className="texte-normal">
                     <b>Des propositions lisibles, sans surprises</b>
                     <br />
-                    Nos propositions sont pensées pour s’adapter à vos besoins. Claires, justes, personnalisables. Et tout est pris en charge.
+                    Nos propositions sont pensées pour s'adapter à vos besoins. Claires, justes, personnalisables. Et tout est pris en charge.
                   </p>
                   <button className="btn-secondaire group">
                     <span>En savoir plus</span>
@@ -83,7 +83,7 @@ const OrganisationSection = () => {
               {/* Bloc 3 */}
               <div className="flex flex-col gap-8">
                 <img 
-                  className="w-full h-60 object-cover" 
+                  className="w-full h-60 object-cover rounded-[20px]" 
                   src={procheImg}
                   alt="Décorations durables"
                 />
@@ -94,7 +94,7 @@ const OrganisationSection = () => {
                   <p className="texte-normal">
                     <b>Une présence humaine et numérique</b>
                     <br />
-                    Nous facilitons l’information des proches et créons un espace commun pour les souvenirs et les échanges.
+                    Nous facilitons l'information des proches et créons un espace commun pour les souvenirs et les échanges.
                   </p>
                   <button className="btn-secondaire group">
                     <span>En savoir plus</span>
