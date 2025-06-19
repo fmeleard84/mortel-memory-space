@@ -54,7 +54,7 @@ const GestionAdminSection = () => {
             {/* Colonne droite - Image */}
             <div className="flex-1 h-[640px]">
               <video
-                  className="w-full h-full object-cover scale-[1.05]"
+                  className="w-full h-full object-cover scale-[1.3]"
                   autoPlay
                   muted
                   loop
