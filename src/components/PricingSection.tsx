@@ -161,7 +161,7 @@ const features = {
           </div>
 
           <div className="flex flex-col items-center gap-2 mt-6">
-            <Button className={`w-full transition-all duration-200 ${isSelected ? 'btn-principal' : 'btn-inactif'}`}>
+            <Button variant="ghost" className={`w-full transition-all duration-200 ${isSelected ? 'btn-principal' : 'btn-inactif'}`}>
               Choisir {title}
             </Button>
             <a href={`#details-${key}`} className="text-sm text-gray-300 hover:text-white underline">
