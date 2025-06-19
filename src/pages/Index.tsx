@@ -13,8 +13,6 @@ import NewFAQ from '../components/NewFAQ';
 import Footer from '../components/Footer';
 import PricingSection from '../components/PricingSection';
 import PrevoirSection from '../components/PrevoirSection';
-import verbatim1 from '../assets/verbatim_1.jpg';
-import verbatim2 from '../assets/verbatim_2.jpg';
 import verbatimVideo_1 from '../assets/verbatim_2.mp4';
 import verbatimVideo_2 from '../assets/verbatim_1.mp4';
 

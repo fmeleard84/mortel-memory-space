@@ -29,10 +29,10 @@ const PrevoirSection = () => {
                 </div>
 
                 {/* Titre et intro */}
-                <h2 className="text-white text-2xl md:text-4xl font-normal font-sans leading-tight">
+                <h2 className="mortel-titre-hero text-white">
                   Anticiper pour alléger ceux que vous aimez
                 </h2>
-                <p className="text-white text-base font-normal font-sans leading-relaxed">
+                <p className="mortel-text text-white">
                   Préparer vos volontés dès maintenant permet de garantir une organisation qui vous ressemble. Cela soulage également vos proches au moment où ils en ont le plus besoin.
                 </p>
               </div>

@@ -153,8 +153,8 @@
 
   .mortel-verbatim-name {
     font-family: 'Outfit', 'Inter', sans-serif;
-    font-weight: 200;
-    font-size: 0.45rem; /* Taille de police pour les titres principaux */
+    font-weight: 300;
+    font-size: 1.0rem; /* Taille de police pour les titres principaux */
     line-height: 1.2em;
     letter-spacing: -0.02em;
   }

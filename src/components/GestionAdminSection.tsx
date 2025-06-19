@@ -55,7 +55,7 @@ const GestionAdminSection = () => {
             <div className="flex-1 h-[640px]">
               <img 
                 className="w-full h-full object-cover" 
-                src="adminfImg"
+                src={adminfImg}
                 alt="Gestion administrative"
               />
             </div>

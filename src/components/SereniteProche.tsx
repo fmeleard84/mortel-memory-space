@@ -12,15 +12,15 @@ const SereniteProche = () => {
               <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center">
-                    <span className="text-mortel-blue text-lg font-inter font-semibold leading-[27px]">
+                    <span className="etiquette">
                       Sérénité
                     </span>
                   </div>
                   <div className="flex flex-col gap-6">
-                    <h2 className="text-white text-3xl md:text-5xl font-inter font-normal leading-tight">
+                    <h2 className="mortel-titre-hero text-white">
                       Une gestion complète et centralisée de vos proches
                     </h2>
-                    <p className="text-white text-lg font-inter font-normal leading-[27px]">
+                    <p className="mortel-text text-white">
                       Nous offrons une solution simple pour informer vos proches du décès et des arrangements funéraires. Grâce à notre plateforme, centralisez toutes les informations essentielles en un seul endroit.
                     </p>
                   </div>
@@ -31,7 +31,7 @@ const SereniteProche = () => {
                       <h3 className="text-white text-xl font-inter font-normal leading-7">
                         Gestion Simplifiée
                       </h3>
-                      <p className="text-neutral-400 text-base font-inter font-normal leading-6">
+                      <p className="mortel-text">
                         Informez facilement vos proches des détails importants concernant les obsèques.
                       </p>
                     </div>
@@ -39,7 +39,7 @@ const SereniteProche = () => {
                       <h3 className="text-white text-xl font-inter font-normal leading-7">
                         Espace Commun
                       </h3>
-                      <p className="text-neutral-400 text-base font-inter font-normal leading-6">
+                      <p className="mortel-text">
                         Un espace dédié pour partager souvenirs et informations avec vos proches.
                       </p>
                     </div>
@@ -47,12 +47,12 @@ const SereniteProche = () => {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row items-center gap-6">
-                <button className="px-6 py-2.5 bg-mortel-blue text-white text-base font-inter font-normal leading-6 hover:bg-mortel-blue/90 transition-colors">
-                  En savoir plus
+                <button className="btn-principal">
+                  Préparer
                 </button>
-                <button className="flex items-center gap-2 text-white text-base font-inter font-normal leading-6 hover:text-mortel-blue transition-colors">
-                  <span>S'inscrire</span>
-                  <ChevronRight className="w-6 h-6" />
+                <button className="btn-secondaire group">
+                  <span>En savoir plus</span>
+                  <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                 </button>
               </div>
             </div>
