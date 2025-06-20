@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import admin_video from '../assets/admini_simple.mp4';
@@ -16,7 +17,7 @@ const GestionAdminSection = () => {
                 <span className="etiquette mb-2">Sérénité</span>
 
                 {/* Vidéo en mobile uniquement */}
-                <div className="w-full h-[240px] md:h-0 md:hidden relative overflow-hidden">
+                <div className="w-full h-[240px] md:h-0 md:hidden relative overflow-hidden rounded-[20px]">
                   <video
                     className="absolute top-0 left-0 w-full h-full object-cover scale-[1.2]"
                     autoPlay
@@ -27,8 +28,6 @@ const GestionAdminSection = () => {
                     <source src={admin_video} type="video/mp4" />
                   </video>
                 </div>
-
-                </div>
               </div>
 
               {/* Texte + Liste */}
@@ -38,15 +37,15 @@ const GestionAdminSection = () => {
                 </h2>
                 <p className="mortel-text text-white text-[1.2em] leading-[1.4em] md:text-[1.4em] md:leading-[1.5em]">
                   Une fois la déclaration de décès établie par un professionnel habilité (médecin, établissement),
-                  nous prenons le relais pour organiser l’ensemble des démarches nécessaires.
-                  Vous n’avez rien à faire. Tout est pris en charge, et chaque étape est suivie en toute transparence.
+                  nous prenons le relais pour organiser l'ensemble des démarches nécessaires.
+                  Vous n'avez rien à faire. Tout est pris en charge, et chaque étape est suivie en toute transparence.
                 </p>
 
                 <div className="flex flex-col gap-2 pt-2">
                   <p className="text-white text-lg font-inter font-semibold">Ce que nous gérons :</p>
                   <ul className="texte-normal list-disc list-inside space-y-1">
                     <li>Transport du défunt</li>
-                    <li>Demandes d’autorisations (crémation, inhumation…)</li>
+                    <li>Demandes d'autorisations (crémation, inhumation…)</li>
                     <li>Coordination avec les mairies et services concernés</li>
                     <li>Suivi et documentation claire, au fil du processus</li>
                   </ul>
@@ -64,7 +63,7 @@ const GestionAdminSection = () => {
             </div>
 
             {/* En desktop uniquement : déplace la vidéo à droite */}
-            <div className="hidden md:flex flex-1 h-[640px] overflow-hidden relative rounded-xl">
+            <div className="hidden md:flex flex-1 h-[640px] overflow-hidden relative rounded-[40px]">
               <video
                 className="absolute top-0 left-0 w-full h-full object-cover scale-[1.2]"
                 autoPlay

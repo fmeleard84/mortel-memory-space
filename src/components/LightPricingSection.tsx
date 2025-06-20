@@ -55,82 +55,79 @@ const LightPricingSection = () => {
       : 'Paiement en 12 fois';
   };
 
+  const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
+    const isHovered = hoveredKey === key;
+    const isRecommended = key === 'presence';
+    const displayAsWhiteCard = isHovered || (isRecommended && !hoveredKey);
 
-const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
-  const isHovered = hoveredKey === key;
-  const isRecommended = key === 'presence';
-  const overrideRecommendation = hoveredKey && hoveredKey !== key;
-  const displayAsWhiteCard = isHovered || (isRecommended && !hoveredKey);
+    return (
+      <div
+        onMouseEnter={() => setHoveredKey(key)}
+        onMouseLeave={() => setHoveredKey(null)}
+        className={`group relative p-6 border rounded-xl cursor-pointer transition-all duration-500 ease-in-out
+        ${displayAsWhiteCard
+          ? 'bg-white text-black border-mortel-blue border-2 shadow-[0_0_25px_rgba(255,255,255,0.15)]'
+          : 'bg-mortel-dark-secondary text-white border-gray-700'}
+      `}
+      >
+        {/* Badge "Notre recommandation" */}
+        {isRecommended && !hoveredKey && (
+          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+            <span className="bg-mortel-blue text-white px-4 py-1 rounded-full text-xs font-medium">
+              Notre recommandation
+            </span>
+          </div>
+        )}
 
-  return (
-    <div
-      onMouseEnter={() => setHoveredKey(key)}
-      onMouseLeave={() => setHoveredKey(null)}
-      className={`group relative p-6 border rounded-xl cursor-pointer transition-all duration-500 ease-in-out
-      ${displayAsWhiteCard
-        ? 'bg-white text-black border-mortel-blue border-2 shadow-[0_0_25px_rgba(255,255,255,0.15)]'
-        : 'bg-mortel-dark-secondary text-white border-gray-700'}
-    `}
-    >
-      {/* Badge "Notre recommandation" */}
-      {isRecommended && !hoveredKey && (
-        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-          <span className="bg-mortel-blue text-white px-4 py-1 rounded-full text-xs font-medium">
-            Notre recommandation
-          </span>
-        </div>
-      )}
+        <div className="text-center flex flex-col items-center gap-4">
+          <h3 className="text-xl font-light uppercase">{title}</h3>
 
-      <div className="text-center flex flex-col items-center gap-4">
-        <h3 className="text-xl font-light uppercase">{title}</h3>
+          <Carousel className="w-full max-w-xs mx-auto">
+            <CarouselContent>
+              {propositionImages[key].map((image, index) => (
+                <CarouselItem key={index}>  
+                  <img src={image} alt={`${title} - Image ${index + 1}`} className="w-full h-[200px] object-cover rounded-[20px]" />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
 
-        <Carousel className="w-full max-w-xs mx-auto">
-          <CarouselContent>
-            {propositionImages[key].map((image, index) => (
-              <CarouselItem key={index}>
-                <img src={image} alt={`${title} - Image ${index + 1}`} className="w-full h-[200px] object-cover" />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+          <p className="text-sm">{descriptions[key]}</p>
 
-        <p className="text-sm">{descriptions[key]}</p>
+          <div className="text-3xl font-bold">
+            {formatPrice(calculatePrice(basePrices[key]))}
+          </div>
 
-        <div className="text-3xl font-bold">
-          {formatPrice(calculatePrice(basePrices[key]))}
-        </div>
+          <p className={`text-xs ${displayAsWhiteCard ? 'text-gray-500' : 'text-gray-400'}`}>
+            {getPaymentLabel()}
+          </p>
 
-        <p className={`text-xs ${displayAsWhiteCard ? 'text-gray-500' : 'text-gray-400'}`}>
-          {getPaymentLabel()}
-        </p>
-
-        {/* CTA Alignés avec chevron animé */}
-        <div className="flex justify-center gap-2 mt-6 w-full">
-
-          <Button
-            variant="ghost"
-            className={`btn-principal transition-all duration-300 px-4 ${
-              !displayAsWhiteCard ? 'btn-inactif' : ''
-            }`}
-          >
-            Choisir {title}
-          </Button>
-          <a
-            href={`#details-${key}`}
-            className={`btn-secondaire group ${
-              displayAsWhiteCard
-                ? 'text-gray-700 hover:text-black'
-                : 'text-gray-300 hover:text-white'
-            }`}
-          >
-            <span>Personnaliser</span>
-            <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
-          </a>
+          {/* CTA Alignés avec chevron animé */}
+          <div className="flex justify-center gap-2 mt-6 w-full">
+            <Button
+              variant="ghost"
+              className={`btn-principal transition-all duration-300 px-4 ${
+                !displayAsWhiteCard ? 'btn-inactif' : ''
+              }`}
+            >
+              Choisir {title}
+            </Button>
+            <a
+              href={`#details-${key}`}
+              className={`btn-secondaire group ${
+                displayAsWhiteCard
+                  ? 'text-gray-700 hover:text-black'
+                  : 'text-gray-300 hover:text-white'
+              }`}
+            >
+              <span>Personnaliser</span>
+              <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
   return (
     <section className="w-full bg-mortel-dark py-24 px-4">
@@ -173,7 +170,7 @@ const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
         <p className="mortel-text text-white text-center text-[1.1em] leading-[1.4em] md:text-[1.4em] md:leading-[1.5em]">
           Toutes nos propositions sont conçues avec la même exigence : qualité, dignité et respect des volontés de chacun. Elles incluent un accompagnement humain 24/7, la prise en charge complète des démarches administratives, une information fluide pour les proches, et un engagement sincère pour l'environnement. Notre transparence est totale : aucun frais caché, aucun supplément inattendu.<br />
           <a href="#valeurs" className="underline hover:text-mortel-blue transition">En savoir plus sur nos valeurs</a>.
-        </div>
+        </p>
       </div>
     </section>
   );
