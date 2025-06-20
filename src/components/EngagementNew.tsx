@@ -73,18 +73,19 @@ const EngagementSection = () => {
             const alignment = 'text-center'; // centré partout
 
             return (
-              <p
+             <p
                 key={index}
                 data-index={index}
                 ref={(el) => (refs.current[index] = el)}
+                style={{ transitionDelay: `${index * 500}ms` }}
                 className={`
-                    transition-all ease-in-out duration-[3000ms] delay-[500ms] transform
-                    text-2xl md:text-3xl font-light font-outfit ${alignment}
+                    will-change-transform transition-all ease-in-out duration-[3000ms] transform
+                    text-2xl md:text-3xl font-light font-outfit text-center
                     ${isVisible ? 'opacity-100 blur-0 translate-y-0' : 'opacity-0 blur-lg translate-y-16'}
-                    `}
-              >
+                `}
+                >
                 {value}
-              </p>
+                </p>
             );
           })}
         </div>
