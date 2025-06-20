@@ -100,7 +100,7 @@ const Footer = () => {
 
     {/* Bas du footer */}
     <div className="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-sm">
-      <p>© 2025 Mortel. Tous droits réservés.</p>
+      <p>© 2025 VAYA. Tous droits réservés.</p>
       <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 underline">
         <Link to="#">Politique de confidentialité</Link>
         <Link to="#">Conditions de service</Link>
