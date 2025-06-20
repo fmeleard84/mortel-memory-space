@@ -1,12 +1,11 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { ChevronRight } from 'lucide-react';
-import videoBackground from '../assets/proche_video.mp4';
+import videoBackground from '../assets/livre.mp4';
 
 const values = [
   'Écoresponsable',
   'Accessible',
   'Humain',
-  'Sécurisé',
   'Présence sincère',
   'Clarté des choix',
   'Respect du rythme',
@@ -57,7 +56,7 @@ const EngagementSection = () => {
       </video>
 
       {/* Contenu par-dessus */}
-      <div className="relative z-10 w-full min-h-[600px] flex flex-col items-center justify-center px-6 py-20 bg-black/30 backdrop-blur-sm rounded-t-[60px]">
+      <div className="relative z-10 w-full min-h-[600px] flex flex-col items-center justify-center px-6 py-20 bg-black/30 backdrop-blur-sm">
         {/* Bloc titre + texte */}
         <div className="text-center max-w-3xl mb-16">
           <h2 className="text-3xl md:text-5xl font-semibold mb-4">
@@ -69,7 +68,7 @@ const EngagementSection = () => {
         </div>
 
         {/* Liste des valeurs */}
-        <div className="flex flex-col gap-10 w-full max-w-3xl">
+        <div className="flex flex-col gap-5 w-full max-w-3xl">
           {values.map((value, index) => {
             const isVisible = visibleIndexes.includes(index);
             const alignment = 'text-center'; // centré partout
