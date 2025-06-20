@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import videoBackground from '../assets/livre.mp4';
@@ -69,29 +70,28 @@ const EngagementSection = () => {
         {/* Liste des valeurs */}
         <div className="flex flex-col gap-5 w-full max-w-3xl">
           {values.map((value, index) => {
-          const isVisible = visibleIndexes.includes(index);
+            const isVisible = visibleIndexes.includes(index);
 
-          return isVisible ? (
-            <p
-              key={index}
-              data-index={index}
-              ref={(el) => (refs.current[index] = el)}
-              className={`
-                animate-cloud-fade text-2xl md:text-3xl font-light font-outfit text-center
-              `}
-              style={{ animationDelay: `${index * 1500}ms` }}
-            >
-              {value}
-            </p>
-          ) : (
-            <div
-              key={index}
-              data-index={index}
-              ref={(el) => (refs.current[index] = el)}
-              className="h-[2em] w-full"
-            />
-          );
-        })}
+            return isVisible ? (
+              <p
+                key={index}
+                data-index={index}
+                ref={(el) => (refs.current[index] = el)}
+                className="animate-cloud-fade text-2xl md:text-3xl font-light font-outfit text-center"
+                style={{ animationDelay: `${index * 1500}ms` }}
+              >
+                {value}
+              </p>
+            ) : (
+              <div
+                key={index}
+                data-index={index}
+                ref={(el) => (refs.current[index] = el)}
+                className="h-[2em] w-full"
+              />
+            );
+          })}
+        </div>
 
         {/* Lien bas */}
         <div className="mt-16">
