@@ -54,50 +54,78 @@ const LightPricingSection = () => {
   };
 
   const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
-    const isSelected = key === 'presence' || hoveredKey === key;
+  const isRecommended = key === 'presence';
+  const isSelected = isRecommended || hoveredKey === key;
 
-    return (
-      <div
-        onMouseEnter={() => setHoveredKey(key)}
-        onMouseLeave={() => setHoveredKey(null)}
-        className={`group relative bg-mortel-dark-secondary p-6 border transition-all duration-300
-          ${isSelected ? 'border-2 border-mortel-blue shadow-[0_0_15px_rgba(255,255,255,0.2)]' : 'border-gray-700'}`}
-      >
-        {key === 'presence' && (
-          <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-            <span className="bg-mortel-blue text-white px-4 py-1 rounded-full text-xs font-medium">
-              Notre recommandation
-            </span>
-          </div>
-        )}
+  return (
+    <div
+      onMouseEnter={() => setHoveredKey(key)}
+      onMouseLeave={() => setHoveredKey(null)}
+      className={`group relative p-6 border transition-all duration-300
+        ${isRecommended
+          ? 'bg-white text-black border-mortel-blue border-2 shadow-[0_0_15px_rgba(0,0,0,0.1)]'
+          : 'bg-mortel-dark-secondary text-white border-gray-700'}`}
+    >
+      {isRecommended && (
+        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+          <span className="bg-mortel-blue text-white px-4 py-1 rounded-full text-xs font-medium">
+            Notre recommandation
+          </span>
+        </div>
+      )}
 
-        <div className="text-center flex flex-col items-center gap-4">
-          <h3 className="text-xl font-light uppercase text-white">{title}</h3>
-          <Carousel className="w-full max-w-xs mx-auto">
-            <CarouselContent>
-              {propositionImages[key].map((image, index) => (
-                <CarouselItem key={index}>
-                  <img src={image} alt={`${title} - Image ${index + 1}`} className="w-full h-[200px] object-cover" />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-          <p className="text-gray-300 text-sm">{descriptions[key]}</p>
-          <div className="text-3xl font-bold text-white">{formatPrice(calculatePrice(basePrices[key]))}</div>
-          <p className="text-xs text-gray-400">{getPaymentLabel()}</p>
+      <div className="text-center flex flex-col items-center gap-4">
+        <h3 className="text-xl font-light uppercase">{title}</h3>
 
-          <div className="flex flex-col items-center gap-2 mt-4 w-full">
-            <Button variant="ghost" className={`w-full transition-all duration-200 ${isSelected ? 'btn-principal' : 'btn-inactif'}`}>
-              Choisir {title}
-            </Button>
-            <a href={`#details-${key}`} className="text-sm text-gray-300 hover:text-white underline">
-              Personnaliser {title}
-            </a>
-          </div>
+        <Carousel className="w-full max-w-xs mx-auto">
+          <CarouselContent>
+            {propositionImages[key].map((image, index) => (
+              <CarouselItem key={index}>
+                <img src={image} alt={`${title} - Image ${index + 1}`} className="w-full h-[200px] object-cover" />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+
+        <p className="text-sm">
+          {descriptions[key]}
+        </p>
+
+        <div className="text-3xl font-bold">
+          {formatPrice(calculatePrice(basePrices[key]))}
+        </div>
+
+        <p className="text-xs text-gray-500">
+          {getPaymentLabel()}
+        </p>
+
+        <div className="flex flex-col items-center gap-2 mt-4 w-full">
+          <Button
+            variant="ghost"
+            className={`w-full transition-all duration-200 ${
+              isRecommended
+                ? 'bg-mortel-blue text-white hover:bg-mortel-blue/90'
+                : isSelected
+                ? 'btn-principal'
+                : 'btn-inactif'
+            }`}
+          >
+            Choisir {title}
+          </Button>
+
+          <a
+            href={`#details-${key}`}
+            className={`text-sm underline transition ${
+              isRecommended ? 'text-gray-700 hover:text-black' : 'text-gray-300 hover:text-white'
+            }`}
+          >
+            Personnaliser {title}
+          </a>
         </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
   return (
     <section className="w-full bg-mortel-dark py-24 px-4">

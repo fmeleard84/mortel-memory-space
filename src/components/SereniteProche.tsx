@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
-import procheImg from '../assets/proche.jpg'; // Utilisation de l'image existante
+import proche_video from '../assets/proche_video.mp4'; // Utilisation de l'image existante
 
 const SereniteProche = () => {
   return (
@@ -58,11 +58,15 @@ const SereniteProche = () => {
               </div>
             </div>
             <div className="flex-1">
-              <img 
-                className="w-full h-[640px] object-cover" 
-                src={procheImg}
-                alt="Gestion centralisée des proches"
-              />
+              <video
+              className="absolute top-0 left-0 w-full h-full object-cover scale-[1.2]"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src={proche_video} type="video/mp4" />
+            </video>
             </div>
           </div>
         </div>
