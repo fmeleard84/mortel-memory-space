@@ -66,7 +66,7 @@ const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
     <div
       onMouseEnter={() => setHoveredKey(key)}
       onMouseLeave={() => setHoveredKey(null)}
-      className={`group relative p-6 border rounded-xl transition-all duration-300 cursor-pointer
+      className={`group relative p-6 border transition-all duration-300 cursor-pointer
         ${displayAsWhiteCard
           ? 'bg-white text-black border-mortel-blue border-2 shadow-[0_0_25px_rgba(255,255,255,0.15)]'
           : 'bg-mortel-dark-secondary text-white border-gray-700'}
@@ -110,18 +110,21 @@ const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
             variant="ghost"
             className={`transition-all duration-200 px-4 ${
               displayAsWhiteCard
-                ? 'bg-mortel-blue text-white hover:bg-mortel-blue/90'
+                ? 'btn-principal text-white'
                 : 'btn-inactif'
             }`}
           >
             Choisir {title}
           </Button>
-
           <a
             href={`#details-${key}`}
-            className="btn-secondaire group text-sm flex items-center gap-2 px-4 py-2"
+            className={`group text-sm flex items-center gap-2 px-4 py-2 font-medium underline transition ${
+              displayAsWhiteCard
+                ? 'text-gray-700 hover:text-black'
+                : 'text-gray-300 hover:text-white'
+            }`}
           >
-            <span>Personnaliser {title}</span>
+            <span>Personnaliser</span>
             <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
           </a>
         </div>

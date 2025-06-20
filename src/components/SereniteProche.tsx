@@ -5,7 +5,7 @@ import proche_video from '../assets/proche_video.mp4'; // Utilisation de l'image
 
 const SereniteProche = () => {
   return (
-    <section id="proche" className="w-full bg-mortel-dark">
+    <section id="proche" className="w-full bg-black">
       <div className="w-full px-4 md:px-16 py-28">
         <div className="w-full max-w-[1280px] mx-auto flex flex-col gap-20">
           <div className="flex flex-col lg:flex-row items-center gap-20">
