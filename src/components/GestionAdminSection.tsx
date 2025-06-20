@@ -16,7 +16,7 @@ const GestionAdminSection = () => {
                 <span className="etiquette mb-2">Sérénité</span>
 
                 {/* ✅ Affichée en mobile aussi */}
-                <div className="w-full h-[240px] md:h-[640px] relative overflow-hidden rounded-xl">
+                <div className="w-full h-[240px] md:h-[640px] relative overflow-hidden">
                   <video
                     className="absolute top-0 left-0 w-full h-full object-cover scale-[1.2]"
                     autoPlay
