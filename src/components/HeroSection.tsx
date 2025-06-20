@@ -27,7 +27,7 @@ const HeroSection = () => {
         <div className="w-full flex flex-col-reverse lg:flex-row justify-center items-stretch h-full">
           
           {/* Colonne gauche - Texte */}
-          <div className="flex-1 flex items-center justify-center px-4 md:px-8 lg:pl-16 lg:pr-8">
+          <div className="flex-1 flex items-center justify-center px-4 md:px-8 lg:pl-16 lg:pr-8 mt-5 lg:mt-0">
             <div className="w-full max-w-[560px] flex flex-col justify-start items-start gap-6 lg:gap-8">
               <h1 className="mortel-titre-hero text-white">
                 VĀYA, le service funéraire clair, humain et sans détour.
