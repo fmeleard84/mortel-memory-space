@@ -159,13 +159,34 @@
 }
 
 /* Animation dans la vidéo */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: scale(0.98); }
-  100% { opacity: 1; transform: scale(1); }
+@keyframes cloudFade {
+  0% {
+    opacity: 0;
+    filter: blur(16px);
+    transform: scale(0.95);
+  }
+  25% {
+    opacity: 0.5;
+    filter: blur(12px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+  }
+  75% {
+    opacity: 0.5;
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(20px);
+    transform: scale(1.05);
+  }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-in-out;
+.animate-cloud-fade {
+  animation: cloudFade 6s ease-in-out forwards;
 }
 
 

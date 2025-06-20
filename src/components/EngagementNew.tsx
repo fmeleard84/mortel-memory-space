@@ -49,9 +49,12 @@ const EngagementSection = () => {
 
             {/* Overlay texte animé */}
             <div className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-              <p className="text-white text-2xl md:text-4xl font-medium animate-fade-in">
-                {values[currentIndex]}
-              </p>
+            <p
+            key={currentIndex} // important pour réinitialiser l’animation à chaque mot
+            className="text-white text-2xl md:text-4xl font-medium animate-cloud-fade absolute"
+            >
+            {values[currentIndex]}
+            </p>
             </div>
           </div>
 
