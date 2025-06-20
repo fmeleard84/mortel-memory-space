@@ -106,6 +106,7 @@ const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
 
         {/* CTA Alignés avec chevron animé */}
         <div className="flex justify-center gap-2 mt-6 w-full">
+
           <Button
             variant="ghost"
             className={`transition-all duration-200 px-4 ${
@@ -118,14 +119,14 @@ const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
           </Button>
           <a
             href={`#details-${key}`}
-            className={`group text-sm flex items-center gap-2 px-4 py-2 font-medium underline transition ${
+            className={`btn-secondaire group ${
               displayAsWhiteCard
                 ? 'text-gray-700 hover:text-black'
                 : 'text-gray-300 hover:text-white'
             }`}
           >
             <span>Personnaliser</span>
-            <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+            <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
           </a>
         </div>
       </div>

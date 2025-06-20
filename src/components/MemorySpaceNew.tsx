@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import memory_video from '../assets/memory_video.mp4'; // Utilisation de l'image existante
 
 const MemorySpaceNew = () => {
   return (
@@ -63,11 +64,15 @@ const MemorySpaceNew = () => {
               </div>
             </div>
             <div className="flex-1">
-              <img 
-                className="w-full h-[640px] object-cover" 
-                src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=640&fit=crop"
-                alt="Espace mémoire"
-              />
+              <video
+              className="absolute top-0 left-0 w-full h-full object-cover scale-[1.2]"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src={memory_video} type="video/mp4" />
+            </video>
             </div>
           </div>
         </div>
