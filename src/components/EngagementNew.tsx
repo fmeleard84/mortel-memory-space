@@ -3,12 +3,11 @@ import { ChevronRight } from 'lucide-react';
 import videoBackground from '../assets/livre.mp4';
 
 const values = [
-  'Écoresponsable',
-  'Accessible',
-  'Humain',
   'Présence sincère',
   'Clarté des choix',
   'Respect du rythme',
+  'Écoresponsable',
+  'Humain',
 ];
 
 const EngagementSection = () => {
@@ -56,7 +55,7 @@ const EngagementSection = () => {
       </video>
 
       {/* Contenu par-dessus */}
-      <div className="relative z-10 w-full min-h-[600px] flex flex-col items-center justify-center px-6 py-20 bg-black/30 backdrop-blur-sm">
+      <div className="relative z-10 w-full min-h-[600px] flex flex-col items-center justify-center px-6 py-20 bg-black/30">
         {/* Bloc titre + texte */}
         <div className="text-center max-w-3xl mb-16">
           <h2 className="text-3xl md:text-5xl font-semibold mb-4">
@@ -78,8 +77,8 @@ const EngagementSection = () => {
                 key={index}
                 data-index={index}
                 ref={(el) => (refs.current[index] = el)}
-                className={`transition-all duration-1000 ease-out transform text-2xl md:text-3xl font-light ${alignment}
-                  ${isVisible ? 'opacity-100 blur-0 translate-y-0' : 'opacity-0 blur-md translate-y-12'}
+                className={`transition-all duration-2000 ease-in-out transform text-2xl md:text-3xl font-light font-outfit ${alignment}
+                  ${isVisible ? 'opacity-100 blur-0 translate-y-0' : 'opacity-0 blur-md translate-y-16'}
                 `}
               >
                 {value}
