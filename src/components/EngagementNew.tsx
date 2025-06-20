@@ -73,15 +73,14 @@ const EngagementSection = () => {
             const alignment = 'text-center'; // centré partout
 
             return (
-             <p
+                <p
                 key={index}
                 data-index={index}
                 ref={(el) => (refs.current[index] = el)}
-                style={{ transitionDelay: `${index * 500}ms` }}
+                style={{ animationDelay: `${index * 1500}ms` }}
                 className={`
-                    will-change-transform transition-all ease-in-out duration-[3000ms] transform
+                    animate-cloud-fade
                     text-2xl md:text-3xl font-light font-outfit text-center
-                    ${isVisible ? 'opacity-100 blur-0 translate-y-0' : 'opacity-0 blur-lg translate-y-16'}
                 `}
                 >
                 {value}

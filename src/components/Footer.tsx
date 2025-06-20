@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Facebook, Instagram, Twitter, Linkedin, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logoMortel from '../assets/Mortel_logo_little.png';
+import logoMortel from '../assets/logo_png.png';
 
 const Footer = () => {
   const [email, setEmail] = useState('');

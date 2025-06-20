@@ -162,31 +162,31 @@
 @keyframes cloudFade {
   0% {
     opacity: 0;
-    filter: blur(16px);
-    transform: scale(0.95);
+    filter: blur(20px);
+    transform: translateY(40px) scale(0.95);
   }
-  25% {
-    opacity: 0.5;
+  20% {
+    opacity: 0.4;
     filter: blur(12px);
   }
   50% {
     opacity: 1;
-    filter: blur(0px);
-    transform: scale(1);
+    filter: blur(0);
+    transform: translateY(0px) scale(1);
   }
-  75% {
-    opacity: 0.5;
-    filter: blur(10px);
+  80% {
+    opacity: 1;
+    filter: blur(0px);
   }
   100% {
-    opacity: 0;
-    filter: blur(20px);
-    transform: scale(1.05);
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0px);
   }
 }
 
 .animate-cloud-fade {
-  animation: cloudFade 6s ease-in-out forwards;
+  animation: cloudFade 4s ease-in-out forwards;
 }
 
 
