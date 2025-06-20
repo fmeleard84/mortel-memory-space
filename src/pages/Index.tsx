@@ -2,6 +2,7 @@ import React from 'react';
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import EngagementSection from '../components/EngagementSection';
+import EngagementNew from '../components/EngagementNew';
 import NewVerbatimSection from '../components/NewVerbatimSection';
 import GestionAdminSection from '../components/GestionAdminSection';
 import OrganisationSection from '../components/OrganisationSection';
@@ -64,6 +65,7 @@ const Index = () => {
       <MemorySpaceNew />
       <NosPlus />
       <EngagementSection />
+      <EngagementNew />
       <PrevoirSection />
       <NewFAQ 
         faqItems={homepageFAQItems}
