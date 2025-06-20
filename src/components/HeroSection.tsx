@@ -22,7 +22,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="hero w-screen flex flex-col justify-start items-start">
+    <section className="hero w-full flex flex-col justify-start items-start">
       <div className="w-full h-full bg-[#0e0e0e]">
         <div className="w-full flex flex-col lg:flex-row justify-center items-stretch h-full">
           
