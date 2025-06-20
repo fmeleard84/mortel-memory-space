@@ -22,14 +22,14 @@ const EngagementSection = () => {
   return (
     <section className="bg-white w-full py-24 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="bg-black rounded-3xl px-6 md:px-20 py-20 flex flex-col items-center gap-12 shadow-2xl">
+        <div className="bg-black px-6 md:px-20 py-20 flex flex-col items-center gap-12">
           
           {/* Titre et texte */}
           <div className="text-center space-y-6">
-            <h2 className="text-3xl md:text-5xl font-semibold text-white">
+            <h2 className="mortel-titre-hero text-white">
               Nos convictions guident nos actions
             </h2>
-            <p className="text-lg text-white max-w-3xl mx-auto">
+            <p className="mortel-text text-white text-[1.2em] leading-[1.4em] md:text-[1.4em] md:leading-[1.5em]">
               Nous croyons en une approche écoresponsable et humaine. Chaque étape de notre service est pensée pour respecter vos valeurs.
             </p>
           </div>
@@ -57,10 +57,10 @@ const EngagementSection = () => {
 
           {/* Lien bas */}
           <div className="flex items-center gap-2 group cursor-pointer transition-opacity hover:opacity-80">
-            <span className="text-mortel-violet text-lg font-medium">
-              Découvrir nos valeurs
-            </span>
-            <ChevronRight className="text-mortel-violet w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            <button className="btn-secondaire group">
+                <span>Nos valeurs</span>
+                <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+            </button>
           </div>
         </div>
       </div>
