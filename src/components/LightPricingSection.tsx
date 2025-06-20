@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 import { Button } from './ui/button';
+import { ChevronRight } from 'lucide-react';
 
 const basePrices = {
   epure: 2850,
@@ -54,7 +55,8 @@ const LightPricingSection = () => {
       : 'Paiement en 12 fois';
   };
 
-  const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
+
+const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
   const isHovered = hoveredKey === key;
   const isRecommended = key === 'presence';
   const overrideRecommendation = hoveredKey && hoveredKey !== key;
@@ -102,7 +104,7 @@ const LightPricingSection = () => {
           {getPaymentLabel()}
         </p>
 
-        {/* CTA Alignés */}
+        {/* CTA Alignés avec chevron animé */}
         <div className="flex justify-center gap-2 mt-6 w-full">
           <Button
             variant="ghost"
@@ -112,18 +114,15 @@ const LightPricingSection = () => {
                 : 'btn-inactif'
             }`}
           >
-            Choisir
+            Choisir {title}
           </Button>
 
           <a
             href={`#details-${key}`}
-            className={`text-sm px-4 py-2 rounded-md font-medium underline transition ${
-              displayAsWhiteCard
-                ? 'text-gray-700 hover:text-black'
-                : 'text-gray-300 hover:text-white'
-            }`}
+            className="btn-secondaire group text-sm flex items-center gap-2 px-4 py-2"
           >
-            Personnaliser
+            <span>Personnaliser {title}</span>
+            <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
           </a>
         </div>
       </div>

@@ -59,14 +59,14 @@ const SereniteProche = () => {
             </div>
             <div className="flex-1">
               <video
-              className="absolute top-0 left-0 w-full h-full object-cover scale-[1.2]"
-              autoPlay
-              muted
-              loop
-              playsInline
-            >
-              <source src={proche_video} type="video/mp4" />
-            </video>
+                className="w-full h-full object-cover scale-[1.2]"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src={proche_video} type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
