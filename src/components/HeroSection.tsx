@@ -32,7 +32,7 @@ const HeroSection = () => {
               <h1 className="mortel-titre-hero text-white">
                 VĀYA, le service funéraire clair, humain et sans détour.
               </h1>
-              <p className="mortel-text text-white text-[1.3em] leading-[1.6em] md:text-[1.2em] md:leading-[1.4em]">
+              <p className="mortel-text text-white text-[1.2em] leading-[1.4em] md:text-[1.4em] md:leading-[1.5em]">
                 Crémation, démarches, accompagnement : on s'occupe de tout, de A à Z.
               </p>
 
