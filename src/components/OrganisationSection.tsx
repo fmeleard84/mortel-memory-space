@@ -11,7 +11,7 @@ const OrganisationSection = () => {
       <div className="w-full px-4 md:px-16 pt-12 md:pt-28 pb-20 md:pb-28">
         <div className="w-full max-w-[1280px] mx-auto flex flex-col gap-10 md:gap-20">
           {/* En-tête */}
-          <div className="flex flex-col lg:flex-row gap-20">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-20">
             {/* Partie gauche : Titre */}
             <div className="w-full lg:w-5/12 flex items-start">
               <div className="flex flex-col gap-4">
@@ -84,7 +84,7 @@ const OrganisationSection = () => {
               </div>
 
               {/* Bloc 3 */}
-              <div className="flex flex-col gap-6 pb-4">
+              <div className="flex flex-col gap-4">
                 <img 
                   className="w-full h-60 object-cover" 
                   src={procheImg}
