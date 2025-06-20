@@ -24,7 +24,7 @@ const OrganisationSection = () => {
 
             {/* Partie droite : Texte, centré verticalement */}
             <div className="w-full lg:w-7/12 flex items-start">
-              <p className="mortel-text text-white text-[1.2em] leading-[1.4em] md:text-[1.4em] md:leading-[1.5em]">
+              <p className="mortel-text text-white text-[1.1em] leading-[1.4em] md:text-[1.4em] md:leading-[1.5em]">
                 Nous accompagnons chaque famille dans ce moment difficile, avec une organisation simple, des démarches prises en charge, et une attention particulière portée aux proches. Rien n'est laissé au hasard. Vous n'êtes pas seuls.
               </p>
             </div>

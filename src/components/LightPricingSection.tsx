@@ -170,7 +170,7 @@ const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
         </div>
 
         {/* Texte de bas de page */}
-        <div className="text-center text-white max-w-4xl mx-auto text-lg leading-relaxed mt-12">
+        <p className="mortel-text text-white text-center text-[1.1em] leading-[1.4em] md:text-[1.4em] md:leading-[1.5em]">
           Toutes nos propositions sont conçues avec la même exigence : qualité, dignité et respect des volontés de chacun. Elles incluent un accompagnement humain 24/7, la prise en charge complète des démarches administratives, une information fluide pour les proches, et un engagement sincère pour l'environnement. Notre transparence est totale : aucun frais caché, aucun supplément inattendu.<br />
           <a href="#valeurs" className="underline hover:text-mortel-blue transition">En savoir plus sur nos valeurs</a>.
         </div>
