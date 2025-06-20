@@ -1,85 +1,50 @@
 import React from 'react';
-import { ChevronRight, Heart, Users, Headphones } from 'lucide-react';
+import { HeartHandshake, Users2, Sparkles } from 'lucide-react';
 
-const NosPlus = () => {
-  const features = [
+const EngagementSection = () => {
+  const items = [
     {
-      icon: Heart,
-      title: "Mur hommage digital",
-      subtitle: "Un espace pour partager souvenirs et émotions.",
-      description: "Partagez uniquement avec vos proches pour préserver l'intimité des souvenirs.",
-      ctaText: "Découvrir"
+      icon: <HeartHandshake className="w-8 h-8 text-mortel-violet" />,
+      title: "Une présence significative",
+      text: "Nous nous engageons à vous accompagner avec sincérité et clarté, à chaque étape.",
     },
     {
-      icon: Users,
-      title: "Jumeau numérique",
-      subtitle: "Un hommage vivant basé sur vos souvenirs.",
-      description: "Un hommage respectueux et personnalisé, accessible à ceux qui le souhaitent.",
-      ctaText: "Explorer"
+      icon: <Users2 className="w-8 h-8 text-mortel-violet" />,
+      title: "Des proches informés",
+      text: "Un espace privé et centralisé pour prévenir vos proches et rassembler les hommages.",
     },
     {
-      icon: Headphones,
-      title: "À votre écoute 24/7",
-      subtitle: "Nous allions humanité et technologie pour un hommage authentique.",
-      description: "Mortel redéfinit l'hommage en intégrant des solutions numériques innovantes.",
-      ctaText: "En savoir plus"
-    }
+      icon: <Sparkles className="w-8 h-8 text-mortel-violet" />,
+      title: "Un soutien qui dure",
+      text: "Des ressources et un accompagnement humain, même après la cérémonie.",
+    },
   ];
 
   return (
-    <section className="w-full bg-mortel-dark-secondary">
-      <div className="w-full px-4 md:px-16 py-28">
-        <div className="w-full max-w-[1280px] mx-auto flex flex-col gap-12">
-          
-          {/* Header */}
-          <div className="flex justify-center">
-            <span className="etiquette">Nos plus</span>
-          </div>
+    <section className="w-full bg-black py-20">
+      <div className="max-w-7xl mx-auto px-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
+          Un service enrichi pour créer du lien durable.
+        </h2>
+        <p className="text-lg text-gray-400 mb-12">
+          Pensé pour alléger la charge, et renforcer les liens avec dignité.
+        </p>
 
-          {/* Main Title */}
-          <div className="w-full max-w-[768px] mx-auto">
-            <h2 className="text-center mortel-titre-hero text-white">
-              Un service enrichi pour créer du lien durable.
-            </h2>
-          </div>
-
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="flex flex-col items-center gap-8">
-                
-                {/* Icon */}
-                <div className="w-12 h-12 flex items-center justify-center">
-                  <feature.icon className="w-10 h-10 text-white" strokeWidth={1.5} />
-                </div>
-
-                {/* Content */}
-                <div className="flex flex-col gap-6 text-center">
-                  <h3 className="text-mortel-blue text-2xl font-bold font-outfit leading-loose mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="mortel-text text-white">
-                    {feature.subtitle}
-                  </p>
-                  <p className="texte-normal">
-                    {feature.description}
-                  </p>
-                </div>
-
-                {/* CTA */}
-                <div className="flex justify-center">
-                  <button className="btn-secondaire group">
-                    <span>{feature.ctaText}</span>
-                    <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="grid md:grid-cols-3 gap-10">
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className="bg-mortel-dark-secondary rounded-2xl p-8 text-left shadow-lg hover:scale-[1.02] transition-all duration-300"
+            >
+              <div className="mb-6">{item.icon}</div>
+              <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+              <p className="text-gray-400">{item.text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 };
 
-export default NosPlus;
+export default EngagementSection;
