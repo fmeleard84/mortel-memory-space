@@ -2,6 +2,7 @@
 import React, { useLayoutEffect, useState } from 'react';
 import hpI3 from '../assets/hp_i_3.jpg';
 import hpI4 from '../assets/hp_i_4.jpg';
+import videoHP from '../assets/hero_hp.mp4';
 import { ChevronRight, Clock, Users } from 'lucide-react';
 
 const HeroSection = () => {
@@ -52,12 +53,15 @@ const HeroSection = () => {
 
           {/* Colonne droite - Image */}
           <div className="flex-1 h-full max-h-full overflow-hidden">
-            <img 
-              className="w-full h-full object-cover object-center" 
-              src={randomImage}
-              alt="Service funéraire serein"
-              loading="eager"
-            />
+            <video
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src={videoHP} type="video/mp4" />
+            </video>
           </div>
         </div>
       </div>
