@@ -65,8 +65,9 @@ export default {
 				// Couleurs Mortel - Charte graphique
 				'mortel-dark': '#191919',
 				'mortel-dark-secondary': '#202020',
-				'mortel-blue': '#30B0C7',
-				'mortel-green': '#B4CB2A',
+				//'mortel-blue': '#30B0C7',
+				'mortel-blue': '#f424f4',
+              'mortel-green': '#B4CB2A',
 				'mortel-violet': '#CB2AB4'
 			},
 			fontFamily: {
