@@ -39,10 +39,10 @@ const EngagementSection = () => {
               <span className="etiquette">Engagements</span>
             </div>
             <div className="flex flex-col gap-6">
-              <h2 className="text-center text-white text-3xl md:text-5xl font-inter font-normal leading-tight">
+              <h2 className="text-center mortel-titre-hero text-white">
                 Nos convictions guident nos actions
               </h2>
-              <p className="text-center texte-normal max-w-[640px] mx-auto">
+              <p className="mortel-text text-white text-center">
                 Nous croyons en une approche écoresponsable et humaine. Chaque étape de notre service est pensée pour respecter vos valeurs.
               </p>
             </div>
@@ -104,9 +104,9 @@ const EngagementSection = () => {
             <button className="btn-principal">
               En savoir plus
             </button>
-            <button className="btn-secondaire">
+            <button className="btn-secondaire group">
               <span>Contact</span>
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
             </button>
           </div>
         </div>
