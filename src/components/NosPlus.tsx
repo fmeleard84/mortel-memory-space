@@ -38,7 +38,7 @@ const NosPlus = () => {
 
           {/* Main Title */}
           <div className="w-full max-w-[768px] mx-auto">
-            <h2 className="text-center text-white text-3xl md:text-5xl font-normal font-outfit leading-tight">
+            <h2 className="text-center mortel-titre-hero text-white">
               Un service enrichi pour créer du lien durable.
             </h2>
           </div>
@@ -58,7 +58,7 @@ const NosPlus = () => {
                   <h3 className="text-mortel-blue text-2xl font-bold font-outfit leading-loose mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-white text-2xl font-normal font-outfit leading-loose">
+                  <p className="mortel-text text-white">
                     {feature.subtitle}
                   </p>
                   <p className="texte-normal">
@@ -68,9 +68,9 @@ const NosPlus = () => {
 
                 {/* CTA */}
                 <div className="flex justify-center">
-                  <button className="btn-secondaire">
+                  <button className="btn-secondaire group">
                     <span>{feature.ctaText}</span>
-                    <ChevronRight className="w-6 h-6" />
+                    <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                   </button>
                 </div>
               </div>
