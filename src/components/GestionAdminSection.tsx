@@ -15,8 +15,8 @@ const GestionAdminSection = () => {
               <div className="flex flex-col gap-4">
                 <span className="etiquette mb-2">Sérénité</span>
 
-                {/* ✅ Affichée en mobile aussi */}
-                <div className="w-full h-[240px] md:h-[640px] relative overflow-hidden">
+                {/* Vidéo en mobile uniquement */}
+                <div className="w-full h-[240px] md:h-0 md:hidden relative overflow-hidden">
                   <video
                     className="absolute top-0 left-0 w-full h-full object-cover scale-[1.2]"
                     autoPlay
@@ -27,6 +27,8 @@ const GestionAdminSection = () => {
                     <source src={admin_video} type="video/mp4" />
                   </video>
                 </div>
+
+                </div>
               </div>
 
               {/* Texte + Liste */}
@@ -34,7 +36,7 @@ const GestionAdminSection = () => {
                 <h2 className="mortel-titre-hero text-white">
                   Démarches administratives simplifiées : nous gérons tout pour vous.
                 </h2>
-                <p className="mortel-text text-white">
+                <p className="mortel-text text-white text-[1.2em] leading-[1.4em] md:text-[1.4em] md:leading-[1.5em]">
                   Une fois la déclaration de décès établie par un professionnel habilité (médecin, établissement),
                   nous prenons le relais pour organiser l’ensemble des démarches nécessaires.
                   Vous n’avez rien à faire. Tout est pris en charge, et chaque étape est suivie en toute transparence.
