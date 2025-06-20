@@ -57,10 +57,10 @@ const EngagementSection = () => {
       </video>
 
       {/* Contenu par-dessus */}
-      <div className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center px-6 py-32 bg-black/80 backdrop-blur-sm rounded-t-[60px]">
+      <div className="relative z-10 w-full min-h-[600px] flex flex-col items-center justify-center px-6 py-20 bg-black/30 backdrop-blur-sm rounded-t-[60px]">
         {/* Bloc titre + texte */}
-        <div className="text-center max-w-3xl mb-24">
-          <h2 className="text-3xl md:text-5xl font-semibold mb-6">
+        <div className="text-center max-w-3xl mb-16">
+          <h2 className="text-3xl md:text-5xl font-semibold mb-4">
             Nos convictions guident nos actions
           </h2>
           <p className="text-lg md:text-xl">
@@ -69,10 +69,10 @@ const EngagementSection = () => {
         </div>
 
         {/* Liste des valeurs */}
-        <div className="flex flex-col gap-24 w-full max-w-3xl">
+        <div className="flex flex-col gap-10 w-full max-w-3xl">
           {values.map((value, index) => {
             const isVisible = visibleIndexes.includes(index);
-            const alignment = index % 2 === 0 ? 'text-left' : 'text-right';
+            const alignment = 'text-center'; // centré partout
 
             return (
               <p
@@ -90,7 +90,7 @@ const EngagementSection = () => {
         </div>
 
         {/* Lien bas */}
-        <div className="mt-24">
+        <div className="mt-16">
           <button className="btn-secondaire group">
             <span>Nos valeurs</span>
             <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
