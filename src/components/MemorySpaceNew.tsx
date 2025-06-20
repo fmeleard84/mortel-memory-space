@@ -65,7 +65,7 @@ const MemorySpaceNew = () => {
             </div>
             <div className="flex-1">
               <video
-                className="w-full h-full object-cover scale-[1.2]"
+                className="w-full h-full object-cover"
                 autoPlay
                 muted
                 loop
