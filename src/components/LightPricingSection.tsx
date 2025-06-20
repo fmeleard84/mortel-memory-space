@@ -66,11 +66,11 @@ const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
     <div
       onMouseEnter={() => setHoveredKey(key)}
       onMouseLeave={() => setHoveredKey(null)}
-      className={`group relative p-6 border transition-all duration-300 cursor-pointer
-        ${displayAsWhiteCard
-          ? 'bg-white text-black border-mortel-blue border-2 shadow-[0_0_25px_rgba(255,255,255,0.15)]'
-          : 'bg-mortel-dark-secondary text-white border-gray-700'}
-      `}
+      className={`group relative p-6 border rounded-xl cursor-pointer transition-all duration-500 ease-in-out
+      ${displayAsWhiteCard
+        ? 'bg-white text-black border-mortel-blue border-2 shadow-[0_0_25px_rgba(255,255,255,0.15)]'
+        : 'bg-mortel-dark-secondary text-white border-gray-700'}
+    `}
     >
       {/* Badge "Notre recommandation" */}
       {isRecommended && !hoveredKey && (
@@ -109,10 +109,8 @@ const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
 
           <Button
             variant="ghost"
-            className={`transition-all duration-200 px-4 ${
-              displayAsWhiteCard
-                ? 'btn-principal text-white'
-                : 'btn-inactif'
+            className={`btn-principal transition-all duration-300 px-4 ${
+              !displayAsWhiteCard ? 'btn-inactif' : ''
             }`}
           >
             Choisir {title}
