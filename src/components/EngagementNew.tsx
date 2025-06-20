@@ -69,25 +69,29 @@ const EngagementSection = () => {
         {/* Liste des valeurs */}
         <div className="flex flex-col gap-5 w-full max-w-3xl">
           {values.map((value, index) => {
-            const isVisible = visibleIndexes.includes(index);
-            const alignment = 'text-center'; // centré partout
+          const isVisible = visibleIndexes.includes(index);
 
-            return (
+          return isVisible ? (
             <p
               key={index}
               data-index={index}
               ref={(el) => (refs.current[index] = el)}
               className={`
-                text-2xl md:text-3xl font-light font-outfit text-center
-                ${visibleIndexes.includes(index) ? 'animate-cloud-fade' : 'opacity-0'}
+                animate-cloud-fade text-2xl md:text-3xl font-light font-outfit text-center
               `}
-              style={visibleIndexes.includes(index) ? { animationDelay: `${index * 1500}ms` } : {}}
+              style={{ animationDelay: `${index * 1500}ms` }}
             >
               {value}
             </p>
-            );
-          })}
-        </div>
+          ) : (
+            <div
+              key={index}
+              data-index={index}
+              ref={(el) => (refs.current[index] = el)}
+              className="h-[2em] w-full"
+            />
+          );
+        })}
 
         {/* Lien bas */}
         <div className="mt-16">
