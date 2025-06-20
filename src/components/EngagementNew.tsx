@@ -61,7 +61,7 @@ const EngagementSection = () => {
           <h2 className="text-3xl md:text-5xl font-semibold mb-4">
             Nos convictions guident nos actions
           </h2>
-          <p className="text-lg md:text-xl">
+          <p className="mortel-text text-white text-[1.2em] leading-[1.4em] md:text-[1.4em] md:leading-[1.5em]">
             Nous croyons en une approche écoresponsable et humaine. Chaque étape de notre service est pensée pour respecter vos valeurs.
           </p>
         </div>
@@ -77,9 +77,11 @@ const EngagementSection = () => {
                 key={index}
                 data-index={index}
                 ref={(el) => (refs.current[index] = el)}
-                className={`transition-all duration-2000 ease-in-out transform text-2xl md:text-3xl font-light font-outfit ${alignment}
-                  ${isVisible ? 'opacity-100 blur-0 translate-y-0' : 'opacity-0 blur-md translate-y-16'}
-                `}
+                className={`
+                    transition-all ease-in-out duration-[3000ms] delay-[500ms] transform
+                    text-2xl md:text-3xl font-light font-outfit ${alignment}
+                    ${isVisible ? 'opacity-100 blur-0 translate-y-0' : 'opacity-0 blur-lg translate-y-16'}
+                    `}
               >
                 {value}
               </p>

@@ -64,7 +64,6 @@ const Index = () => {
       />
       <MemorySpaceNew />
       <NosPlus />
-      <EngagementSection />
       <EngagementNew />
       <PrevoirSection />
       <NewFAQ 
