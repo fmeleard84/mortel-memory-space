@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 import { Button } from './ui/button';
@@ -169,7 +170,8 @@ const LightPricingSection = () => {
 
         {/* Texte de bas de page */}
         <div className="text-center text-white max-w-4xl mx-auto text-lg leading-relaxed mt-12">
-          Toutes nos propositions sont conçues avec la même exigence : qualité, dignité et respect des volontés de chacun. Elles incluent un accompagnement humain 24/7, la prise en charge complète des démarches administratives, une information fluide pour les proches, et un engagement sincère pour l’environnement. Notre transparence est totale : aucun frais caché, aucun supplément inattendu.<br><a href="#valeurs" className="underline hover:text-mortel-blue transition">En savoir plus sur nos valeurs</a></br>.
+          Toutes nos propositions sont conçues avec la même exigence : qualité, dignité et respect des volontés de chacun. Elles incluent un accompagnement humain 24/7, la prise en charge complète des démarches administratives, une information fluide pour les proches, et un engagement sincère pour l'environnement. Notre transparence est totale : aucun frais caché, aucun supplément inattendu.<br />
+          <a href="#valeurs" className="underline hover:text-mortel-blue transition">En savoir plus sur nos valeurs</a>.
         </div>
       </div>
     </section>
