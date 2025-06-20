@@ -17,7 +17,7 @@ const GestionAdminSection = () => {
                 <span className="etiquette mb-2">Sérénité</span>
 
                 {/* Vidéo en mobile uniquement */}
-                <div className="w-full h-[240px] md:h-0 md:hidden relative overflow-hidden rounded-[20px]">
+                <div className="w-full h-[240px] md:h-0 md:hidden relative overflow-hidden">
                   <video
                     className="absolute top-0 left-0 w-full h-full object-cover scale-[1.2]"
                     autoPlay
@@ -63,7 +63,7 @@ const GestionAdminSection = () => {
             </div>
 
             {/* En desktop uniquement : déplace la vidéo à droite */}
-            <div className="hidden md:flex flex-1 h-[640px] overflow-hidden relative rounded-[40px]">
+            <div className="hidden md:flex flex-1 h-[640px] overflow-hidden relative">
               <video
                 className="absolute top-0 left-0 w-full h-full object-cover scale-[1.2]"
                 autoPlay

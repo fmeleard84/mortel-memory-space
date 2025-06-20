@@ -103,7 +103,7 @@ const LightPricingSection = () => {
           </p>
 
           {/* CTA Alignés avec chevron animé */}
-          <div className="flex justify-center gap-2 mt-6 w-full">
+          <div className="flex justify-between mt-6 w-full px-2">
             <Button
               variant="ghost"
               className={`btn-principal transition-all duration-300 px-4 ${
