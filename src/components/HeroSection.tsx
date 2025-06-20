@@ -24,7 +24,7 @@ const HeroSection = () => {
   return (
     <section className="hero w-full flex flex-col justify-start items-start">
       <div className="w-full h-full bg-[#0e0e0e]">
-        <div className="w-full flex flex-col lg:flex-row justify-center items-stretch h-full">
+        <div className="w-full flex flex-col-reverse lg:flex-row justify-center items-stretch h-full">
           
           {/* Colonne gauche - Texte */}
           <div className="flex-1 flex items-center justify-center px-4 md:px-8 lg:pl-16 lg:pr-8">
