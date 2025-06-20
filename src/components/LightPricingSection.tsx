@@ -54,19 +54,23 @@ const LightPricingSection = () => {
   };
 
   const renderCard = (title: string, key: 'epure' | 'presence' | 'signature') => {
+  const isHovered = hoveredKey === key;
   const isRecommended = key === 'presence';
-  const isSelected = isRecommended || hoveredKey === key;
+  const overrideRecommendation = hoveredKey && hoveredKey !== key;
+  const displayAsWhiteCard = isHovered || (isRecommended && !hoveredKey);
 
   return (
     <div
       onMouseEnter={() => setHoveredKey(key)}
       onMouseLeave={() => setHoveredKey(null)}
-      className={`group relative p-6 border transition-all duration-300
-        ${isRecommended
-          ? 'bg-white text-black border-mortel-blue border-2 shadow-[0_0_15px_rgba(0,0,0,0.1)]'
-          : 'bg-mortel-dark-secondary text-white border-gray-700'}`}
+      className={`group relative p-6 border rounded-xl transition-all duration-300 cursor-pointer
+        ${displayAsWhiteCard
+          ? 'bg-white text-black border-mortel-blue border-2 shadow-[0_0_25px_rgba(255,255,255,0.15)]'
+          : 'bg-mortel-dark-secondary text-white border-gray-700'}
+      `}
     >
-      {isRecommended && (
+      {/* Badge "Notre recommandation" */}
+      {isRecommended && !hoveredKey && (
         <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
           <span className="bg-mortel-blue text-white px-4 py-1 rounded-full text-xs font-medium">
             Notre recommandation
@@ -87,39 +91,38 @@ const LightPricingSection = () => {
           </CarouselContent>
         </Carousel>
 
-        <p className="text-sm">
-          {descriptions[key]}
-        </p>
+        <p className="text-sm">{descriptions[key]}</p>
 
         <div className="text-3xl font-bold">
           {formatPrice(calculatePrice(basePrices[key]))}
         </div>
 
-        <p className="text-xs text-gray-500">
+        <p className={`text-xs ${displayAsWhiteCard ? 'text-gray-500' : 'text-gray-400'}`}>
           {getPaymentLabel()}
         </p>
 
-        <div className="flex flex-col items-center gap-2 mt-4 w-full">
+        {/* CTA Alignés */}
+        <div className="flex justify-center gap-2 mt-6 w-full">
           <Button
             variant="ghost"
-            className={`w-full transition-all duration-200 ${
-              isRecommended
+            className={`transition-all duration-200 px-4 ${
+              displayAsWhiteCard
                 ? 'bg-mortel-blue text-white hover:bg-mortel-blue/90'
-                : isSelected
-                ? 'btn-principal'
                 : 'btn-inactif'
             }`}
           >
-            Choisir {title}
+            Choisir
           </Button>
 
           <a
             href={`#details-${key}`}
-            className={`text-sm underline transition ${
-              isRecommended ? 'text-gray-700 hover:text-black' : 'text-gray-300 hover:text-white'
+            className={`text-sm px-4 py-2 rounded-md font-medium underline transition ${
+              displayAsWhiteCard
+                ? 'text-gray-700 hover:text-black'
+                : 'text-gray-300 hover:text-white'
             }`}
           >
-            Personnaliser {title}
+            Personnaliser
           </a>
         </div>
       </div>
@@ -166,7 +169,7 @@ const LightPricingSection = () => {
 
         {/* Texte de bas de page */}
         <div className="text-center text-white max-w-4xl mx-auto text-lg leading-relaxed mt-12">
-          Toutes nos propositions sont conçues avec la même exigence : qualité, dignité et respect des volontés de chacun. Elles incluent un accompagnement humain 24/7, la prise en charge complète des démarches administratives, une information fluide pour les proches, et un engagement sincère pour l’environnement. Notre transparence est totale : aucun frais caché, aucun supplément inattendu. <a href="#valeurs" className="underline hover:text-mortel-blue transition">En savoir plus sur nos valeurs</a>.
+          Toutes nos propositions sont conçues avec la même exigence : qualité, dignité et respect des volontés de chacun. Elles incluent un accompagnement humain 24/7, la prise en charge complète des démarches administratives, une information fluide pour les proches, et un engagement sincère pour l’environnement. Notre transparence est totale : aucun frais caché, aucun supplément inattendu.<br><a href="#valeurs" className="underline hover:text-mortel-blue transition">En savoir plus sur nos valeurs</a></br>.
         </div>
       </div>
     </section>
