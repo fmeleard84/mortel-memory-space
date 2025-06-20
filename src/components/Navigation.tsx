@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logoMortel from '../assets/Mortel_logo_little.png';
+import logoMortel from '../assets/logo_png.png';
 import avatarConsultant from '../assets/call_homme.jpg';
 
 const Navigation = () => {
