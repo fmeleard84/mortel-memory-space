@@ -7,7 +7,7 @@ import ModalRappel from './Modal_rappel_tel';
 import { useConseiller } from './contexts/ConseillerContext';
 
 const Header = () => {
-  const conseiller = useConseiller(); // le conseiller actif (ex: { prenom: "Marie", image: "/conseillers/marie.jpg" })
+  const conseiller = useConseiller();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [modalRappel, setModalRappel] = useState(false);
@@ -67,22 +67,26 @@ const Header = () => {
 
           {/* Consultant + boutons */}
           <div className="flex items-center gap-4">
-            {/* Consultant desktop (non scrollé) */}
+            {/* Consultant desktop */}
             <div className="hidden xl:flex items-center gap-2">
               {!isScrolled && conseiller && (
-                <>
+                <div className="flex items-center gap-4">
                   <img
                     className="w-[35px] h-[35px] rounded-full border border-white object-cover"
                     src={conseiller.image}
                     alt={`Conseiller ${conseiller.prenom}`}
                   />
-                  <span
-                    className="text-white text-sm font-normal leading-[21px]"
-                    style={{ fontFamily: 'Inter' }}
+                  <div className="flex flex-col text-white text-xs leading-snug" style={{ fontFamily: 'Inter' }}>
+                    <span className="whitespace-nowrap">{conseiller.prenom} est actuellement</span>
+                    <span className="whitespace-nowrap">à votre écoute</span>
+                  </div>
+                  <button
+                    onClick={() => setModalRappel(true)}
+                    className="ml-2 px-3 py-1.5 bg-mortel-violet text-xs text-white rounded hover:bg-mortel-violet/90 transition"
                   >
-                    {conseiller.prenom}, est actuellement disponible pour être à votre écoute
-                  </span>
-                </>
+                    Être rappelé
+                  </button>
+                </div>
               )}
             </div>
 
@@ -132,20 +136,29 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
+
             {/* Consultant mobile */}
             {conseiller && (
-              <div className="flex items-center gap-2 pt-4 border-t border-white/20">
-                <img
-                  className="w-[35px] h-[35px] rounded-full border border-white object-cover"
-                  src={conseiller.image}
-                  alt={`Conseiller ${conseiller.prenom}`}
-                />
-                <span
-                  className="text-white text-sm font-normal leading-[21px]"
-                  style={{ fontFamily: 'Inter' }}
+              <div className="flex items-center justify-between gap-2 pt-4 border-t border-white/20">
+                <div className="flex flex-col items-center gap-1">
+                  <img
+                    className="w-[28px] h-[28px] rounded-full border border-white object-cover"
+                    src={conseiller.image}
+                    alt={`Conseiller ${conseiller.prenom}`}
+                  />
+                  <span className="text-white text-[10px]" style={{ fontFamily: 'Inter' }}>
+                    {conseiller.prenom}
+                  </span>
+                </div>
+                <button
+                  onClick={() => {
+                    setModalRappel(true);
+                    setIsOpen(false);
+                  }}
+                  className="px-2 py-1 text-[10px] bg-mortel-violet text-white rounded hover:bg-mortel-violet/90"
                 >
-                  {conseiller.prenom}, est actuellement disponible pour vous aider
-                </span>
+                  Être rappelé
+                </button>
               </div>
             )}
           </div>
