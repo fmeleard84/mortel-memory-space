@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { ChevronRight, Clock, Users } from 'lucide-react';
-import anticiperImg from '../assets/anticiper.jpg'; // Utilisation de l'image existante
+import anticiperVideo from '../assets/video_prevoir.mp4'; // Utilisation de l'image existante
 
 const PrevoirSection = () => {
   return (
@@ -12,11 +12,15 @@ const PrevoirSection = () => {
             
             {/* Right Column - Image */}
             <div className="w-full lg:w-1/2">
-              <img 
-                 src={anticiperImg}
-                alt="Prévoir ses obsèques"
-                className="w-full h-auto object-cover"
-              />
+              <video
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src={anticiperVideo} type="video/mp4" />
+            </video>
             </div>
 
             {/* Left Column - Content */}

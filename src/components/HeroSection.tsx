@@ -2,7 +2,7 @@
 import React, { useLayoutEffect, useState } from 'react';
 import hpI3 from '../assets/hp_i_3.jpg';
 import hpI4 from '../assets/hp_i_4.jpg';
-import videoHP from '../assets/hero_hp.mp4';
+import videoHP from '../assets/video_fleur_hp.mp4';
 import { ChevronRight, Clock, Users } from 'lucide-react';
 
 const HeroSection = () => {
