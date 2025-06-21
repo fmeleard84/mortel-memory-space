@@ -12,6 +12,8 @@ interface ModalRappelProps {
 }
 
 const ModalRappel: React.FC<ModalRappelProps> = ({ open, onClose, conseiller }) => {
+ if (!open || !conseiller) return null; // ✅ évite l'erreur si conseiller est null
+
   const [onglet, setOnglet] = useState<'maintenant' | 'plus-tard'>('maintenant');
 
   return (
