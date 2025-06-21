@@ -86,7 +86,7 @@ const LightPricingSection = () => {
             <CarouselContent>
               {propositionImages[key].map((image, index) => (
                 <CarouselItem key={index}>  
-                  <img src={image} alt={`${title} - Image ${index + 1}`} className="w-full h-[200px] object-cover rounded-[20px]" />
+                  <img src={image} alt={`${title} - Image ${index + 1}`} className="w-full h-[200px] object-cover" />
                 </CarouselItem>
               ))}
             </CarouselContent>
