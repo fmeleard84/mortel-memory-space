@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
 import { Button } from './ui/button';
@@ -12,9 +13,9 @@ interface ModalRappelProps {
 }
 
 const ModalRappel: React.FC<ModalRappelProps> = ({ open, onClose, conseiller }) => {
- if (!open || !conseiller) return null; // ✅ évite l'erreur si conseiller est null
-
   const [onglet, setOnglet] = useState<'maintenant' | 'plus-tard'>('maintenant');
+
+  if (!open || !conseiller) return null;
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
@@ -26,16 +27,18 @@ const ModalRappel: React.FC<ModalRappelProps> = ({ open, onClose, conseiller }) 
         </DialogHeader>
 
         {/* Conseiller actif */}
-        <div className="flex items-center gap-3 mb-4 mt-2">
-          <img
-            src={conseiller.image}
-            alt={conseiller.prenom}
-            className="w-10 h-10 rounded-full object-cover border border-white"
-          />
-          <p className="text-sm font-inter text-white">
-            Vous serez rappelé(e) par <strong>{conseiller.prenom}</strong>, notre conseiller actuellement disponible.
-          </p>
-        </div>
+        {conseiller && (
+          <div className="flex items-center gap-3 mb-4 mt-2">
+            <img
+              src={conseiller.image}
+              alt={conseiller.prenom}
+              className="w-10 h-10 rounded-full object-cover border border-white"
+            />
+            <p className="text-sm font-inter text-white">
+              Vous serez rappelé(e) par <strong>{conseiller.prenom}</strong>, notre conseiller actuellement disponible.
+            </p>
+          </div>
+        )}
 
         {/* Onglets */}
         <div className="flex gap-2 mb-6">
