@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,12 +63,10 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Couleurs Mortel - Charte graphique
+				// Couleurs Mortel - Charte graphique (sans le vert jaune)
 				'mortel-dark': '#191919',
 				'mortel-dark-secondary': '#202020',
-				//'mortel-blue': '#30B0C7',
-				'mortel-blue': '#e52fe5',
-              'mortel-green': '#B4CB2A',
+				'mortel-blue': '#30B0C7',
 				'mortel-violet': '#CB2AB4'
 			},
 			fontFamily: {

@@ -29,11 +29,11 @@ const AccompagnementSection = () => {
                 <input
                   type="email"
                   placeholder="Entrez votre email"
-                  className="flex-1 h-11 px-3 py-2 bg-white/10 text-white placeholder:text-white/60 text-base leading-6 outline-none border border-transparent focus:border-mortel-green transition-colors"
+                  className="flex-1 h-11 px-3 py-2 bg-white/10 text-white placeholder:text-white/60 text-base leading-6 outline-none border border-transparent focus:border-mortel-blue transition-colors"
                   style={{ fontFamily: 'Inter' }}
                 />
                 <button 
-                  className="px-6 py-2.5 bg-mortel-green text-white text-base font-normal leading-6 hover:bg-mortel-green/90 transition-colors whitespace-nowrap"
+                  className="px-6 py-2.5 bg-mortel-blue text-white text-base font-normal leading-6 hover:bg-mortel-blue/90 transition-colors whitespace-nowrap"
                   style={{ fontFamily: 'Inter' }}
                 >
                   S'inscrire
