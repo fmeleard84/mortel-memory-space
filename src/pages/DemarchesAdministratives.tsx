@@ -3,6 +3,7 @@ import React from 'react';
 import Navigation from '../components/Navigation';
 import DemarchesHero from '../components/DemarchesHero';
 import DemarchesSection from '../components/DemarchesSection';
+import BlocConversionImmediat from '../components/BlocConversionImmediat';
 import Footer from '../components/Footer';
 
 const DemarchesAdministratives = () => {
@@ -11,6 +12,7 @@ const DemarchesAdministratives = () => {
       <Navigation />
       <DemarchesHero />
       <DemarchesSection />
+      <BlocConversionImmediat />
       <Footer />
     </div>
   );
