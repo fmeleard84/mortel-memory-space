@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import DemarchesAdministratives from "./pages/DemarchesAdministratives";
 import NotFound from "./pages/NotFound";
+import { ConseillerProvider } from './components/contexts/ConseillerContext';
+
 
 const queryClient = new QueryClient();
 
@@ -15,6 +17,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+    <ConseillerProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
@@ -23,6 +26,8 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+    </ConseillerProvider>
+
     </TooltipProvider>
   </QueryClientProvider>
 );

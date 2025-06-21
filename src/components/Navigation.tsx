@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Menu, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logoMortel from '../assets/logo_png.png';
-import avatarConsultant from '../assets/call_homme.jpg';
 
-const Navigation = () => {
+import ModalRappel from './Modal_rappel_tel';
+import { useConseiller } from './contexts/ConseillerContext';
+
+const Header = () => {
+  const conseiller = useConseiller(); // le conseiller actif (ex: { prenom: "Marie", image: "/conseillers/marie.jpg" })
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [modalPlanifier, setModalPlanifier] = useState(false);
+  const [modalRappel, setModalRappel] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,18 +69,18 @@ const Navigation = () => {
           <div className="flex items-center gap-4">
             {/* Consultant desktop (non scrollé) */}
             <div className="hidden xl:flex items-center gap-2">
-              {!isScrolled && (
+              {!isScrolled && conseiller && (
                 <>
                   <img
                     className="w-[35px] h-[35px] rounded-full border border-white object-cover"
-                    src={avatarConsultant}
-                    alt="Consultant"
+                    src={conseiller.image}
+                    alt={`Conseiller ${conseiller.prenom}`}
                   />
                   <span
                     className="text-white text-sm font-normal leading-[21px]"
                     style={{ fontFamily: 'Inter' }}
                   >
-                    Alain, est actuellement disponible pour être à votre écoute
+                    {conseiller.prenom}, est actuellement disponible pour être à votre écoute
                   </span>
                 </>
               )}
@@ -87,8 +90,8 @@ const Navigation = () => {
             {(isScrolled || window.innerWidth < 1024) && (
               <>
                 <button
-                  onClick={() => setModalPlanifier(true)}
-                  className={`btn-principal transition-all duration-300
+                  onClick={() => setModalRappel(true)}
+                  className={`bg-mortel-violet text-white font-normal hover:bg-mortel-violet/90 transition-all duration-300
                     ${isScrolled ? 'text-xs px-3 py-1.5' : 'text-sm px-5 py-2'}`}
                   style={{ fontFamily: 'Inter' }}
                 >
@@ -129,58 +132,34 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <div className="flex items-center gap-2 pt-4 border-t border-white/20">
-              <img
-                className="w-[35px] h-[35px] rounded-full border border-white object-cover"
-                src={avatarConsultant}
-                alt="Consultant"
-              />
-              <span
-                className="text-white text-sm font-normal leading-[21px]"
-                style={{ fontFamily: 'Inter' }}
-              >
-                Alain, est actuellement disponible pour être à votre écoute
-              </span>
-            </div>
+            {/* Consultant mobile */}
+            {conseiller && (
+              <div className="flex items-center gap-2 pt-4 border-t border-white/20">
+                <img
+                  className="w-[35px] h-[35px] rounded-full border border-white object-cover"
+                  src={conseiller.image}
+                  alt={`Conseiller ${conseiller.prenom}`}
+                />
+                <span
+                  className="text-white text-sm font-normal leading-[21px]"
+                  style={{ fontFamily: 'Inter' }}
+                >
+                  {conseiller.prenom}, est actuellement disponible pour vous aider
+                </span>
+              </div>
+            )}
           </div>
         </div>
       )}
 
       {/* Modal de rappel */}
-      {modalPlanifier && (
-        <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center px-4">
-          <div className="bg-white rounded-xl max-w-md w-full p-6 text-black relative">
-            <button
-              onClick={() => setModalPlanifier(false)}
-              className="absolute top-2 right-3 text-gray-500 hover:text-black text-xl"
-            >
-              ×
-            </button>
-            <h3 className="text-xl font-semibold mb-4">Être rappelé</h3>
-            <p className="text-sm mb-4">
-              Un conseiller vous rappellera dans les 5 minutes suivant votre demande.
-            </p>
-            <input
-              type="tel"
-              placeholder="Votre numéro de téléphone"
-              className="w-full px-4 py-2 border border-gray-300 rounded mb-4"
-            />
-            <div className="flex justify-end gap-3">
-              <button
-                onClick={() => setModalPlanifier(false)}
-                className="px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded"
-              >
-                Annuler
-              </button>
-              <button className="px-4 py-2 text-sm bg-mortel-violet text-white hover:bg-mortel-violet/90 rounded">
-                Être rappelé maintenant
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <ModalRappel
+        open={modalRappel}
+        onClose={() => setModalRappel(false)}
+        conseiller={conseiller}
+      />
     </div>
   );
 };
 
-export default Navigation;
+export default Header;
