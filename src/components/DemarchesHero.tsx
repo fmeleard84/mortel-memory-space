@@ -36,23 +36,20 @@ const DemarchesHero = () => {
               <div className="flex flex-col gap-4">
                 <p className="mortel-text text-white text-[1.1em] leading-[1.4em] md:text-[1.4em] md:leading-[1.5em]">
                   Un décès vient d'avoir lieu ou va arriver.
-                </p>
-                <p className="mortel-text text-white text-[1.1em] leading-[1.4em] md:text-[1.4em] md:leading-[1.5em]">
                   Vous êtes là. Nous aussi. Dès maintenant.
                 </p>
               </div>
 
               <div className="flex flex-col gap-6 w-full">
-                <div className="flex flex-col sm:flex-row justify-start items-start gap-3 lg:gap-4 w-full sm:w-auto">
-
-                  {/* Bouton Être rappelé */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <Button className="btn-principal" onClick={() => setModalRappelOpen(true)}>
                     Être rappelé
                   </Button>
-
-                  {/* Bouton Commencer */}
-                  <button className="btn-secondaire group" onClick={() => setModalCompteOpen(true)}>
-                    <span>Commencer</span>
+                  <button
+                    className="btn-secondaire group"
+                    onClick={() => setModalCompteOpen(true)}
+                  >
+                    <span>Commencer maintenant</span>
                     <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                   </button>
                 </div>

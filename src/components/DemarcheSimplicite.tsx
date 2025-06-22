@@ -16,10 +16,10 @@ const EtapesSimplicite = () => {
 
         {/* Titre & sous-titre */}
         <div className="flex flex-col gap-4">
-          <h2 className="text-3xl md:text-4xl font-semibold">
+         <h1 className="mortel-titre-hero text-white">
             Organiser un départ, en toute simplicité
-          </h2>
-          <p className="text-white/80 text-lg max-w-3xl">
+          </h1>
+            <p className="mortel-text text-white text-[1.1em] leading-[1.4em] md:text-[1.4em] md:leading-[1.5em]">
             Créez un compte pour tout gérer vous-même, ou laissez un conseiller vous accompagner à chaque étape.
             Vous êtes libre. Présents ou discrets, nous sommes là, comme vous en avez besoin.
           </p>
@@ -28,6 +28,10 @@ const EtapesSimplicite = () => {
         {/* Étapes */}
         <div className="flex flex-col gap-8 w-full">
           <div className="flex flex-col md:flex-row gap-6">
+            {/* Étiquette "prévoir" stylée */}
+            <div className="etiquette">
+                Comment ça marche
+            </div>
             <div className="flex-1">
               <span className="text-mortel-violet text-sm">1. Créer un compte ou être rappelé</span>
               <p className="text-white mt-2">
