@@ -67,11 +67,11 @@ export default {
 				'mortel-dark': '#191919',
 				'mortel-dark-secondary': '#202020',
 				'mortel-blue': '#30B0C7',
-				'mortel-violet': '#CB2AB4'
+				'mortel-violet': '#CB2AB4',
+				'mortel-violet-texte': '#ec31d1'
 			},
 			fontFamily: {
 				'sans': ['Inter', 'system-ui', 'sans-serif'],
-				'mono': ['JetBrains Mono', 'monospace'],
 				'heading': ['Outfit', 'Inter', 'sans-serif'], // Nouvelle police pour les titres
 			},
 			borderRadius: {

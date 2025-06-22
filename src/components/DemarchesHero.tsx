@@ -81,7 +81,7 @@ const DemarchesHero = () => {
           </div>
 
           {/* Colonne droite - Image */}
-          <div className="flex-1 max-h-[600px] overflow-hidden bg-black">
+          <div className="flex-1 max-h-[500px] overflow-hidden bg-black">
           <img
             className="w-full h-full object-contain object-center"
             src={iphoneService}
