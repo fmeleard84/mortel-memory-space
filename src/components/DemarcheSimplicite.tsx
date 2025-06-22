@@ -16,6 +16,10 @@ const EtapesSimplicite = () => {
 
         {/* Titre & sous-titre */}
         <div className="flex flex-col gap-4">
+            {/* Étiquette "prévoir" stylée */}
+            <div className="etiquette">
+                Comment ça marche
+            </div>
          <h1 className="mortel-titre-hero text-white">
             Organiser un départ, en toute simplicité
           </h1>
@@ -28,27 +32,23 @@ const EtapesSimplicite = () => {
         {/* Étapes */}
         <div className="flex flex-col gap-8 w-full">
           <div className="flex flex-col md:flex-row gap-6">
-            {/* Étiquette "prévoir" stylée */}
-            <div className="etiquette">
-                Comment ça marche
-            </div>
             <div className="flex-1">
-              <span className="text-mortel-violet text-sm">1. Créer un compte ou être rappelé</span>
-              <p className="text-white mt-2">
+              <span className="mortel-text text-mortel-violet">1. Créer un compte ou être rappelé</span>
+             <p className="texte-normal">
                 Créez votre compte en quelques instants, ou demandez à être rappelé.  
                 Un conseiller est disponible 24h/24, 7j/7 pour vous guider avec humanité.
               </p>
             </div>
             <div className="flex-1">
-              <span className="text-mortel-violet text-sm">2. Transmettre le certificat de décès</span>
-              <p className="text-white mt-2">
+              <span className="mortel-text text-mortel-violet">2. Transmettre le certificat de décès</span>
+            <p className="texte-normal">
                 Si vous l’avez, vous le téléversez simplement.  
                 Si ce n’est pas encore le cas, nous vous aidons à l’obtenir rapidement.
               </p>
             </div>
             <div className="flex-1">
-              <span className="text-mortel-violet text-sm">3. On s’occupe du reste</span>
-              <p className="text-white mt-2">
+              <span className="mortel-text text-mortel-violet">3. On s’occupe du reste</span>
+            <p className="texte-normal">
                 Dès votre compte activé et le certificat transmis, nous prenons le relais.  
                 Vous suivez chaque démarche en temps réel via votre espace personnel.
               </p>
