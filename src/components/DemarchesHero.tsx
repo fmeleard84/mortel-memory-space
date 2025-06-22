@@ -7,7 +7,7 @@ import { Button } from './ui/button';
 import ModalRappel from './modals/Modal_rappel_tel';
 import ModalCreationCompte from './modals/Modal_creation_compte';
 import { useConseiller } from './contexts/ConseillerContext';
-import VideoAdmin from '../assets/admin_video.mp4';
+import VideoAdmin from '../assets/video_admin.mp4';
 
 
 

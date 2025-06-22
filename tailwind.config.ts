@@ -69,7 +69,7 @@ export default {
 				'mortel-dark-secondary': '#202020',
 				'mortel-blue': '#30B0C7',
 				'mortel-violet': '#CB2AB4',
-				'mortel-violet-texte': '#ec31d1'
+				'mortel-violet-texte': '#f604d3'
 			},
 			fontFamily: {
 				'sans': ['Inter', 'system-ui', 'sans-serif'],

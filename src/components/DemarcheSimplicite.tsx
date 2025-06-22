@@ -33,21 +33,21 @@ const EtapesSimplicite = () => {
           {/* Étapes */}
           <div className="flex flex-col gap-6">
             <div>
-              <h3 className="text-lg font-semibold text-mortel-violet">1. Créer un compte ou être rappelé</h3>
+              <h3 className="text-lg font-semibold text-white">1. Créer un compte ou être rappelé</h3>
               <p className="texte-normal">
                 Créez votre compte en quelques instants, ou demandez à être rappelé.
                 Un conseiller est disponible 24h/24, 7j/7 pour vous guider avec humanité.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-mortel-violet">2. Transmettre le certificat de décès</h3>
+              <h3 className="text-lg font-semibold text-white">2. Transmettre le certificat de décès</h3>
               <p className="texte-normal">
                 Si vous l’avez, vous le téléversez simplement.
                 Si ce n’est pas encore le cas, nous vous aidons à l’obtenir rapidement.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-mortel-violet">3. On s’occupe du reste</h3>
+              <h3 className="text-lg font-semibold text-white">3. On s’occupe du reste</h3>
               <p className="texte-normal">
                 Dès votre compte activé et le certificat transmis, nous prenons le relais.
                 Vous suivez chaque démarche en temps réel via votre espace personnel.
