@@ -71,7 +71,7 @@ const EtapesSimplicite = () => {
         </div>
 
         {/* Colonne droite : image */}
-        <div className="flex-1 h-full max-h-[600px] w-full">
+        <div className="flex-1 h-full max-h-[400px] w-full">
           <img
             src={iphoneService}
             alt="Service funéraire VĀYA"

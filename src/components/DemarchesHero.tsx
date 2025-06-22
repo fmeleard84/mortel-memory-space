@@ -7,6 +7,9 @@ import { Button } from './ui/button';
 import ModalRappel from './modals/Modal_rappel_tel';
 import ModalCreationCompte from './modals/Modal_creation_compte';
 import { useConseiller } from './contexts/ConseillerContext';
+import VideoAdmin from '../assets/admin_video.mp4';
+
+
 
 const DemarchesHero = () => {
   const conseiller = useConseiller();
@@ -79,12 +82,15 @@ const DemarchesHero = () => {
 
           {/* Colonne droite - Image */}
           <div className="flex-1 max-h-[500px] overflow-hidden bg-black">
-          <img
-            className="w-full h-full object-contain object-center"
-            src={iphoneService}
-            alt="Service funéraire VĀYA"
-            loading="eager"
-          />
+          <video
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src={VideoAdmin} type="video/mp4" />
+            </video>
         </div>
         </div>
       </div>

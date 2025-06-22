@@ -144,10 +144,6 @@
     letter-spacing: -0.02em;
   }
 
-  .btn-principal {
-    @apply px-6 py-2.5 bg-mortel-violet text-white text-base font-normal font-sans rounded-none transition-all duration-200 hover:rounded-[5px] hover:shadow-[0_0_10px_rgba(255,255,255,0.3)];
-  }
-
 
 @media (max-width: 768px) {
   .mortel-titre-hero {
@@ -234,7 +230,7 @@
   }
 
   .etiquette {
-    @apply text-mortel-blue text-base font-sans font-normal border-b border-mortel-blue w-fit;
+    @apply text-mortel-violet text-base font-sans font-normal border-b border-mortel-violet w-fit;
   }
 
   .texte-normal {
@@ -254,7 +250,7 @@
 
   /* Bouton inactif (filet bleu) */
   .btn-inactif {
-    @apply px-6 py-2.5 border border-mortel-blue text-mortel-blue text-base font-normal font-sans bg-transparent transition-all duration-200 rounded-none hover:rounded-[5px] hover:shadow-[0_0_10px_rgba(255,255,255,0.3)] hover:bg-mortel-blue hover:text-white;
+    @apply px-6 py-2.5 border border-mortel-violet text-mortel-violet text-base font-normal font-sans bg-transparent transition-all duration-200 rounded-none hover:rounded-[5px] hover:shadow-[0_0_10px_rgba(255,255,255,0.3)] hover:bg-mortel-blue hover:text-white;
   }
 
   /* Bouton version Épure (noir) */
