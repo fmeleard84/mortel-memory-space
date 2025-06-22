@@ -52,7 +52,7 @@ const DemarchesHero = () => {
 
                   {/* Bouton Commencer */}
                   <button className="btn-secondaire group" onClick={() => setModalCompteOpen(true)}>
-                    <span>Commencer l'organisation</span>
+                    <span>Commencer</span>
                     <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
                   </button>
                 </div>
