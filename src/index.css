@@ -19,7 +19,7 @@
     --popover: 255 255 255;
     --popover-foreground: 25 25 25;
 
-    --primary: #CB2AB4; /* #30B0C7 - Bleu Mortel (remplace le vert) */
+    --primary: 203 42 180; /* #30B0C7 - Bleu Mortel (remplace le vert) */
     --primary-foreground: 25 25 25;
 
     --secondary: 240 4.8% 95.9%;
@@ -61,7 +61,7 @@
     --popover: 32 32 32;
     --popover-foreground: 248 248 248;
 
-    --primary: 48 176 199; /* #30B0C7 - Bleu Mortel */
+    --primary: 203 42 180; /* #30B0C7 - Bleu Mortel */
     --primary-foreground: 25 25 25;
 
     --secondary: 32 32 32;

@@ -71,12 +71,12 @@ const EtapesSimplicite = () => {
         </div>
 
         {/* Colonne droite : image */}
-        <div className="flex-1 h-full max-h-[400px] w-full">
-          <img
+        <div className="flex-1 w-full max-h-[500px]">
+        <img
             src={iphoneService}
             alt="Service funéraire VĀYA"
-            className="w-full h-full object-contain object-center"
-          />
+            className="w-full max-h-[500px] object-contain object-center"
+        />
         </div>
       </div>
 

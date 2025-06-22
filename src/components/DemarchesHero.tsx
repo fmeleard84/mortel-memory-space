@@ -25,8 +25,8 @@ const DemarchesHero = () => {
   }, []);
 
   return (
-    <section className="hero w-full flex flex-col justify-start items-start">
-      <div className="w-full h-full bg-[#0e0e0e]">
+      <section className="hero w-full min-h-[80vh] flex flex-col justify-start items-start">
+        <div className="w-full h-full bg-[#0e0e0e]">
         <div className="w-full flex flex-col lg:flex-row justify-center items-stretch h-full">
 
           {/* Colonne gauche - Texte */}
@@ -81,16 +81,16 @@ const DemarchesHero = () => {
           </div>
 
           {/* Colonne droite - Image */}
-          <div className="flex-1 max-h-[500px] overflow-hidden bg-black">
+          <div className="flex-1 h-full overflow-hidden bg-black">
           <video
-              className="w-full h-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-            >
-              <source src={VideoAdmin} type="video/mp4" />
-            </video>
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={VideoAdmin} type="video/mp4" />
+          </video>
         </div>
         </div>
       </div>
