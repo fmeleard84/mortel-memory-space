@@ -57,8 +57,21 @@ const DemarchesHero = () => {
                   </button>
                 </div>
 
-                {/* Texte en bas */}
+                {/* Texte en bas avec conseiller */}
                 <div className="flex flex-col gap-2 pt-4 border-t border-white/20">
+                  {conseiller && (
+                    <div className="flex items-center gap-3">
+                      <img
+                        className="w-9 h-9 rounded-full object-cover border border-white"
+                        src={conseiller.image}
+                        alt={`Conseiller ${conseiller.prenom}`}
+                      />
+                      <div className="flex flex-col text-white text-sm leading-tight font-inter">
+                        <span>{conseiller.prenom} est actuellement</span>
+                        <span>à votre écoute</span>
+                      </div>
+                    </div>
+                  )}
                   <div className="text-white/70 text-sm font-normal font-inter">
                     Nous sommes à votre disposition 7j/7, 24h/24
                   </div>
