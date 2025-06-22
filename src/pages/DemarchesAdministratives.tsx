@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 import NewVerbatimSection from '../components/NewVerbatimSection';
 import NewFAQ from '../components/NewFAQ';
 import verbatim3 from '../assets/verbatim_3.jpg';
+import DemarcheSimplicite from '../components/DemarcheSimplicite';
 
   const handleCommencerClick = () => {
     console.log("Redirection vers le formulaire de démarrage des démarches");
@@ -49,6 +50,7 @@ const DemarchesAdministratives = () => {
         imageSrc={verbatim3}
         imageAlt="Témoignage de Marylin"
       />
+      <DemarcheSimplicite />
       <NewFAQ 
         title="Questions sur vos démarches"
         description="Retrouvez les réponses aux questions les plus fréquentes concernant la simplification de vos démarches administratives."
