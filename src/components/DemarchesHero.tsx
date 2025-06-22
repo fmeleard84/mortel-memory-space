@@ -51,10 +51,10 @@ const DemarchesHero = () => {
                   </Button>
 
                   {/* Bouton Commencer */}
-                  <Button className="btn-secondaire group text-white h-[42px] flex items-center" onClick={() => setModalCompteOpen(true)}>
+                  <button className="btn-secondaire group" onClick={() => setModalCompteOpen(true)}>
                     <span>Commencer l'organisation</span>
                     <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
-                  </Button>
+                  </button>
                 </div>
 
                 {/* Texte en bas */}
@@ -68,14 +68,14 @@ const DemarchesHero = () => {
           </div>
 
           {/* Colonne droite - Image */}
-          <div className="flex-1 h-full max-h-full overflow-hidden bg-black">
-            <img
-              className="w-full h-full object-contain object-center bg-black"
-              src={iphoneService}
-              alt="Service funéraire VĀYA"
-              loading="eager"
-            />
-          </div>
+          <div className="flex-1 max-h-[600px] overflow-hidden bg-black">
+          <img
+            className="w-full h-full object-contain object-center"
+            src={iphoneService}
+            alt="Service funéraire VĀYA"
+            loading="eager"
+          />
+        </div>
         </div>
       </div>
 
