@@ -1,19 +1,14 @@
-
 import React, { useLayoutEffect, useState } from 'react';
-import hpI3 from '../assets/hp_i_3.jpg';
-import hpI4 from '../assets/hp_i_4.jpg';
-import { ChevronRight, Phone } from 'lucide-react';
+import iphoneService from '../assets/iphone_service_2.png';
+import { ChevronRight } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
+import { Button } from './ui/button';
 
 const DemarchesHero = () => {
-  const images = [hpI3, hpI4];
-  const [randomImage, setRandomImage] = useState(images[0]);
+  const [modalRappel, setModalRappel] = useState(false);
+  const [modalCompte, setModalCompte] = useState(false);
 
   useLayoutEffect(() => {
-    // Sélection d'une image aléatoire
-    const randomIndex = Math.floor(Math.random() * images.length);
-    setRandomImage(images[randomIndex]);
-
-    // Calcul et injection de la hauteur du header dans une variable CSS
     const header = document.getElementById('site-header');
     if (header) {
       const headerHeight = header.offsetHeight;
@@ -32,6 +27,7 @@ const DemarchesHero = () => {
               <h1 className="mortel-titre-hero text-white">
                 On s'occupe de tout. Vous n'avez plus à y penser.
               </h1>
+
               <div className="flex flex-col gap-4">
                 <p className="mortel-text text-white">
                   Un décès vient d'avoir lieu ou va arriver.
@@ -43,23 +39,81 @@ const DemarchesHero = () => {
 
               <div className="flex flex-col gap-6 w-full">
                 <div className="flex flex-col sm:flex-row justify-start items-start gap-3 lg:gap-4 w-full sm:w-auto">
-                  <button className="btn-principal flex items-center gap-2">
-                    <Phone className="w-4 h-4" />
-                    <span>Être rappelé dans les 10 minutes</span>
-                  </button>
-                  <button className="btn-secondaire group text-white h-[42px] flex items-center">
-                    <span>Commencer l'organisation</span>
-                    <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
-                  </button>
+                  
+                  {/* Être rappelé */}
+                  <Dialog open={modalRappel} onOpenChange={setModalRappel}>
+                    <DialogTrigger asChild>
+                      <Button className="btn-principal w-full md:w-auto">
+                        Être rappelé
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="bg-mortel-dark border-white/20 text-white rounded-[20px]">
+                      <DialogHeader>
+                        <DialogTitle className="text-white text-xl font-inter font-semibold">
+                          Être rappelé
+                        </DialogTitle>
+                      </DialogHeader>
+                      <div className="space-y-4">
+                        <input
+                          type="tel"
+                          placeholder="06 12 34 56 78"
+                          className="w-full px-4 py-3 bg-mortel-dark-secondary border border-white/20 rounded-[10px] text-white placeholder-white/50 focus:outline-none focus:border-mortel-violet"
+                        />
+                        <Button className="btn-principal w-full">
+                          Demander un rappel
+                        </Button>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+
+                  {/* Commencer l'organisation */}
+                  <Dialog open={modalCompte} onOpenChange={setModalCompte}>
+                    <DialogTrigger asChild>
+                      <Button className="btn-secondaire group text-white h-[42px] flex items-center">
+                        <span>Commencer l'organisation</span>
+                        <ChevronRight className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="bg-mortel-dark border-white/20 text-white rounded-[20px]">
+                      <DialogHeader>
+                        <DialogTitle className="text-white text-xl font-inter font-semibold">
+                          Créer votre compte
+                        </DialogTitle>
+                      </DialogHeader>
+                      <div className="space-y-4">
+                        <input
+                          type="text"
+                          placeholder="Votre prénom"
+                          className="w-full px-4 py-3 bg-mortel-dark-secondary border border-white/20 rounded-[10px] text-white placeholder-white/50 focus:outline-none focus:border-mortel-violet"
+                        />
+                        <input
+                          type="text"
+                          placeholder="Votre nom"
+                          className="w-full px-4 py-3 bg-mortel-dark-secondary border border-white/20 rounded-[10px] text-white placeholder-white/50 focus:outline-none focus:border-mortel-violet"
+                        />
+                        <input
+                          type="email"
+                          placeholder="votre.email@example.com"
+                          className="w-full px-4 py-3 bg-mortel-dark-secondary border border-white/20 rounded-[10px] text-white placeholder-white/50 focus:outline-none focus:border-mortel-violet"
+                        />
+                        <input
+                          type="tel"
+                          placeholder="06 12 34 56 78"
+                          className="w-full px-4 py-3 bg-mortel-dark-secondary border border-white/20 rounded-[10px] text-white placeholder-white/50 focus:outline-none focus:border-mortel-violet"
+                        />
+                        <Button className="btn-principal w-full">
+                          Créer mon compte
+                        </Button>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+
                 </div>
-                
-                {/* Numéro de téléphone */}
+
+                {/* Texte en bas */}
                 <div className="flex flex-col gap-2 pt-4 border-t border-white/20">
-                  <div className="text-white text-xl font-normal font-inter">
-                    06 12 34 56 78
-                  </div>
                   <div className="text-white/70 text-sm font-normal font-inter">
-                    7j/7, de 8h à 22h
+                    Nous sommes à votre disposition 7j/7, 24h/24
                   </div>
                 </div>
               </div>
@@ -67,11 +121,11 @@ const DemarchesHero = () => {
           </div>
 
           {/* Colonne droite - Image */}
-          <div className="flex-1 h-full max-h-full overflow-hidden">
+          <div className="flex-1 h-full max-h-full overflow-hidden bg-black">
             <img 
-              className="w-full h-full object-cover object-center" 
-              src={randomImage}
-              alt="Démarches administratives"
+              className="w-full h-full object-contain object-center bg-black" 
+              src={iphoneService}
+              alt="Service funéraire VĀYA"
               loading="eager"
             />
           </div>
