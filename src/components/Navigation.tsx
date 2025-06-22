@@ -3,7 +3,7 @@ import { Menu, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logoMortel from '../assets/logo_png.png';
 
-import ModalRappel from './Modal_rappel_tel';
+import ModalRappel from './modals/Modal_rappel_tel';
 import { useConseiller } from './contexts/ConseillerContext';
 
 const Header = () => {

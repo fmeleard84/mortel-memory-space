@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
-import { Button } from './ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../ui/dialog';
+import { Button } from '../ui/button';
 
 interface ModalRappelProps {
   open: boolean;
@@ -9,13 +9,13 @@ interface ModalRappelProps {
   conseiller: {
     prenom: string;
     image: string;
-  };
+  } | null;
 }
 
 const ModalRappel: React.FC<ModalRappelProps> = ({ open, onClose, conseiller }) => {
   const [onglet, setOnglet] = useState<'maintenant' | 'plus-tard'>('maintenant');
 
-  if (!open || !conseiller) return null;
+  if (!open) return null;
 
   return (
     <Dialog open={open} onOpenChange={onClose}>

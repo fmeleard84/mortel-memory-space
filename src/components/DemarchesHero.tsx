@@ -1,12 +1,15 @@
+
 import React, { useLayoutEffect, useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import iphoneService from '../assets/iphone_service_2.png';
 
 import { Button } from './ui/button';
-import ModalRappel from './modals/Modal_rappel_tel'; // ton composant modifié
-import ModalCreationCompte from './modals/Modal_creation_compte'; // composant que je t’ai fourni
+import ModalRappel from './modals/Modal_rappel_tel';
+import ModalCreationCompte from './modals/Modal_creation_compte';
+import { useConseiller } from './contexts/ConseillerContext';
 
 const DemarchesHero = () => {
+  const conseiller = useConseiller();
   const [modalRappelOpen, setModalRappelOpen] = useState(false);
   const [modalCompteOpen, setModalCompteOpen] = useState(false);
 
@@ -77,7 +80,7 @@ const DemarchesHero = () => {
       </div>
 
       {/* Modales */}
-      <ModalRappel open={modalRappelOpen} onClose={() => setModalRappelOpen(false)} />
+      <ModalRappel open={modalRappelOpen} onClose={() => setModalRappelOpen(false)} conseiller={conseiller} />
       <ModalCreationCompte open={modalCompteOpen} onClose={() => setModalCompteOpen(false)} />
     </section>
   );
