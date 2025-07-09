@@ -99,7 +99,7 @@ export default function BlogForm() {
           title: article.title,
           content: article.content,
           excerpt: article.excerpt || '',
-          category_id: article.category_id || '',
+          category_id: article.category_id || 'none',
           status: article.status as 'draft' | 'published',
           featured_image: article.featured_image || '',
         });
@@ -164,7 +164,7 @@ export default function BlogForm() {
         title: data.title,
         content: data.content,
         excerpt: data.excerpt,
-        category_id: data.category_id,
+        category_id: data.category_id === 'none' ? null : data.category_id,
         status: data.status,
         featured_image: data.featured_image,
         slug,
@@ -463,7 +463,7 @@ export default function BlogForm() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="">Aucune catégorie</SelectItem>
+                            <SelectItem value="none">Aucune catégorie</SelectItem>
                             {categories.map((category) => (
                               <SelectItem key={category.id} value={category.id}>
                                 {category.name}
