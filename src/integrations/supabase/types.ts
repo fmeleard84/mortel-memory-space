@@ -14,7 +14,65 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      availability_status: {
+        Row: {
+          id: string
+          is_available: boolean
+          member_id: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          is_available?: boolean
+          member_id: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          is_available?: boolean
+          member_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "availability_status_member_id_fkey"
+            columns: ["member_id"]
+            isOneToOne: true
+            referencedRelation: "team_members"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      team_members: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          nom: string
+          portable: string
+          prenom: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          nom: string
+          portable: string
+          prenom: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          nom?: string
+          portable?: string
+          prenom?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
