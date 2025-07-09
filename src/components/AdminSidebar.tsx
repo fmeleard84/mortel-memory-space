@@ -1,4 +1,4 @@
-import { Users, LogOut } from 'lucide-react';
+import { Users, LogOut, BookOpen } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import {
   Sidebar,
@@ -20,6 +20,11 @@ const adminMenuItems = [
     title: 'Équipe',
     url: '/admin/equipe',
     icon: Users,
+  },
+  {
+    title: 'Blog',
+    url: '/admin/blog',
+    icon: BookOpen,
   },
 ];
 

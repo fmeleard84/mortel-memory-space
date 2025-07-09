@@ -6,6 +6,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import DemarchesAdministratives from "./pages/DemarchesAdministratives";
+import BlogHome from "./pages/BlogHome";
+import BlogArticle from "./pages/BlogArticle";
+import AdminBlog from "./pages/AdminBlog";
+import BlogForm from "./pages/BlogForm";
 import NotFound from "./pages/NotFound";
 import { ConseillerProvider } from './components/contexts/ConseillerContext';
 import { AdminAuthProvider } from './contexts/AdminAuthContext';
@@ -30,6 +34,10 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/demarches-administratives" element={<DemarchesAdministratives />} />
             
+            {/* Routes Blog */}
+            <Route path="/souffle" element={<BlogHome />} />
+            <Route path="/souffle/article/:slug" element={<BlogArticle />} />
+            
             {/* Routes Admin */}
             <Route path="/admin" element={<AdminLogin />} />
             <Route path="/admin/*" element={
@@ -38,6 +46,9 @@ const App = () => (
               </ProtectedRoute>
             }>
               <Route path="equipe" element={<AdminEquipe />} />
+              <Route path="blog" element={<AdminBlog />} />
+              <Route path="blog/nouveau" element={<BlogForm />} />
+              <Route path="blog/modifier/:id" element={<BlogForm />} />
             </Route>
             
             {/* Route disponibilité (non-référencée) */}

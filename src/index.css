@@ -104,13 +104,106 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.2em;
     overflow-x: hidden;
   }
 
-  /* Titles use Outfit font */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Outfit', 'Inter', sans-serif;
+  /* Titles use Inter font */
+  h1, h2, h3, h4, h5, h6, .heading {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+  
+  /* Blog content styling */
+  .prose-editor .ql-editor {
+    @apply min-h-[400px] text-foreground;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.6;
+  }
+  
+  .prose-editor .ql-toolbar {
+    @apply border-input;
+  }
+  
+  .prose-editor .ql-container {
+    @apply border-input;
+  }
+  
+  /* Prose content styling for blog articles */
+  .prose {
+    @apply text-foreground;
+  }
+  
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    font-family: 'Inter', sans-serif;
+    @apply text-foreground;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  
+  .prose p,
+  .prose li,
+  .prose blockquote {
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.6;
+  }
+  
+  .prose a {
+    @apply text-primary underline;
+  }
+  
+  .prose strong {
+    @apply text-foreground font-bold;
+  }
+  
+  .prose code {
+    @apply bg-muted text-foreground px-1 py-0.5 rounded;
+  }
+  
+  .prose pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-primary pl-4 text-muted-foreground italic;
+  }
+  
+  .prose img {
+    border-radius: 40px;
+  }
+  
+  /* Line clamp utilities */
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
 
   /* Custom scrollbar */
