@@ -17,8 +17,8 @@ export default function BlogHome() {
   const [tags, setTags] = useState<BlogTag[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
-  const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || '');
-  const [selectedTag, setSelectedTag] = useState(searchParams.get('tag') || '');
+  const [selectedCategory, setSelectedCategory] = useState(searchParams.get('category') || 'all');
+  const [selectedTag, setSelectedTag] = useState(searchParams.get('tag') || 'all');
 
   useEffect(() => {
     fetchData();
@@ -54,7 +54,7 @@ export default function BlogHome() {
       query = query.or(`title.ilike.%${searchTerm}%,content.ilike.%${searchTerm}%`);
     }
     
-    if (selectedCategory) {
+    if (selectedCategory && selectedCategory !== 'all') {
       const category = categories.find(c => c.slug === selectedCategory);
       if (category) {
         query = query.eq('category_id', category.id);
@@ -67,7 +67,7 @@ export default function BlogHome() {
       let filteredArticles = articlesData;
 
       // Filter by tag if selected
-      if (selectedTag) {
+      if (selectedTag && selectedTag !== 'all') {
         filteredArticles = articlesData.filter(article => 
           article.blog_article_tags?.some(at => at.blog_tags.slug === selectedTag)
         );
@@ -94,7 +94,7 @@ export default function BlogHome() {
   const updateSearchParams = (params: Record<string, string>) => {
     const newSearchParams = new URLSearchParams(searchParams);
     Object.entries(params).forEach(([key, value]) => {
-      if (value) {
+      if (value && value !== 'all') {
         newSearchParams.set(key, value);
       } else {
         newSearchParams.delete(key);
@@ -157,7 +157,7 @@ export default function BlogHome() {
                   <SelectValue placeholder="Toutes les catégories" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">Toutes les catégories</SelectItem>
+                  <SelectItem value="all">Toutes les catégories</SelectItem>
                   {categories.map((category) => (
                     <SelectItem key={category.id} value={category.slug}>
                       {category.name}
@@ -174,7 +174,7 @@ export default function BlogHome() {
                   <SelectValue placeholder="Tous les tags" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">Tous les tags</SelectItem>
+                  <SelectItem value="all">Tous les tags</SelectItem>
                   {tags.map((tag) => (
                     <SelectItem key={tag.id} value={tag.slug}>
                       {tag.name}
@@ -183,13 +183,13 @@ export default function BlogHome() {
                 </SelectContent>
               </Select>
 
-              {(searchTerm || selectedCategory || selectedTag) && (
+              {(searchTerm || (selectedCategory && selectedCategory !== 'all') || (selectedTag && selectedTag !== 'all')) && (
                 <Button 
                   variant="outline" 
                   onClick={() => {
                     setSearchTerm('');
-                    setSelectedCategory('');
-                    setSelectedTag('');
+                    setSelectedCategory('all');
+                    setSelectedTag('all');
                     setSearchParams(new URLSearchParams());
                   }}
                 >
@@ -332,8 +332,8 @@ export default function BlogHome() {
             <Button
               onClick={() => {
                 setSearchTerm('');
-                setSelectedCategory('');
-                setSelectedTag('');
+                setSelectedCategory('all');
+                setSelectedTag('all');
                 setSearchParams(new URLSearchParams());
               }}
             >
