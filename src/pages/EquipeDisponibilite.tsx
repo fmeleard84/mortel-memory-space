@@ -86,9 +86,12 @@ export default function EquipeDisponibilite() {
       .upsert({
         member_id: userId,
         is_available: isAvailable,
+      }, {
+        onConflict: 'member_id'
       });
 
     if (error) {
+      console.error('Error updating availability:', error);
       toast({
         title: "Erreur",
         description: "Impossible de mettre à jour la disponibilité",
