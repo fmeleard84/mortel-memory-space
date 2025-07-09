@@ -103,6 +103,16 @@ export default function BlogHome() {
     setSearchParams(newSearchParams);
   };
 
+  const handleCategoryClick = (categorySlug: string) => {
+    setSelectedCategory(categorySlug);
+    updateSearchParams({ category: categorySlug });
+  };
+
+  const handleTagClick = (tagSlug: string) => {
+    setSelectedTag(tagSlug);
+    updateSearchParams({ tag: tagSlug });
+  };
+
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('fr-FR', {
       year: 'numeric',
@@ -128,8 +138,8 @@ export default function BlogHome() {
       <header className="bg-card border-b">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-foreground mb-4">SOUFFLE</h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <h1 className="mortel-titre-hero text-foreground mb-4">SOUFFLE</h1>
+            <p className="mortel-text-introdution text-muted-foreground max-w-2xl mx-auto">
               Découvrez nos articles, conseils et témoignages pour vous accompagner dans vos démarches
             </p>
           </div>
@@ -206,45 +216,73 @@ export default function BlogHome() {
         {heroArticle && (
           <section className="mb-12">
             <Card className="overflow-hidden">
-              <div className="md:flex">
+              <div className="flex flex-col md:flex-row">
+                {/* Image fixe à gauche */}
                 {heroArticle.featured_image && (
-                  <div className="md:w-1/2">
-                    <img
-                      src={heroArticle.featured_image}
-                      alt={heroArticle.title}
-                      className="w-full h-64 md:h-full object-cover"
-                    />
+                  <div className="md:w-1/2 order-1 md:order-1">
+                    <Link to={`/souffle/article/${heroArticle.slug}`} className="block h-full">
+                      <img
+                        src={heroArticle.featured_image}
+                        alt={heroArticle.title}
+                        className="w-full h-64 md:h-[400px] object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                        style={{ borderRadius: '40px' }}
+                      />
+                    </Link>
                   </div>
                 )}
-                <div className={heroArticle.featured_image ? "md:w-1/2 p-8" : "p-8"}>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                    <Calendar className="h-4 w-4" />
-                    {heroArticle.published_at && formatDate(heroArticle.published_at)}
-                    {heroArticle.blog_categories && (
-                      <>
-                        <span>•</span>
-                        <Badge variant="secondary">{heroArticle.blog_categories.name}</Badge>
-                      </>
+                
+                {/* Contenu structuré à droite */}
+                <div className={`${heroArticle.featured_image ? "md:w-1/2" : "w-full"} p-8 order-2 md:order-2 flex flex-col justify-between`}>
+                  <div>
+                    {/* Métadonnées */}
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+                      <Calendar className="h-4 w-4" />
+                      {heroArticle.published_at && formatDate(heroArticle.published_at)}
+                      {heroArticle.blog_categories && (
+                        <>
+                          <span>•</span>
+                          <Badge 
+                            variant="secondary" 
+                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+                            onClick={() => handleCategoryClick(heroArticle.blog_categories.slug)}
+                          >
+                            {heroArticle.blog_categories.name}
+                          </Badge>
+                        </>
+                      )}
+                    </div>
+                    
+                    {/* Titre */}
+                    <h2 className="mortel-title text-foreground mb-4" style={{ fontSize: '2rem', lineHeight: '1.2em' }}>
+                      {heroArticle.title}
+                    </h2>
+                    
+                    {/* Résumé */}
+                    {heroArticle.excerpt && (
+                      <p className="mortel-text text-muted-foreground mb-6 text-lg leading-relaxed">
+                        {heroArticle.excerpt}
+                      </p>
                     )}
                   </div>
-                  <h2 className="text-3xl font-bold text-foreground mb-4">
-                    {heroArticle.title}
-                  </h2>
-                  {heroArticle.excerpt && (
-                    <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
-                      {heroArticle.excerpt}
-                    </p>
-                  )}
-                  <div className="flex items-center justify-between">
-                    <div className="flex flex-wrap gap-2">
+                  
+                  <div>
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-6">
                       {heroArticle.blog_article_tags?.map((articleTag) => (
-                        <Badge key={articleTag.blog_tags.id} variant="outline">
+                        <Badge 
+                          key={articleTag.blog_tags.id} 
+                          variant="outline"
+                          className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+                          onClick={() => handleTagClick(articleTag.blog_tags.slug)}
+                        >
                           <Tag className="h-3 w-3 mr-1" />
                           {articleTag.blog_tags.name}
                         </Badge>
                       ))}
                     </div>
-                    <Button asChild>
+                    
+                    {/* Bouton */}
+                    <Button asChild className="w-full md:w-auto">
                       <Link to={`/souffle/article/${heroArticle.slug}`}>
                         Lire l'article
                       </Link>
@@ -259,7 +297,7 @@ export default function BlogHome() {
         {/* Articles Grid */}
         {articles.length > 0 && (
           <section>
-            <h2 className="text-2xl font-bold text-foreground mb-8">
+            <h2 className="mortel-title text-foreground mb-8" style={{ fontSize: '1.5rem' }}>
               {heroArticle ? 'Autres articles' : 'Nos articles'}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -267,11 +305,14 @@ export default function BlogHome() {
                 <Card key={article.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                   {article.featured_image && (
                     <div className="aspect-video">
-                      <img
-                        src={article.featured_image}
-                        alt={article.title}
-                        className="w-full h-full object-cover"
-                      />
+                      <Link to={`/souffle/article/${article.slug}`}>
+                        <img
+                          src={article.featured_image}
+                          alt={article.title}
+                          className="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                          style={{ borderRadius: '20px' }}
+                        />
+                      </Link>
                     </div>
                   )}
                   <CardHeader>
@@ -281,15 +322,21 @@ export default function BlogHome() {
                       {article.blog_categories && (
                         <>
                           <span>•</span>
-                          <Badge variant="secondary" className="text-xs">
+                          <Badge 
+                            variant="secondary" 
+                            className="text-xs cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+                            onClick={() => handleCategoryClick(article.blog_categories.slug)}
+                          >
                             {article.blog_categories.name}
                           </Badge>
                         </>
                       )}
                     </div>
-                    <CardTitle className="line-clamp-2">{article.title}</CardTitle>
+                    <CardTitle className="mortel-title line-clamp-2" style={{ fontSize: '1.1rem', textTransform: 'none' }}>
+                      {article.title}
+                    </CardTitle>
                     {article.excerpt && (
-                      <CardDescription className="line-clamp-3">
+                      <CardDescription className="mortel-text line-clamp-3">
                         {article.excerpt}
                       </CardDescription>
                     )}
@@ -298,7 +345,12 @@ export default function BlogHome() {
                     <div className="flex items-center justify-between">
                       <div className="flex flex-wrap gap-1">
                         {article.blog_article_tags?.slice(0, 2).map((articleTag) => (
-                          <Badge key={articleTag.blog_tags.id} variant="outline" className="text-xs">
+                          <Badge 
+                            key={articleTag.blog_tags.id} 
+                            variant="outline" 
+                            className="text-xs cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+                            onClick={() => handleTagClick(articleTag.blog_tags.slug)}
+                          >
                             {articleTag.blog_tags.name}
                           </Badge>
                         ))}
@@ -325,8 +377,8 @@ export default function BlogHome() {
         {!heroArticle && articles.length === 0 && (
           <div className="text-center py-12">
             <div className="text-6xl text-muted-foreground mb-4">📝</div>
-            <h2 className="text-2xl font-bold text-foreground mb-2">Aucun article trouvé</h2>
-            <p className="text-muted-foreground mb-6">
+            <h2 className="mortel-title text-foreground mb-2">Aucun article trouvé</h2>
+            <p className="mortel-text text-muted-foreground mb-6">
               Aucun article ne correspond à vos critères de recherche.
             </p>
             <Button

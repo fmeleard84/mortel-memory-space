@@ -177,12 +177,12 @@ export default function BlogArticle() {
               )}
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="mortel-titre-hero text-foreground mb-6 leading-tight">
               {article.title}
             </h1>
 
             {article.excerpt && (
-              <p className="text-xl text-muted-foreground leading-relaxed mb-6">
+              <p className="mortel-text-introdution text-muted-foreground leading-relaxed mb-6">
                 {article.excerpt}
               </p>
             )}
@@ -210,17 +210,20 @@ export default function BlogArticle() {
         {/* Related Articles */}
         {relatedArticles.length > 0 && (
           <section className="max-w-4xl mx-auto mt-16 pt-8 border-t">
-            <h2 className="text-2xl font-bold text-foreground mb-8">Articles similaires</h2>
+            <h2 className="mortel-title text-foreground mb-8">Articles similaires</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedArticles.map((relatedArticle) => (
                 <Card key={relatedArticle.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                   {relatedArticle.featured_image && (
                     <div className="aspect-video">
-                      <img
-                        src={relatedArticle.featured_image}
-                        alt={relatedArticle.title}
-                        className="w-full h-full object-cover"
-                      />
+                      <Link to={`/souffle/article/${relatedArticle.slug}`}>
+                        <img
+                          src={relatedArticle.featured_image}
+                          alt={relatedArticle.title}
+                          className="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                          style={{ borderRadius: '20px' }}
+                        />
+                      </Link>
                     </div>
                   )}
                   <CardContent className="p-4">
@@ -228,11 +231,11 @@ export default function BlogArticle() {
                       <Calendar className="h-3 w-3" />
                       {relatedArticle.published_at && formatDate(relatedArticle.published_at)}
                     </div>
-                    <h3 className="font-semibold text-foreground mb-2 line-clamp-2">
+                    <h3 className="mortel-title text-foreground mb-2 line-clamp-2" style={{ fontSize: '1.1rem', textTransform: 'none' }}>
                       {relatedArticle.title}
                     </h3>
                     {relatedArticle.excerpt && (
-                      <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
+                      <p className="mortel-text text-sm text-muted-foreground mb-3 line-clamp-2">
                         {relatedArticle.excerpt}
                       </p>
                     )}

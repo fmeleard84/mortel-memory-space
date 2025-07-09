@@ -20,10 +20,30 @@ export const AdminAuthProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState<boolean>(false);
 
   useEffect(() => {
-    const savedAuth = localStorage.getItem('admin_authenticated');
-    if (savedAuth === 'true') {
-      setIsAdminAuthenticated(true);
-    }
+    // Vérification de l'état d'authentification au montage
+    const checkAuthState = () => {
+      try {
+        const savedAuth = localStorage.getItem('admin_authenticated');
+        if (savedAuth === 'true') {
+          setIsAdminAuthenticated(true);
+        }
+      } catch (error) {
+        console.warn('Erreur lors de la vérification de l\'auth admin:', error);
+        setIsAdminAuthenticated(false);
+      }
+    };
+
+    checkAuthState();
+
+    // Écouter les changements dans localStorage (pour la synchronisation entre onglets)
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'admin_authenticated') {
+        setIsAdminAuthenticated(e.newValue === 'true');
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
   }, []);
 
   const adminLogin = async (email: string, password: string): Promise<boolean> => {
